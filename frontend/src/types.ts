@@ -28,5 +28,31 @@ export interface Observation {
   text_description: string;
   context: ObservationContext;
   created_at: string;
+  analysis: AnalysisBundle;
 }
 
+export type BehaviourState = "relaxed" | "playful" | "alert_or_curious" | "attention_seeking" | "fearful" | "stressed_or_frustrated" | "defensive_or_aggressive" | "potentially_unwell" | "uncertain";
+
+export interface EvidenceItem { key: string; observation: string; source: "text" | "context"; }
+
+export interface ModalityResult {
+  status: "pending" | "completed" | "failed";
+  label?: BehaviourState;
+  confidence?: number;
+  detected_features: string[];
+  evidence: EvidenceItem[];
+  state_scores: { state: BehaviourState; score: number }[];
+  alternatives: { state: BehaviourState; confidence: number }[];
+  explanation?: string;
+  recommendations: string[];
+  safety_escalation: boolean;
+  safety_message?: string;
+}
+
+export interface AnalysisBundle {
+  text: ModalityResult;
+  context: ModalityResult;
+  video: ModalityResult;
+  audio: ModalityResult;
+  fusion: ModalityResult;
+}

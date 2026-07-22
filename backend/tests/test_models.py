@@ -15,4 +15,3 @@ def test_observation_has_safe_empty_context_defaults() -> None:
     assert observation.context.known_triggers == []
     assert observation.video is None
     assert observation.audio is None
-

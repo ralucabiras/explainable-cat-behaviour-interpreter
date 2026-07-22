@@ -30,6 +30,39 @@ class AnalysisStatus(StrEnum):
     FAILED = "failed"
 
 
+class BehaviourState(StrEnum):
+    RELAXED = "relaxed"
+    PLAYFUL = "playful"
+    ALERT_OR_CURIOUS = "alert_or_curious"
+    ATTENTION_SEEKING = "attention_seeking"
+    FEARFUL = "fearful"
+    STRESSED_OR_FRUSTRATED = "stressed_or_frustrated"
+    DEFENSIVE_OR_AGGRESSIVE = "defensive_or_aggressive"
+    POTENTIALLY_UNWELL = "potentially_unwell"
+    UNCERTAIN = "uncertain"
+
+
+class EvidenceSource(StrEnum):
+    TEXT = "text"
+    CONTEXT = "context"
+
+
+class EvidenceItem(APIModel):
+    key: str
+    observation: str
+    source: EvidenceSource
+
+
+class StateScore(APIModel):
+    state: BehaviourState
+    score: float = Field(ge=0)
+
+
+class AlternativeInterpretation(APIModel):
+    state: BehaviourState
+    confidence: float = Field(ge=0, le=1)
+
+
 class MediaReference(APIModel):
     filename: str
     content_type: str
@@ -38,10 +71,16 @@ class MediaReference(APIModel):
 
 class ModalityResult(APIModel):
     status: AnalysisStatus = AnalysisStatus.PENDING
-    label: str | None = None
+    label: BehaviourState | None = None
     confidence: float | None = Field(default=None, ge=0, le=1)
     detected_features: list[str] = Field(default_factory=list)
+    evidence: list[EvidenceItem] = Field(default_factory=list)
+    state_scores: list[StateScore] = Field(default_factory=list)
+    alternatives: list[AlternativeInterpretation] = Field(default_factory=list, max_length=2)
     explanation: str | None = None
+    recommendations: list[str] = Field(default_factory=list)
+    safety_escalation: bool = False
+    safety_message: str | None = None
 
 
 class AnalysisBundle(APIModel):
@@ -67,4 +106,3 @@ class ObservationCreate(APIModel):
 
 class Observation(StoredModel, ObservationCreate):
     analysis: AnalysisBundle = Field(default_factory=AnalysisBundle)
-

@@ -17,7 +17,7 @@ backend/app/
 compose.yaml              Frontend, backend, and MongoDB development services
 ```
 
-Analysis output is stored separately for each modality, including a status, label, confidence, detected features, and explanation. This gives later taxonomy and explainability work a stable contract.
+Analysis output is stored separately for each modality, including a status, label, evidence, confidence, alternatives, recommendations, and explanation. Text and context use a deterministic, auditable rules baseline; video and audio remain pending.
 
 ## Run with Docker
 
@@ -71,7 +71,7 @@ For a backend outside Docker, set `MONGODB_URL=mongodb://localhost:27017`. The f
 | `GET` | `/api/v1/observations` | List observations; optionally filter by `pet_id` |
 | `GET` | `/api/v1/observations/{id}` | Retrieve one observation |
 
-Media fields and analysis result contracts exist in the backend models, but uploads and inference are intentionally not active yet.
+Creating an observation synchronously runs text and context interpretation and returns the completed explainable result. Media fields exist in the backend models, but video and audio inference are intentionally not active yet.
 
 ## Development checks
 
@@ -81,11 +81,11 @@ ruff check .
 pytest
 
 cd ../frontend
+npm run test
 npm run lint
 npm run build
 ```
 
-## Next stage
+## Current analysis scope
 
-Define the limited cat-behaviour taxonomy and its observable clues, uncertainty rules, urgent safety triggers, alternatives, and safe recommendations. That knowledge base can then drive deterministic text clue extraction and context scoring before any pretrained model is introduced.
-
+The English-language baseline covers nine broad cat behaviour states, context-aware weighted evidence, simple negation, uncertainty, alternatives, and urgent safety escalation. Its confidence value is evidence strength from deterministic rules, not a medically validated probability.

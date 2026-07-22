@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from motor.motor_asyncio import AsyncIOMotorDatabase
 
@@ -11,7 +11,7 @@ class PetService:
         self.repository = MongoRepository(database.pets)
 
     async def create(self, payload: PetCreate) -> Pet:
-        now = datetime.now(timezone.utc)
+        now = datetime.now(UTC)
         document = payload.model_dump()
         document.update(created_at=now, updated_at=now)
         return await self.repository.create(Pet.model_validate({"id": "pending", **document}), Pet)
@@ -21,4 +21,3 @@ class PetService:
 
     async def list(self) -> list[Pet]:
         return await self.repository.list(Pet)
-

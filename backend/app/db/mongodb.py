@@ -25,4 +25,3 @@ async def get_database() -> AsyncIterator[AsyncIOMotorDatabase]:
     if _client is None:
         raise RuntimeError("MongoDB connection has not been initialised")
     yield _client[get_settings().mongodb_database]
-

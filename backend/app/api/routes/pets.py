@@ -27,4 +27,3 @@ async def get_pet(pet_id: str, database: Database) -> Pet:
     if pet is None:
         raise HTTPException(status_code=404, detail="Pet not found")
     return pet
-

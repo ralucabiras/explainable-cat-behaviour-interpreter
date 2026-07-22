@@ -32,4 +32,3 @@ async def get_observation(observation_id: str, database: Database) -> Observatio
     if observation is None:
         raise HTTPException(status_code=404, detail="Observation not found")
     return observation
-

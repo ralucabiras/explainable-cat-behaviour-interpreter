@@ -23,4 +23,3 @@ class PetCreate(APIModel):
 
 class Pet(StoredModel, PetCreate):
     pass
-
