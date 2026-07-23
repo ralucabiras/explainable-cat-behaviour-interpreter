@@ -1,9 +1,12 @@
 import { FormEvent, useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import { api } from "../api";
 import { InterpretationResult } from "../components/InterpretationResult";
 import type { Observation, Pet } from "../types";
 
 export function NewObservationPage({ pets }: { pets: Pet[] }) {
+  const [searchParams] = useSearchParams();
+  const requestedPetId = searchParams.get("petId");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const [result, setResult] = useState<Observation | null>(null);
@@ -40,7 +43,7 @@ export function NewObservationPage({ pets }: { pets: Pet[] }) {
       <div className="page-heading"><div><p className="eyebrow">Behaviour journal</p><h1>Record an observation</h1><p>Describe what you saw, then add the circumstances around it.</p></div></div>
       <form onSubmit={submit}>
         <fieldset className="card"><legend>1. What happened?</legend>
-          <label>Cat<select name="pet_id" required>{pets.map((pet) => <option key={pet.id} value={pet.id}>{pet.name}</option>)}</select></label>
+          <label>Cat<select name="pet_id" required defaultValue={pets.some((pet) => pet.id === requestedPetId) ? requestedPetId ?? undefined : undefined}>{pets.map((pet) => <option key={pet.id} value={pet.id}>{pet.name}</option>)}</select></label>
           <label>Description<textarea name="description" required minLength={1} maxLength={5000} rows={6} placeholder="For example: Luna paced by the door and meowed repeatedly after we arrived at the new apartment…" /></label>
         </fieldset>
         <fieldset className="card"><legend>2. Context</legend><div className="form-grid">
@@ -53,6 +56,7 @@ export function NewObservationPage({ pets }: { pets: Pet[] }) {
         {message && <p className="success">{message}</p>}{error && <p className="error">{error}</p>}<button className="primary submit">Save and interpret</button>
       </form>
       {result && <InterpretationResult result={result.analysis.fusion} />}
+      {result && <div className="saved-result-link"><Link to={`/app/observations/${result.id}`}>Open the permanent journal entry →</Link></div>}
     </section>
   );
 }

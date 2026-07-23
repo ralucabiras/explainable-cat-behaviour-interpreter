@@ -8,6 +8,8 @@ import { AboutPage } from "./pages/AboutPage";
 import { LandingPage } from "./pages/LandingPage";
 import { LoginPage } from "./pages/LoginPage";
 import { NewObservationPage } from "./pages/NewObservationPage";
+import { ObservationDetailPage } from "./pages/ObservationDetailPage";
+import { PetDetailPage } from "./pages/PetDetailPage";
 import { PetsPage } from "./pages/PetsPage";
 import { ProfilePage } from "./pages/ProfilePage";
 import { SignUpPage } from "./pages/SignUpPage";
@@ -62,6 +64,8 @@ function ProtectedApp() {
     <Routes>
       <Route index element={<PetsPage pets={pets} refresh={refresh} />} />
       <Route path="observe" element={<NewObservationPage pets={pets} />} />
+      <Route path="pets/:petId" element={<PetDetailPage onPetsChanged={refresh} />} />
+      <Route path="observations/:observationId" element={<ObservationDetailPage />} />
       <Route path="profile" element={<ProfilePage user={user} />} />
       <Route path="*" element={<Navigate to="/app" replace />} />
     </Routes>

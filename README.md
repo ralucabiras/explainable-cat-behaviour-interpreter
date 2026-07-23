@@ -71,13 +71,24 @@ For a backend outside Docker, set `MONGODB_URL=mongodb://localhost:27017`. The f
 | `POST` | `/api/v1/pets` | Create a cat profile |
 | `GET` | `/api/v1/pets` | List cat profiles |
 | `GET` | `/api/v1/pets/{id}` | Retrieve one profile |
+| `PATCH` | `/api/v1/pets/{id}` | Update an owned cat profile |
+| `DELETE` | `/api/v1/pets/{id}` | Delete a cat and its observations |
 | `POST` | `/api/v1/observations` | Save a text and context observation |
 | `GET` | `/api/v1/observations` | List observations; optionally filter by `pet_id` |
 | `GET` | `/api/v1/observations/{id}` | Retrieve one observation |
+| `DELETE` | `/api/v1/observations/{id}` | Permanently delete an observation |
 
 Creating an observation synchronously runs text and context interpretation and returns the completed explainable result. Media fields exist in the backend models, but video and audio inference are intentionally not active yet.
 
 Pet and observation endpoints require a bearer token and only return records belonging to the authenticated user.
+
+The authenticated app includes a global recent-observation view, per-cat newest-first
+timelines, behaviour-state and date filtering, permanent interpretation pages, and
+profile/observation deletion. Observation inputs and results are immutable so saved
+interpretations remain reproducible.
+
+Observation history accepts `pet_id`, `state`, `date_from`, `date_to`, `skip`, and
+`limit` query parameters. The default page size is 20 and the maximum is 100.
 
 ## Gmail email confirmation
 

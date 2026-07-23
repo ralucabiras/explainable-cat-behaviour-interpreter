@@ -15,6 +15,10 @@ async def connect_to_mongo() -> None:
     database = _client[settings.mongodb_database]
     await database.users.create_index("email", unique=True)
     await database.pets.create_index([("owner_id", 1), ("created_at", -1)])
+    await database.observations.create_index([("owner_id", 1), ("pet_id", 1), ("created_at", -1)])
+    await database.observations.create_index(
+        [("owner_id", 1), ("analysis.fusion.label", 1), ("created_at", -1)]
+    )
 
 
 async def close_mongo_connection() -> None:

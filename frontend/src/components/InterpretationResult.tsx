@@ -1,12 +1,6 @@
-import type { BehaviourState, ModalityResult } from "../types";
+import type { ModalityResult } from "../types";
+import { BEHAVIOUR_LABELS as LABELS } from "../lib/behaviour";
 
-const LABELS: Record<BehaviourState, string> = {
-  relaxed: "Relaxed", playful: "Playful", alert_or_curious: "Alert or curious",
-  attention_seeking: "Attention-seeking", fearful: "Fearful",
-  stressed_or_frustrated: "Stressed or frustrated",
-  defensive_or_aggressive: "Defensive or aggressive",
-  potentially_unwell: "Potentially unwell", uncertain: "Uncertain",
-};
 
 export function InterpretationResult({ result }: { result: ModalityResult }) {
   const textEvidence = result.evidence.filter((item) => item.source === "text");

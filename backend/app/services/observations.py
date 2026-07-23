@@ -7,7 +7,12 @@ from app.ai.context_analyser import ContextAnalyser
 from app.ai.fusion import FusionEngine
 from app.ai.safety import assess_safety
 from app.ai.text_analyser import TextAnalyser
-from app.models.observation import AnalysisBundle, Observation, ObservationCreate
+from app.models.observation import (
+    AnalysisBundle,
+    BehaviourState,
+    Observation,
+    ObservationCreate,
+)
 from app.repositories.base import MongoRepository
 
 
@@ -65,8 +70,40 @@ class ObservationService:
     async def get(self, observation_id: str, owner_id: str) -> Observation | None:
         return await self.repository.get(observation_id, Observation, {"owner_id": owner_id})
 
-    async def list(self, owner_id: str, pet_id: str | None = None) -> list[Observation]:
+    async def list(
+        self,
+        owner_id: str,
+        pet_id: str | None = None,
+        state: BehaviourState | None = None,
+        date_from: datetime | None = None,
+        date_to: datetime | None = None,
+        skip: int = 0,
+        limit: int = 20,
+    ) -> list[Observation]:
         query = {"owner_id": owner_id}
         if pet_id:
             query["pet_id"] = pet_id
-        return await self.repository.list(Observation, query)
+        if state:
+            query["analysis.fusion.label"] = state.value
+        if date_from or date_to:
+            created_at: dict[str, str] = {}
+            if date_from:
+                created_at["$gte"] = self._utc_iso(date_from)
+            if date_to:
+                created_at["$lte"] = self._utc_iso(date_to)
+            query["created_at"] = created_at
+        return await self.repository.list(
+            Observation,
+            query,
+            skip=skip,
+            limit=limit,
+        )
+
+    async def delete(self, observation_id: str, owner_id: str) -> bool:
+        return await self.repository.delete(observation_id, {"owner_id": owner_id})
+
+    @staticmethod
+    def _utc_iso(value: datetime) -> str:
+        if value.tzinfo is None:
+            value = value.replace(tzinfo=UTC)
+        return value.astimezone(UTC).isoformat()

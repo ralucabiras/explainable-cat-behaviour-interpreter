@@ -1,4 +1,11 @@
-import type { Observation, ObservationContext, Pet, Sex, User } from "./types";
+import type {
+  Observation,
+  ObservationContext,
+  ObservationFilters,
+  Pet,
+  Sex,
+  User,
+} from "./types";
 
 const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:8000/api/v1";
 
@@ -16,7 +23,17 @@ async function request<T>(path: string, options?: RequestInit): Promise<T> {
     const body = await response.json().catch(() => null);
     throw new Error(body?.detail ?? "The request could not be completed.");
   }
+  if (response.status === 204) return undefined as T;
   return response.json() as Promise<T>;
+}
+
+function queryString(values: Record<string, string | number | undefined>) {
+  const params = new URLSearchParams();
+  Object.entries(values).forEach(([key, value]) => {
+    if (value !== undefined && value !== "") params.set(key, String(value));
+  });
+  const query = params.toString();
+  return query ? `?${query}` : "";
 }
 
 export const api = {
@@ -39,11 +56,32 @@ export const api = {
     }),
   me: () => request<User>("/auth/me"),
   listPets: () => request<Pet[]>("/pets"),
-  createPet: (payload: { name: string; breed?: string; sex: Sex; notes?: string }) =>
+  getPet: (petId: string) => request<Pet>(`/pets/${petId}`),
+  createPet: (payload: {
+    name: string;
+    breed?: string;
+    sex: Sex;
+    date_of_birth?: string;
+    notes?: string;
+  }) =>
     request<Pet>("/pets", {
       method: "POST",
       body: JSON.stringify({ ...payload, species: "cat" }),
     }),
+  updatePet: (
+    petId: string,
+    payload: Partial<Pick<Pet, "name" | "breed" | "sex" | "date_of_birth" | "notes">>,
+  ) => request<Pet>(`/pets/${petId}`, { method: "PATCH", body: JSON.stringify(payload) }),
+  deletePet: (petId: string) =>
+    request<{ message: string; deleted_observations: number }>(`/pets/${petId}`, {
+      method: "DELETE",
+    }),
+  listObservations: (filters: ObservationFilters = {}) =>
+    request<Observation[]>(`/observations${queryString({ ...filters })}`),
+  getObservation: (observationId: string) =>
+    request<Observation>(`/observations/${observationId}`),
+  deleteObservation: (observationId: string) =>
+    request<void>(`/observations/${observationId}`, { method: "DELETE" }),
   createObservation: (payload: {
     pet_id: string;
     text_description: string;

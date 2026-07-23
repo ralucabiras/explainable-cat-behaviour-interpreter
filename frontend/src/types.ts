@@ -12,10 +12,12 @@ export interface Pet {
   id: string;
   name: string;
   species: "cat";
-  breed?: string;
+  breed?: string | null;
   sex: Sex;
-  date_of_birth?: string;
-  notes?: string;
+  date_of_birth?: string | null;
+  notes?: string | null;
+  created_at: string;
+  updated_at: string;
 }
 
 export interface ObservationContext {
@@ -36,6 +38,7 @@ export interface Observation {
   text_description: string;
   context: ObservationContext;
   created_at: string;
+  updated_at: string;
   analysis: AnalysisBundle;
 }
 
@@ -63,4 +66,13 @@ export interface AnalysisBundle {
   video: ModalityResult;
   audio: ModalityResult;
   fusion: ModalityResult;
+}
+
+export interface ObservationFilters {
+  pet_id?: string;
+  state?: BehaviourState;
+  date_from?: string;
+  date_to?: string;
+  skip?: number;
+  limit?: number;
 }
