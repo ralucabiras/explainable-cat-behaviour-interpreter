@@ -1,6 +1,9 @@
 from functools import lru_cache
+from pathlib import Path
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+ROOT_ENV_FILE = Path(__file__).resolve().parents[3] / ".env"
 
 
 class Settings(BaseSettings):
@@ -18,7 +21,11 @@ class Settings(BaseSettings):
     gmail_app_password: str | None = None
     email_from_name: str = "Whiskerwise"
 
-    model_config = SettingsConfigDict(env_file=".env", extra="ignore")
+    model_config = SettingsConfigDict(
+        env_file=(ROOT_ENV_FILE, ".env"),
+        env_file_encoding="utf-8",
+        extra="ignore",
+    )
 
     @property
     def allowed_origins(self) -> list[str]:

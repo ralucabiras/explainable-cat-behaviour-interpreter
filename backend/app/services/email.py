@@ -19,13 +19,14 @@ class EmailService:
             raise RuntimeError("EMAIL_DELIVERY_MODE must be 'console' or 'gmail'")
         if not settings.gmail_address or not settings.gmail_app_password:
             raise RuntimeError("Gmail SMTP credentials are not configured")
+        app_password = "".join(settings.gmail_app_password.split())
         await asyncio.to_thread(
             self._send_gmail,
             recipient,
             display_name,
             confirmation_url,
             settings.gmail_address,
-            settings.gmail_app_password,
+            app_password,
             settings.email_from_name,
         )
         return confirmation_url
