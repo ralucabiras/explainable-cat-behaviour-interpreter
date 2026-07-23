@@ -57,7 +57,9 @@ npm install
 npm run dev
 ```
 
-For a backend outside Docker, set `MONGODB_URL=mongodb://localhost:27017`. The frontend defaults to `http://localhost:8000/api/v1`.
+For a backend outside Docker, use `MONGODB_URL=mongodb://localhost:27017`.
+Docker Compose automatically uses its internal `mongo` hostname regardless of this local
+setting. The frontend defaults to `http://localhost:8000/api/v1`.
 
 ## Current API
 

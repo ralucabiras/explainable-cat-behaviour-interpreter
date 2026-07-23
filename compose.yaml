@@ -16,7 +16,7 @@ services:
     build: ./backend
     restart: unless-stopped
     environment:
-      MONGODB_URL: ${MONGODB_URL:-mongodb://mongo:27017}
+      MONGODB_URL: mongodb://mongo:27017
       MONGODB_DATABASE: ${MONGODB_DATABASE:-animal_behaviour}
       CORS_ORIGINS: http://localhost:5173
       FRONTEND_URL: http://localhost:5173
