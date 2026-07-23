@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { describe, expect, it } from "vitest";
 import { LandingPage } from "./LandingPage";
+import { AboutPage } from "./AboutPage";
 import { SignUpPage } from "./SignUpPage";
 
 describe("public pages", () => {
@@ -21,5 +22,14 @@ describe("public pages", () => {
     expect(screen.getByLabelText("Email")).toBeRequired();
     expect(screen.getByLabelText(/^Password/, { selector: "input" })).toBeRequired();
     expect(screen.getByLabelText("Confirm password")).toBeRequired();
+  });
+
+  it("explains the project principles on the about page", () => {
+    render(<MemoryRouter><AboutPage /></MemoryRouter>);
+    expect(screen.getByRole("heading", {
+      name: "Careful technology for a relationship built on observation.",
+    })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Show the reasoning" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Know the boundary" })).toBeInTheDocument();
   });
 });

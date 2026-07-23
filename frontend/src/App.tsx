@@ -4,6 +4,7 @@ import { api } from "./api";
 import { useAuth } from "./auth/AuthContext";
 import { Layout } from "./components/Layout";
 import { ConfirmEmailPage } from "./pages/ConfirmEmailPage";
+import { AboutPage } from "./pages/AboutPage";
 import { LandingPage } from "./pages/LandingPage";
 import { LoginPage } from "./pages/LoginPage";
 import { NewObservationPage } from "./pages/NewObservationPage";
@@ -15,6 +16,7 @@ import type { Pet } from "./types";
 export default function App() {
   return <Routes>
     <Route path="/" element={<LandingPage />} />
+    <Route path="/about" element={<AboutPage />} />
     <Route path="/signup" element={<SignUpPage />} />
     <Route path="/login" element={<LoginPage />} />
     <Route path="/confirm-email" element={<ConfirmEmailPage />} />
