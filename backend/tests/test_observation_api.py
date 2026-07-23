@@ -1,8 +1,10 @@
 from bson import ObjectId
 from fastapi.testclient import TestClient
 
+from app.api.dependencies import get_current_user
 from app.db.mongodb import get_database
 from app.main import app
+from app.models.user import User
 
 
 class InsertResult:
@@ -34,7 +36,18 @@ def test_create_endpoint_returns_explainable_analysis() -> None:
     async def override_database():
         yield database
 
+    async def override_user():
+        return User(
+            id=str(ObjectId()),
+            display_name="Test Owner",
+            email="owner@example.com",
+            email_verified=True,
+            created_at="2026-01-01T00:00:00Z",
+            updated_at="2026-01-01T00:00:00Z",
+        )
+
     app.dependency_overrides[get_database] = override_database
+    app.dependency_overrides[get_current_user] = override_user
     try:
         response = TestClient(app).post(
             "/api/v1/observations",

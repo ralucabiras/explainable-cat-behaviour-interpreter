@@ -22,4 +22,4 @@ class PetCreate(APIModel):
 
 
 class Pet(StoredModel, PetCreate):
-    pass
+    owner_id: str | None = None

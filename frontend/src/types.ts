@@ -1,5 +1,13 @@
 export type Sex = "female" | "male" | "unknown";
 
+export interface User {
+  id: string;
+  display_name: string;
+  email: string;
+  email_verified: boolean;
+  created_at: string;
+}
+
 export interface Pet {
   id: string;
   name: string;

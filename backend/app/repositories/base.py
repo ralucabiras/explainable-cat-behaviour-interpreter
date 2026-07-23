@@ -23,10 +23,16 @@ class MongoRepository:
         document["_id"] = result.inserted_id
         return output_model.model_validate(serialise_document(document))
 
-    async def get(self, item_id: str, output_model: type[T]) -> T | None:
+    async def get(
+        self,
+        item_id: str,
+        output_model: type[T],
+        query: dict[str, Any] | None = None,
+    ) -> T | None:
         if not ObjectId.is_valid(item_id):
             return None
-        document = await self.collection.find_one({"_id": ObjectId(item_id)})
+        filters = {"_id": ObjectId(item_id), **(query or {})}
+        document = await self.collection.find_one(filters)
         return output_model.model_validate(serialise_document(document)) if document else None
 
     async def list(self, output_model: type[T], query: dict[str, Any] | None = None) -> list[T]:

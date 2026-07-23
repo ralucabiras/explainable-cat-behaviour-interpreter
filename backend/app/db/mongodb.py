@@ -12,6 +12,9 @@ async def connect_to_mongo() -> None:
     settings = get_settings()
     _client = AsyncIOMotorClient(settings.mongodb_url)
     await _client.admin.command("ping")
+    database = _client[settings.mongodb_database]
+    await database.users.create_index("email", unique=True)
+    await database.pets.create_index([("owner_id", 1), ("created_at", -1)])
 
 
 async def close_mongo_connection() -> None:

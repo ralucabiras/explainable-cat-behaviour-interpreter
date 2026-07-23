@@ -35,7 +35,7 @@ async def test_create_persists_completed_analysis() -> None:
         pet_id=str(ObjectId()),
         text_description="She is pacing after we moved house.",
     )
-    result = await ObservationService(database).create(payload)
+    result = await ObservationService(database).create(payload, "owner-1")
     assert result is not None
     assert result.analysis.text.status == AnalysisStatus.COMPLETED
     assert result.analysis.context.status == AnalysisStatus.COMPLETED
@@ -47,7 +47,8 @@ async def test_create_persists_completed_analysis() -> None:
 async def test_create_rejects_a_missing_pet_without_inserting() -> None:
     database = FakeDatabase(existing_pet=False)
     result = await ObservationService(database).create(
-        ObservationCreate(pet_id=str(ObjectId()), text_description="She is hiding.")
+        ObservationCreate(pet_id=str(ObjectId()), text_description="She is hiding."),
+        "owner-1",
     )
     assert result is None
     assert database.observations.inserted == []
@@ -62,7 +63,8 @@ async def test_analysis_failure_does_not_insert(monkeypatch) -> None:
     monkeypatch.setattr("app.services.observations.TextAnalyser.analyse", fail_analysis)
     with pytest.raises(RuntimeError, match="analysis failed"):
         await ObservationService(database).create(
-            ObservationCreate(pet_id=str(ObjectId()), text_description="She is hiding.")
+            ObservationCreate(pet_id=str(ObjectId()), text_description="She is hiding."),
+            "owner-1",
         )
     assert database.observations.inserted == []
 

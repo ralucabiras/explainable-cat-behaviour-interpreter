@@ -1,15 +1,20 @@
 import type { ReactNode } from "react";
+import type { User } from "../types";
 
-type Page = "pets" | "observe";
+type Page = "pets" | "observe" | "profile";
 
 export function Layout({
   children,
   page,
   onNavigate,
+  user,
+  onLogout,
 }: {
   children: ReactNode;
   page: Page;
   onNavigate: (page: Page) => void;
+  user: User;
+  onLogout: () => void;
 }) {
   return (
     <div className="shell">
@@ -25,6 +30,8 @@ export function Layout({
           <button className={page === "observe" ? "active" : ""} onClick={() => onNavigate("observe")}>
             New observation
           </button>
+          <button className={page === "profile" ? "user-chip active" : "user-chip"} title={user.email} onClick={() => onNavigate("profile")}>{user.display_name}</button>
+          <button onClick={onLogout}>Log out</button>
         </nav>
       </header>
       <main>{children}</main>
@@ -35,4 +42,3 @@ export function Layout({
     </div>
   );
 }
-

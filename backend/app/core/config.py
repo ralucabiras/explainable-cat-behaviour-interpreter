@@ -9,6 +9,14 @@ class Settings(BaseSettings):
     mongodb_url: str = "mongodb://localhost:27017"
     mongodb_database: str = "animal_behaviour"
     cors_origins: str = "http://localhost:5173"
+    frontend_url: str = "http://localhost:5173"
+    jwt_secret: str = "development-only-change-me"
+    access_token_minutes: int = 30
+    confirmation_token_hours: int = 24
+    email_delivery_mode: str = "console"
+    gmail_address: str | None = None
+    gmail_app_password: str | None = None
+    email_from_name: str = "Whiskerwise"
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 

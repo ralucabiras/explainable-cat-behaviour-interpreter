@@ -16,10 +16,15 @@ class ObservationService:
         self.database = database
         self.repository = MongoRepository(database.observations)
 
-    async def create(self, payload: ObservationCreate) -> Observation | None:
+    async def create(self, payload: ObservationCreate, owner_id: str) -> Observation | None:
         if not ObjectId.is_valid(payload.pet_id):
             return None
-        if await self.database.pets.find_one({"_id": ObjectId(payload.pet_id)}) is None:
+        if (
+            await self.database.pets.find_one(
+                {"_id": ObjectId(payload.pet_id), "owner_id": owner_id}
+            )
+            is None
+        ):
             return None
         now = datetime.now(UTC)
         stored = Observation(
@@ -27,6 +32,7 @@ class ObservationService:
             **payload.model_dump(),
             created_at=now,
             updated_at=now,
+            owner_id=owner_id,
             analysis=AnalysisBundle(),
         )
         text_result = await TextAnalyser().analyse(stored)
@@ -56,8 +62,11 @@ class ObservationService:
         )
         return await self.repository.create(stored, Observation)
 
-    async def get(self, observation_id: str) -> Observation | None:
-        return await self.repository.get(observation_id, Observation)
+    async def get(self, observation_id: str, owner_id: str) -> Observation | None:
+        return await self.repository.get(observation_id, Observation, {"owner_id": owner_id})
 
-    async def list(self, pet_id: str | None = None) -> list[Observation]:
-        return await self.repository.list(Observation, {"pet_id": pet_id} if pet_id else None)
+    async def list(self, owner_id: str, pet_id: str | None = None) -> list[Observation]:
+        query = {"owner_id": owner_id}
+        if pet_id:
+            query["pet_id"] = pet_id
+        return await self.repository.list(Observation, query)

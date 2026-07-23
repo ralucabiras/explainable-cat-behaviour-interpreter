@@ -105,4 +105,5 @@ class ObservationCreate(APIModel):
 
 
 class Observation(StoredModel, ObservationCreate):
+    owner_id: str | None = None
     analysis: AnalysisBundle = Field(default_factory=AnalysisBundle)
