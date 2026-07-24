@@ -12,6 +12,7 @@ from app.models.observation import (
     Observation,
     ObservationContext,
 )
+from app.models.pet import Pet
 
 
 def observation(text: str, context: ObservationContext | None = None) -> Observation:
@@ -80,6 +81,25 @@ async def test_context_can_produce_an_interpretation_without_text_clues() -> Non
     result = await ContextAnalyser().analyse(item)
     assert result.label == BehaviourState.STRESSED_OR_FRUSTRATED
     assert {evidence.source.value for evidence in result.evidence} == {"context"}
+
+
+async def test_profile_traits_add_context_only_when_situation_is_relevant() -> None:
+    item = observation(
+        "The doorbell rang and she watched the visitor.",
+        ObservationContext(unfamiliar_people_present=True),
+    )
+    pet = Pet(
+        id="pet",
+        owner_id="owner",
+        name="Miso",
+        sociability_with_people="shy",
+        known_triggers=["doorbell"],
+        created_at=datetime.now(UTC),
+        updated_at=datetime.now(UTC),
+    )
+    result = await ContextAnalyser().analyse(item, pet)
+    assert "profile_people_sociability" in result.detected_features
+    assert "profile_known_trigger" in result.detected_features
 
 
 @pytest.mark.parametrize(

@@ -83,11 +83,18 @@ setting. The frontend defaults to `http://localhost:8000/api/v1`.
 Creating an observation synchronously runs text and context interpretation and returns the completed explainable result. Media fields exist in the backend models, but video and audio inference are intentionally not active yet.
 
 Pet and observation endpoints require a bearer token and only return records belonging to the authenticated user.
+Expired access tokens are cleared by the frontend and force a full return to the public
+landing page before another authenticated request can be made.
 
 The authenticated app includes a global recent-observation view, per-cat newest-first
 timelines, behaviour-state and date filtering, permanent interpretation pages, and
 profile/observation deletion. Observation inputs and results are immutable so saved
 interpretations remain reproducible.
+
+Cat profiles include feeding routine, activity level, sociability, routine sensitivity,
+known triggers, and personality notes. Situationally relevant profile traits are recorded
+as explicit context evidence during interpretation. Cat names are unique per owner using
+case-insensitive, whitespace-normalized matching.
 
 Observation history accepts `pet_id`, `state`, `date_from`, `date_to`, `skip`, and
 `limit` query parameters. The default page size is 20 and the maximum is 100.

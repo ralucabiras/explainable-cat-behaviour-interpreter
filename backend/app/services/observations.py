@@ -13,7 +13,8 @@ from app.models.observation import (
     Observation,
     ObservationCreate,
 )
-from app.repositories.base import MongoRepository
+from app.models.pet import Pet
+from app.repositories.base import MongoRepository, serialise_document
 
 
 class ObservationService:
@@ -24,13 +25,12 @@ class ObservationService:
     async def create(self, payload: ObservationCreate, owner_id: str) -> Observation | None:
         if not ObjectId.is_valid(payload.pet_id):
             return None
-        if (
-            await self.database.pets.find_one(
-                {"_id": ObjectId(payload.pet_id), "owner_id": owner_id}
-            )
-            is None
-        ):
+        pet_document = await self.database.pets.find_one(
+            {"_id": ObjectId(payload.pet_id), "owner_id": owner_id}
+        )
+        if pet_document is None:
             return None
+        pet = Pet.model_validate(serialise_document(pet_document))
         now = datetime.now(UTC)
         stored = Observation(
             id="pending",
@@ -41,7 +41,7 @@ class ObservationService:
             analysis=AnalysisBundle(),
         )
         text_result = await TextAnalyser().analyse(stored)
-        context_result = await ContextAnalyser().analyse(stored)
+        context_result = await ContextAnalyser().analyse(stored, pet)
         safety_text = " ".join(
             part
             for part in (

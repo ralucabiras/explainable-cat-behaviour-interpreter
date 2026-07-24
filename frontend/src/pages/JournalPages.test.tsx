@@ -38,6 +38,12 @@ const pet: Pet = {
   species: "cat",
   sex: "female",
   breed: "Domestic shorthair",
+  feeding_method: "scheduled_twice_daily",
+  activity_level: "moderate",
+  sociability_with_people: "selective",
+  sociability_with_animals: "shy",
+  routine_sensitivity: "moderate",
+  known_triggers: ["doorbell"],
   created_at: "2026-01-01T00:00:00Z",
   updated_at: "2026-01-01T00:00:00Z",
 };

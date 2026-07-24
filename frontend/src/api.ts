@@ -3,6 +3,10 @@ import type {
   ObservationContext,
   ObservationFilters,
   Pet,
+  FeedingMethod,
+  ActivityLevel,
+  RoutineSensitivity,
+  Sociability,
   Sex,
   User,
 } from "./types";
@@ -19,6 +23,11 @@ async function request<T>(path: string, options?: RequestInit): Promise<T> {
       ...options?.headers,
     },
   });
+  if (response.status === 401 && token) {
+    localStorage.removeItem("whiskerwise_token");
+    window.location.replace("/");
+    throw new Error("Your session expired. Please log in again.");
+  }
   if (!response.ok) {
     const body = await response.json().catch(() => null);
     throw new Error(body?.detail ?? "The request could not be completed.");
@@ -63,6 +72,14 @@ export const api = {
     sex: Sex;
     date_of_birth?: string;
     notes?: string;
+    feeding_method: FeedingMethod;
+    feeding_notes?: string;
+    activity_level: ActivityLevel;
+    sociability_with_people: Sociability;
+    sociability_with_animals: Sociability;
+    routine_sensitivity: RoutineSensitivity;
+    known_triggers: string[];
+    personality_notes?: string;
   }) =>
     request<Pet>("/pets", {
       method: "POST",
@@ -70,7 +87,12 @@ export const api = {
     }),
   updatePet: (
     petId: string,
-    payload: Partial<Pick<Pet, "name" | "breed" | "sex" | "date_of_birth" | "notes">>,
+    payload: Partial<Pick<Pet,
+      | "name" | "breed" | "sex" | "date_of_birth" | "notes"
+      | "feeding_method" | "feeding_notes" | "activity_level"
+      | "sociability_with_people" | "sociability_with_animals"
+      | "routine_sensitivity" | "known_triggers" | "personality_notes"
+    >>,
   ) => request<Pet>(`/pets/${petId}`, { method: "PATCH", body: JSON.stringify(payload) }),
   deletePet: (petId: string) =>
     request<{ message: string; deleted_observations: number }>(`/pets/${petId}`, {

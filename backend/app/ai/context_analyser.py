@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-from app.ai.scoring import modality_result
+from app.ai.scoring import modality_result, phrase_is_present
 from app.models.observation import (
     BehaviourState,
     EvidenceItem,
@@ -9,10 +9,11 @@ from app.models.observation import (
     ModalityResult,
     Observation,
 )
+from app.models.pet import Pet, RoutineSensitivity, Sociability
 
 
 class ContextAnalyser:
-    async def analyse(self, observation: Observation) -> ModalityResult:
+    async def analyse(self, observation: Observation, pet: Pet | None = None) -> ModalityResult:
         context = observation.context
         scores = defaultdict(float)
         evidence: list[EvidenceItem] = []
@@ -70,4 +71,52 @@ class ContextAnalyser:
                 "one or more known triggers were present",
                 {BehaviourState.FEARFUL: 1.0, BehaviourState.STRESSED_OR_FRUSTRATED: 0.8},
             )
+        if (
+            pet
+            and pet.routine_sensitivity == RoutineSensitivity.HIGH
+            and (context.recent_travel_or_relocation or context.routine_changes)
+        ):
+            add(
+                "profile_routine_sensitivity",
+                "a profile history of high sensitivity to routine changes",
+                {BehaviourState.STRESSED_OR_FRUSTRATED: 0.8},
+            )
+        if (
+            pet
+            and pet.sociability_with_people == Sociability.SHY
+            and context.unfamiliar_people_present
+        ):
+            add(
+                "profile_people_sociability",
+                "a profile history of shyness around people",
+                {BehaviourState.FEARFUL: 0.8},
+            )
+        if (
+            pet
+            and pet.sociability_with_animals == Sociability.SHY
+            and context.unfamiliar_animals_present
+        ):
+            add(
+                "profile_animal_sociability",
+                "a profile history of shyness around other animals",
+                {BehaviourState.FEARFUL: 0.8},
+            )
+        if pet and pet.known_triggers:
+            situational_text = " ".join(
+                part for part in (observation.text_description, context.routine_changes) if part
+            )
+            matched_triggers = [
+                trigger
+                for trigger in pet.known_triggers
+                if phrase_is_present(situational_text, trigger)
+            ]
+            if matched_triggers:
+                add(
+                    "profile_known_trigger",
+                    f"a known profile trigger was mentioned ({', '.join(matched_triggers)})",
+                    {
+                        BehaviourState.FEARFUL: 0.9,
+                        BehaviourState.STRESSED_OR_FRUSTRATED: 0.7,
+                    },
+                )
         return modality_result(scores, evidence)

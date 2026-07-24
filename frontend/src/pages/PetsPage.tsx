@@ -2,7 +2,15 @@ import { FormEvent, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { api } from "../api";
 import { ObservationCard } from "../components/ObservationCard";
-import type { Observation, Pet, Sex } from "../types";
+import type {
+  ActivityLevel,
+  FeedingMethod,
+  Observation,
+  Pet,
+  RoutineSensitivity,
+  Sex,
+  Sociability,
+} from "../types";
 
 export function PetsPage({ pets, refresh }: { pets: Pet[]; refresh: () => Promise<void> }) {
   const [open, setOpen] = useState(pets.length === 0);
@@ -25,6 +33,14 @@ export function PetsPage({ pets, refresh }: { pets: Pet[]; refresh: () => Promis
         sex: String(form.get("sex")) as Sex,
         date_of_birth: String(form.get("date_of_birth")) || undefined,
         notes: String(form.get("notes")) || undefined,
+        feeding_method: String(form.get("feeding_method")) as FeedingMethod,
+        feeding_notes: String(form.get("feeding_notes")) || undefined,
+        activity_level: String(form.get("activity_level")) as ActivityLevel,
+        sociability_with_people: String(form.get("sociability_with_people")) as Sociability,
+        sociability_with_animals: String(form.get("sociability_with_animals")) as Sociability,
+        routine_sensitivity: String(form.get("routine_sensitivity")) as RoutineSensitivity,
+        known_triggers: String(form.get("known_triggers")).split(",").map((item) => item.trim()).filter(Boolean),
+        personality_notes: String(form.get("personality_notes")) || undefined,
       });
       formElement.reset();
       setOpen(false);
@@ -44,6 +60,14 @@ export function PetsPage({ pets, refresh }: { pets: Pet[]; refresh: () => Promis
       <label>Breed<input name="breed" maxLength={100} /></label>
       <label>Sex<select name="sex" defaultValue="unknown"><option value="unknown">Unknown</option><option value="female">Female</option><option value="male">Male</option></select></label>
       <label>Date of birth<input name="date_of_birth" type="date" /></label>
+      <label>Feeding method<select name="feeding_method" defaultValue="unknown"><option value="unknown">Not specified</option><option value="free_fed">Free-fed</option><option value="scheduled_once_daily">Scheduled once daily</option><option value="scheduled_twice_daily">Scheduled twice daily</option><option value="scheduled_three_plus">Scheduled 3+ times daily</option><option value="mixed">Mixed</option><option value="other">Other</option></select></label>
+      <label>Feeding details<input name="feeding_notes" placeholder="Food type, usual times, special habits" /></label>
+      <label>Activity level<select name="activity_level" defaultValue="unknown"><option value="unknown">Not specified</option><option value="low">Low</option><option value="moderate">Moderate</option><option value="high">High</option></select></label>
+      <label>With people<select name="sociability_with_people" defaultValue="unknown"><option value="unknown">Not specified</option><option value="social">Social</option><option value="selective">Selective</option><option value="shy">Shy</option></select></label>
+      <label>With other animals<select name="sociability_with_animals" defaultValue="unknown"><option value="unknown">Not specified</option><option value="social">Social</option><option value="selective">Selective</option><option value="shy">Shy</option></select></label>
+      <label>Routine sensitivity<select name="routine_sensitivity" defaultValue="unknown"><option value="unknown">Not specified</option><option value="low">Low</option><option value="moderate">Moderate</option><option value="high">High</option></select></label>
+      <label className="wide">Known triggers<input name="known_triggers" placeholder="Doorbell, carrier, visitors (comma separated)" /></label>
+      <label className="wide">Personality notes<textarea name="personality_notes" rows={3} maxLength={1500} placeholder="Typical temperament, favourite activities, normal hiding or vocalisation habits…" /></label>
       <label className="wide">Notes<textarea name="notes" rows={3} maxLength={1000} /></label>
       {error && <p className="error wide">{error}</p>}
       <div className="actions wide"><button type="button" className="quiet" onClick={() => setOpen(false)}>Cancel</button><button className="primary">Save profile</button></div>

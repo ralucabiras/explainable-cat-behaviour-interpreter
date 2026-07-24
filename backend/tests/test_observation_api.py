@@ -17,7 +17,12 @@ class FakeCollection:
         self.inserted: list[dict] = []
 
     async def find_one(self, _query: dict) -> dict:
-        return {"_id": ObjectId()}
+        return {
+            "_id": ObjectId(),
+            "name": "Miso",
+            "created_at": "2026-01-01T00:00:00Z",
+            "updated_at": "2026-01-01T00:00:00Z",
+        }
 
     async def insert_one(self, document: dict) -> InsertResult:
         self.inserted.append(document)

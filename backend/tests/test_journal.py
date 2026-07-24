@@ -1,3 +1,4 @@
+import re
 from datetime import UTC, datetime
 from types import SimpleNamespace
 
@@ -7,15 +8,29 @@ from bson import ObjectId
 from app.models.observation import BehaviourState
 from app.models.pet import PetUpdate
 from app.services.observations import ObservationService
-from app.services.pets import PetService
+from app.services.pets import DuplicatePetNameError, PetService
 
 
 def matches(document: dict, query: dict) -> bool:
     for key, expected in query.items():
+        if key == "$or":
+            if not any(matches(document, option) for option in expected):
+                return False
+            continue
         value = document
         for part in key.split("."):
             value = value.get(part) if isinstance(value, dict) else None
         if isinstance(expected, dict):
+            if (
+                "$regex" in expected
+                and re.search(
+                    expected["$regex"],
+                    str(value),
+                    re.IGNORECASE if expected.get("$options") == "i" else 0,
+                )
+                is None
+            ):
+                return False
             if "$gte" in expected and value < expected["$gte"]:
                 return False
             if "$lte" in expected and value > expected["$lte"]:
@@ -117,6 +132,21 @@ async def test_pet_update_is_owner_scoped_and_partial() -> None:
         await PetService(database).update(str(document["_id"]), PetUpdate(name="Stolen"), "owner-2")
         is None
     )
+
+
+async def test_duplicate_cat_names_are_case_insensitive_per_owner() -> None:
+    miso = pet_document("owner-1")
+    luna = pet_document("owner-1")
+    luna["name"] = "Luna"
+    other_owner_miso = pet_document("owner-2")
+    database = Database([miso, luna, other_owner_miso])
+    with pytest.raises(DuplicatePetNameError):
+        await PetService(database).update(
+            str(luna["_id"]),
+            PetUpdate(name="  MISO  "),
+            "owner-1",
+        )
+    await PetService(database)._ensure_unique_name("owner-2", "Luna")
 
 
 def test_empty_pet_update_is_invalid() -> None:

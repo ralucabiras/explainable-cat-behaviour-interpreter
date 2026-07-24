@@ -28,7 +28,7 @@ export function NewObservationPage({ pets }: { pets: Pet[] }) {
           recent_travel_or_relocation: form.has("recent_travel"),
           recent_play: form.has("recent_play"),
           routine_changes: String(form.get("routine_changes")) || undefined,
-          known_triggers: String(form.get("known_triggers")).split(",").map((v) => v.trim()).filter(Boolean),
+          known_triggers: [],
         },
       });
       setResult(saved);
@@ -49,7 +49,6 @@ export function NewObservationPage({ pets }: { pets: Pet[] }) {
         <fieldset className="card"><legend>2. Context</legend><div className="form-grid">
           <label>Location<input name="location" placeholder="Living room" /></label><label>Time of day<input name="time_of_day" placeholder="Early evening" /></label>
           <label>Feeding<select name="feeding_status" defaultValue="unknown"><option value="unknown">Unknown</option><option value="fed">Recently fed</option><option value="due_soon">Due soon</option><option value="overdue">Overdue</option></select></label>
-          <label>Known triggers<input name="known_triggers" placeholder="Doorbell, carrier (comma separated)" /></label>
           <label className="wide">Routine changes<textarea name="routine_changes" rows={2} /></label>
         </div><div className="checks"><label><input type="checkbox" name="unfamiliar_people" /> Unfamiliar people present</label><label><input type="checkbox" name="unfamiliar_animals" /> Unfamiliar animals present</label><label><input type="checkbox" name="recent_travel" /> Recent travel or relocation</label><label><input type="checkbox" name="recent_play" /> Recent play</label></div></fieldset>
         <fieldset className="card disabled"><legend>3. Media (coming later)</legend><p>Video will be added after text and context are stable. Audio follows once the rest of the pipeline is reliable.</p></fieldset>

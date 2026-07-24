@@ -16,7 +16,17 @@ class FakeCollection:
         self.inserted: list[dict] = []
 
     async def find_one(self, _query: dict) -> dict | None:
-        return {"_id": ObjectId()} if self.existing_pet else None
+        return (
+            {
+                "_id": ObjectId(),
+                "name": "Miso",
+                "owner_id": "owner-1",
+                "created_at": "2026-01-01T00:00:00Z",
+                "updated_at": "2026-01-01T00:00:00Z",
+            }
+            if self.existing_pet
+            else None
+        )
 
     async def insert_one(self, document: dict) -> InsertResult:
         self.inserted.append(document)

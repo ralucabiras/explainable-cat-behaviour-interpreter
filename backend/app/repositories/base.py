@@ -17,8 +17,14 @@ class MongoRepository:
     def __init__(self, collection: AsyncIOMotorCollection) -> None:
         self.collection = collection
 
-    async def create(self, payload: BaseModel, output_model: type[T]) -> T:
+    async def create(
+        self,
+        payload: BaseModel,
+        output_model: type[T],
+        extra: dict[str, Any] | None = None,
+    ) -> T:
         document = payload.model_dump(mode="json", exclude={"id"})
+        document.update(extra or {})
         result = await self.collection.insert_one(document)
         document["_id"] = result.inserted_id
         return output_model.model_validate(serialise_document(document))

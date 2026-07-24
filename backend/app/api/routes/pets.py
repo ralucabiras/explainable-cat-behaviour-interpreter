@@ -2,14 +2,20 @@ from fastapi import APIRouter, HTTPException, status
 
 from app.api.dependencies import CurrentUser, Database
 from app.models.pet import Pet, PetCreate, PetDeleteResponse, PetUpdate
-from app.services.pets import PetService
+from app.services.pets import DuplicatePetNameError, PetService
 
 router = APIRouter()
 
 
 @router.post("", response_model=Pet, status_code=status.HTTP_201_CREATED)
 async def create_pet(payload: PetCreate, database: Database, current_user: CurrentUser) -> Pet:
-    return await PetService(database).create(payload, current_user.id)
+    try:
+        return await PetService(database).create(payload, current_user.id)
+    except DuplicatePetNameError:
+        raise HTTPException(
+            status_code=409,
+            detail="You already have a cat profile with this name",
+        ) from None
 
 
 @router.get("", response_model=list[Pet])
@@ -32,7 +38,13 @@ async def update_pet(
     database: Database,
     current_user: CurrentUser,
 ) -> Pet:
-    pet = await PetService(database).update(pet_id, payload, current_user.id)
+    try:
+        pet = await PetService(database).update(pet_id, payload, current_user.id)
+    except DuplicatePetNameError:
+        raise HTTPException(
+            status_code=409,
+            detail="You already have a cat profile with this name",
+        ) from None
     if pet is None:
         raise HTTPException(status_code=404, detail="Pet not found")
     return pet

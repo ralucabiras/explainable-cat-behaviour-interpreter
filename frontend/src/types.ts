@@ -1,4 +1,8 @@
 export type Sex = "female" | "male" | "unknown";
+export type FeedingMethod = "free_fed" | "scheduled_once_daily" | "scheduled_twice_daily" | "scheduled_three_plus" | "mixed" | "other" | "unknown";
+export type ActivityLevel = "low" | "moderate" | "high" | "unknown";
+export type Sociability = "social" | "selective" | "shy" | "unknown";
+export type RoutineSensitivity = "low" | "moderate" | "high" | "unknown";
 
 export interface User {
   id: string;
@@ -16,6 +20,14 @@ export interface Pet {
   sex: Sex;
   date_of_birth?: string | null;
   notes?: string | null;
+  feeding_method: FeedingMethod;
+  feeding_notes?: string | null;
+  activity_level: ActivityLevel;
+  sociability_with_people: Sociability;
+  sociability_with_animals: Sociability;
+  routine_sensitivity: RoutineSensitivity;
+  known_triggers: string[];
+  personality_notes?: string | null;
   created_at: string;
   updated_at: string;
 }
