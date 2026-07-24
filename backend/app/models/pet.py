@@ -74,6 +74,13 @@ class PetCreate(APIModel):
                 cleaned.setdefault(trigger.casefold(), trigger)
         return list(cleaned.values())
 
+    @field_validator("date_of_birth")
+    @classmethod
+    def birth_date_cannot_be_future(cls, value: date | None) -> date | None:
+        if value is not None and value > date.today():
+            raise ValueError("Date of birth cannot be in the future")
+        return value
+
 
 class PetUpdate(APIModel):
     name: str | None = Field(default=None, min_length=1, max_length=80)
@@ -106,6 +113,13 @@ class PetUpdate(APIModel):
             if trigger:
                 cleaned.setdefault(trigger.casefold(), trigger)
         return list(cleaned.values())
+
+    @field_validator("date_of_birth")
+    @classmethod
+    def birth_date_cannot_be_future(cls, value: date | None) -> date | None:
+        if value is not None and value > date.today():
+            raise ValueError("Date of birth cannot be in the future")
+        return value
 
     @model_validator(mode="after")
     def require_a_change(self) -> "PetUpdate":

@@ -1,3 +1,5 @@
+from datetime import date, timedelta
+
 import pytest
 from pydantic import ValidationError
 
@@ -15,3 +17,8 @@ def test_observation_has_safe_empty_context_defaults() -> None:
     assert observation.context.known_triggers == []
     assert observation.video is None
     assert observation.audio is None
+
+
+def test_pet_birth_date_cannot_be_in_the_future() -> None:
+    with pytest.raises(ValidationError, match="cannot be in the future"):
+        PetCreate(name="Future Cat", date_of_birth=date.today() + timedelta(days=1))

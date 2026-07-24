@@ -38,6 +38,7 @@ const pet: Pet = {
   species: "cat",
   sex: "female",
   breed: "Domestic shorthair",
+  date_of_birth: "2023-01-10",
   feeding_method: "scheduled_twice_daily",
   activity_level: "moderate",
   sociability_with_people: "selective",
@@ -83,6 +84,7 @@ describe("journal pages", () => {
   it("loads a per-cat timeline and applies a state filter", async () => {
     renderPetPage();
     expect(await screen.findByRole("heading", { name: "Miso" })).toBeInTheDocument();
+    expect(screen.getByText(/years.*old/)).toBeInTheDocument();
     expect(screen.getByText("Miso was hiding under the bed.")).toBeInTheDocument();
     fireEvent.change(screen.getByLabelText("Interpretation"), {
       target: { value: "fearful" },

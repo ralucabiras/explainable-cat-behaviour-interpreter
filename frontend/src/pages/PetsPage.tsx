@@ -1,6 +1,7 @@
 import { FormEvent, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { api } from "../api";
+import { CatProfileFields } from "../components/CatProfileFields";
 import { ObservationCard } from "../components/ObservationCard";
 import type {
   ActivityLevel,
@@ -55,22 +56,10 @@ export function PetsPage({ pets, refresh }: { pets: Pet[]; refresh: () => Promis
       <div><p className="eyebrow">Your companions</p><h1>Cat profiles</h1><p>Profiles provide the individual context behind each observation.</p></div>
       <button className="primary" onClick={() => setOpen(!open)}>+ Add a cat</button>
     </div>
-    {open && <form className="card form-grid" onSubmit={submit}>
-      <label>Name<input name="name" required maxLength={80} /></label>
-      <label>Breed<input name="breed" maxLength={100} /></label>
-      <label>Sex<select name="sex" defaultValue="unknown"><option value="unknown">Unknown</option><option value="female">Female</option><option value="male">Male</option></select></label>
-      <label>Date of birth<input name="date_of_birth" type="date" /></label>
-      <label>Feeding method<select name="feeding_method" defaultValue="unknown"><option value="unknown">Not specified</option><option value="free_fed">Free-fed</option><option value="scheduled_once_daily">Scheduled once daily</option><option value="scheduled_twice_daily">Scheduled twice daily</option><option value="scheduled_three_plus">Scheduled 3+ times daily</option><option value="mixed">Mixed</option><option value="other">Other</option></select></label>
-      <label>Feeding details<input name="feeding_notes" placeholder="Food type, usual times, special habits" /></label>
-      <label>Activity level<select name="activity_level" defaultValue="unknown"><option value="unknown">Not specified</option><option value="low">Low</option><option value="moderate">Moderate</option><option value="high">High</option></select></label>
-      <label>With people<select name="sociability_with_people" defaultValue="unknown"><option value="unknown">Not specified</option><option value="social">Social</option><option value="selective">Selective</option><option value="shy">Shy</option></select></label>
-      <label>With other animals<select name="sociability_with_animals" defaultValue="unknown"><option value="unknown">Not specified</option><option value="social">Social</option><option value="selective">Selective</option><option value="shy">Shy</option></select></label>
-      <label>Routine sensitivity<select name="routine_sensitivity" defaultValue="unknown"><option value="unknown">Not specified</option><option value="low">Low</option><option value="moderate">Moderate</option><option value="high">High</option></select></label>
-      <label className="wide">Known triggers<input name="known_triggers" placeholder="Doorbell, carrier, visitors (comma separated)" /></label>
-      <label className="wide">Personality notes<textarea name="personality_notes" rows={3} maxLength={1500} placeholder="Typical temperament, favourite activities, normal hiding or vocalisation habits…" /></label>
-      <label className="wide">Notes<textarea name="notes" rows={3} maxLength={1000} /></label>
-      {error && <p className="error wide">{error}</p>}
-      <div className="actions wide"><button type="button" className="quiet" onClick={() => setOpen(false)}>Cancel</button><button className="primary">Save profile</button></div>
+    {open && <form className="card cat-profile-form" onSubmit={submit}>
+      <CatProfileFields />
+      {error && <p className="error">{error}</p>}
+      <div className="actions"><button type="button" className="quiet" onClick={() => setOpen(false)}>Cancel</button><button className="primary">Save profile</button></div>
     </form>}
     <div className="pet-grid">
       {pets.map((pet) => <Link className="card pet-card pet-card-link" to={`/app/pets/${pet.id}`} key={pet.id}>
