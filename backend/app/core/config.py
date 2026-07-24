@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     cors_origins: str = "http://localhost:5173"
     frontend_url: str = "http://localhost:5173"
     jwt_secret: str = "development-only-change-me"
-    access_token_minutes: int = 30
+    access_token_minutes: int = 60 * 24 * 7
     confirmation_token_hours: int = 24
     email_delivery_mode: str = "console"
     gmail_address: str | None = None
