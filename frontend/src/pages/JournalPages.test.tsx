@@ -5,6 +5,7 @@ import { api } from "../api";
 import type { ModalityResult, Observation, Pet } from "../types";
 import { ObservationDetailPage } from "./ObservationDetailPage";
 import { PetDetailPage } from "./PetDetailPage";
+import { PetsPage } from "./PetsPage";
 
 vi.mock("../api", () => ({
   api: {
@@ -14,6 +15,7 @@ vi.mock("../api", () => ({
     deletePet: vi.fn(),
     getObservation: vi.fn(),
     deleteObservation: vi.fn(),
+    createPet: vi.fn(),
   },
 }));
 
@@ -69,6 +71,7 @@ describe("journal pages", () => {
     });
     vi.mocked(api.getObservation).mockResolvedValue(observation);
     vi.mocked(api.deleteObservation).mockResolvedValue(undefined);
+    vi.mocked(api.createPet).mockResolvedValue(pet);
   });
 
   it("loads a per-cat timeline and applies a state filter", async () => {
@@ -124,6 +127,16 @@ describe("journal pages", () => {
     await waitFor(() =>
       expect(api.deleteObservation).toHaveBeenCalledWith("observation-1"),
     );
+  });
+
+  it("creates a cat and resets the form after the asynchronous request", async () => {
+    const refresh = vi.fn().mockResolvedValue(undefined);
+    render(<MemoryRouter><PetsPage pets={[]} refresh={refresh} /></MemoryRouter>);
+    fireEvent.change(screen.getByLabelText("Name"), { target: { value: "Miso" } });
+    fireEvent.click(screen.getByRole("button", { name: "Save profile" }));
+    await waitFor(() => expect(api.createPet).toHaveBeenCalled());
+    await waitFor(() => expect(refresh).toHaveBeenCalled());
+    expect(screen.queryByText(/Cannot read properties/)).not.toBeInTheDocument();
   });
 });
 

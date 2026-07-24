@@ -16,7 +16,8 @@ export function PetsPage({ pets, refresh }: { pets: Pet[]; refresh: () => Promis
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setError("");
-    const form = new FormData(event.currentTarget);
+    const formElement = event.currentTarget;
+    const form = new FormData(formElement);
     try {
       await api.createPet({
         name: String(form.get("name")),
@@ -25,7 +26,7 @@ export function PetsPage({ pets, refresh }: { pets: Pet[]; refresh: () => Promis
         date_of_birth: String(form.get("date_of_birth")) || undefined,
         notes: String(form.get("notes")) || undefined,
       });
-      event.currentTarget.reset();
+      formElement.reset();
       setOpen(false);
       await refresh();
     } catch (reason) {
