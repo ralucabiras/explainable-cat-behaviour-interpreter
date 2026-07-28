@@ -80,7 +80,12 @@ setting. The frontend defaults to `http://localhost:8000/api/v1`.
 | `GET` | `/api/v1/observations/{id}` | Retrieve one observation |
 | `DELETE` | `/api/v1/observations/{id}` | Permanently delete an observation |
 
-Creating an observation synchronously runs text and context interpretation and returns the completed explainable result. Media fields exist in the backend models, but video and audio inference are intentionally not active yet.
+Creating an observation synchronously runs text and context interpretation and returns the completed explainable result. Audio inference remains intentionally inactive.
+
+Short private MP4, WebM, and MOV clips can be attached through the optional video flow.
+Clips are limited to 50 MB and 30 seconds. The system extracts deterministic motion
+features and representative frames, but video does not yet influence the final fused
+interpretation. Media access requires ownership and explicit upload consent.
 
 Pet and observation endpoints require a bearer token and only return records belonging to the authenticated user.
 Expired access tokens are cleared by the frontend and force a full return to the public

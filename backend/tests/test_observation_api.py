@@ -1,3 +1,5 @@
+import json
+
 from bson import ObjectId
 from fastapi.testclient import TestClient
 
@@ -71,3 +73,44 @@ def test_create_endpoint_returns_explainable_analysis() -> None:
     assert interpretation["label"] == "stressed_or_frustrated"
     assert interpretation["evidence"]
     assert interpretation["explanation"]
+
+
+def test_video_endpoint_requires_consent_and_supported_type() -> None:
+    database = FakeDatabase()
+
+    async def override_database():
+        yield database
+
+    async def override_user():
+        return User(
+            id=str(ObjectId()),
+            display_name="Test Owner",
+            email="owner@example.com",
+            email_verified=True,
+            created_at="2026-01-01T00:00:00Z",
+            updated_at="2026-01-01T00:00:00Z",
+        )
+
+    payload = {
+        "pet_id": str(ObjectId()),
+        "text_description": "The cat moved around.",
+    }
+    app.dependency_overrides[get_database] = override_database
+    app.dependency_overrides[get_current_user] = override_user
+    try:
+        client = TestClient(app)
+        missing_consent = client.post(
+            "/api/v1/observations/with-video",
+            data={"payload": json.dumps(payload), "media_consent_confirmed": "false"},
+            files={"video": ("clip.mp4", b"content", "video/mp4")},
+        )
+        unsupported = client.post(
+            "/api/v1/observations/with-video",
+            data={"payload": json.dumps(payload), "media_consent_confirmed": "true"},
+            files={"video": ("clip.txt", b"content", "text/plain")},
+        )
+    finally:
+        app.dependency_overrides.clear()
+
+    assert missing_consent.status_code == 422
+    assert unsupported.status_code == 415

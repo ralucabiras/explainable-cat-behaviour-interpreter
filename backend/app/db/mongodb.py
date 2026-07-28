@@ -24,6 +24,7 @@ async def connect_to_mongo() -> None:
     await database.observations.create_index(
         [("owner_id", 1), ("analysis.fusion.label", 1), ("created_at", -1)]
     )
+    await database.media.create_index([("owner_id", 1), ("observation_id", 1)])
 
 
 async def close_mongo_connection() -> None:

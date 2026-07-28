@@ -45,6 +45,7 @@ class BehaviourState(StrEnum):
 class EvidenceSource(StrEnum):
     TEXT = "text"
     CONTEXT = "context"
+    VIDEO = "video"
 
 
 class EvidenceItem(APIModel):
@@ -64,9 +65,13 @@ class AlternativeInterpretation(APIModel):
 
 
 class MediaReference(APIModel):
+    media_id: str | None = None
     filename: str
     content_type: str
-    storage_key: str | None = None
+    size_bytes: int | None = Field(default=None, ge=0)
+    duration_seconds: float | None = Field(default=None, ge=0)
+    width: int | None = Field(default=None, ge=1)
+    height: int | None = Field(default=None, ge=1)
 
 
 class ModalityResult(APIModel):
@@ -81,6 +86,9 @@ class ModalityResult(APIModel):
     recommendations: list[str] = Field(default_factory=list)
     safety_escalation: bool = False
     safety_message: str | None = None
+    quality_warnings: list[str] = Field(default_factory=list)
+    representative_frames: list[float] = Field(default_factory=list)
+    feature_values: dict[str, float] = Field(default_factory=dict)
 
 
 class AnalysisBundle(APIModel):

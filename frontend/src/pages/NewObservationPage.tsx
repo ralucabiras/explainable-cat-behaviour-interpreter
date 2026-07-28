@@ -2,6 +2,7 @@ import { FormEvent, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { api } from "../api";
 import { InterpretationResult } from "../components/InterpretationResult";
+import { VideoEvidence } from "../components/VideoEvidence";
 import type { Observation, Pet } from "../types";
 
 export function NewObservationPage({ pets }: { pets: Pet[] }) {
@@ -10,13 +11,18 @@ export function NewObservationPage({ pets }: { pets: Pet[] }) {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const [result, setResult] = useState<Observation | null>(null);
+  const [video, setVideo] = useState<File | null>(null);
+  const [consent, setConsent] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [busy, setBusy] = useState(false);
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setMessage(""); setError(""); setResult(null);
     const form = new FormData(event.currentTarget);
+    setBusy(true);
     try {
-      const saved = await api.createObservation({
+      const payload = {
         pet_id: String(form.get("pet_id")),
         text_description: String(form.get("description")),
         context: {
@@ -30,10 +36,14 @@ export function NewObservationPage({ pets }: { pets: Pet[] }) {
           routine_changes: String(form.get("routine_changes")) || undefined,
           known_triggers: [],
         },
-      });
+      };
+      const saved = video
+        ? await api.createObservationWithVideo(payload, video, consent, setProgress)
+        : await api.createObservation(payload);
       setResult(saved);
       setMessage("Observation saved and interpreted.");
     } catch (reason) { setError(reason instanceof Error ? reason.message : "Could not save the observation."); }
+    finally { setBusy(false); }
   }
 
   if (pets.length === 0) return <section><h1>New observation</h1><div className="notice">Create a cat profile before recording an observation.</div></section>;
@@ -51,10 +61,29 @@ export function NewObservationPage({ pets }: { pets: Pet[] }) {
           <label>Feeding<select name="feeding_status" defaultValue="unknown"><option value="unknown">Unknown</option><option value="fed">Recently fed</option><option value="due_soon">Due soon</option><option value="overdue">Overdue</option></select></label>
           <label className="wide">Routine changes<textarea name="routine_changes" rows={2} /></label>
         </div><div className="checks"><label><input type="checkbox" name="unfamiliar_people" /> Unfamiliar people present</label><label><input type="checkbox" name="unfamiliar_animals" /> Unfamiliar animals present</label><label><input type="checkbox" name="recent_travel" /> Recent travel or relocation</label><label><input type="checkbox" name="recent_play" /> Recent play</label></div></fieldset>
-        <fieldset className="card disabled"><legend>3. Media (coming later)</legend><p>Video will be added after text and context are stable. Audio follows once the rest of the pipeline is reliable.</p></fieldset>
-        {message && <p className="success">{message}</p>}{error && <p className="error">{error}</p>}<button className="primary submit">Save and interpret</button>
+        <fieldset className="card media-upload"><legend>3. Optional video</legend>
+          <p>Add a short clip for private, explainable motion analysis. Video evidence does not yet change the final interpretation.</p>
+          {!video ? <label className="video-picker">Choose video
+            <input type="file" accept="video/mp4,video/webm,video/quicktime" onChange={(event) => {
+              const selected = event.target.files?.[0];
+              setError("");
+              if (!selected) return;
+              if (selected.size > 50 * 1024 * 1024) { setError("Video must be 50 MB or smaller."); event.target.value = ""; return; }
+              setVideo(selected); setConsent(false); setProgress(0);
+            }} />
+            <small>MP4, WebM, or MOV · maximum 50 MB and 30 seconds</small>
+          </label> : <div className="selected-video">
+            <div><strong>{video.name}</strong><small>{(video.size / 1024 / 1024).toFixed(1)} MB</small></div>
+            <button type="button" className="quiet" onClick={() => { setVideo(null); setConsent(false); setProgress(0); }}>Remove</button>
+          </div>}
+          {video && <label className="media-consent"><input type="checkbox" checked={consent} onChange={(event) => setConsent(event.target.checked)} required /> I confirm I have permission to upload this video, including from any identifiable people shown.</label>}
+          {progress > 0 && progress < 100 && <div className="upload-progress" aria-live="polite"><progress value={progress} max={100} /> Uploading {progress}%</div>}
+          {busy && video && progress >= 100 && <p className="notice" aria-live="polite">Upload complete. Extracting motion evidence…</p>}
+        </fieldset>
+        {message && <p className="success">{message}</p>}{error && <p className="error">{error}</p>}<button className="primary submit" disabled={busy || Boolean(video && !consent)}>{busy ? "Interpreting…" : "Save and interpret"}</button>
       </form>
       {result && <InterpretationResult result={result.analysis.fusion} />}
+      {result && <VideoEvidence observation={result} />}
       {result && <div className="saved-result-link"><Link to={`/app/observations/${result.id}`}>Open the permanent journal entry →</Link></div>}
     </section>
   );

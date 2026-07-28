@@ -11,5 +11,6 @@ dist/
 vite.config.js
 coverage/
 backend/evaluation/results/
+backend/data/media/
 *.log
 .DS_Store

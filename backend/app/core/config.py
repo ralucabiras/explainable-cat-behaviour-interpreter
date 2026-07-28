@@ -20,6 +20,9 @@ class Settings(BaseSettings):
     gmail_address: str | None = None
     gmail_app_password: str | None = None
     email_from_name: str = "Whiskerwise"
+    media_root: str = "data/media"
+    max_video_bytes: int = 50 * 1024 * 1024
+    max_video_seconds: int = 30
 
     model_config = SettingsConfigDict(
         env_file=(ROOT_ENV_FILE, ".env"),

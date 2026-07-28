@@ -7,9 +7,11 @@ from app.ai.context_analyser import ContextAnalyser
 from app.ai.fusion import FusionEngine
 from app.ai.safety import assess_safety
 from app.ai.text_analyser import TextAnalyser
+from app.ai.video_analyser import VideoAnalysis
 from app.models.observation import (
     AnalysisBundle,
     BehaviourState,
+    MediaReference,
     Observation,
     ObservationCreate,
 )
@@ -23,6 +25,65 @@ class ObservationService:
         self.repository = MongoRepository(database.observations)
 
     async def create(self, payload: ObservationCreate, owner_id: str) -> Observation | None:
+        return await self._create_analysed(payload, owner_id)
+
+    async def create_with_video(
+        self,
+        payload: ObservationCreate,
+        owner_id: str,
+        media_id: str,
+        video_path: str,
+        frame_paths: list[str],
+        size_bytes: int,
+        analysis: VideoAnalysis,
+        original_filename: str,
+        content_type: str,
+    ) -> Observation | None:
+        reference = MediaReference(
+            media_id=media_id,
+            filename=original_filename,
+            content_type=content_type,
+            size_bytes=size_bytes,
+            duration_seconds=round(analysis.duration, 3),
+            width=analysis.width,
+            height=analysis.height,
+        )
+        observation = await self._create_analysed(
+            payload.model_copy(update={"video": reference}),
+            owner_id,
+            analysis.result,
+        )
+        if observation is None:
+            return None
+        try:
+            await self.database.media.insert_one(
+                {
+                    "_id": ObjectId(media_id),
+                    "owner_id": owner_id,
+                    "observation_id": observation.id,
+                    "filename": original_filename,
+                    "content_type": content_type,
+                    "size_bytes": size_bytes,
+                    "duration_seconds": analysis.duration,
+                    "width": analysis.width,
+                    "height": analysis.height,
+                    "path": video_path,
+                    "frame_paths": frame_paths,
+                    "consent_confirmed": True,
+                    "created_at": datetime.now(UTC).isoformat(),
+                }
+            )
+        except Exception:
+            await self.repository.delete(observation.id, {"owner_id": owner_id})
+            raise
+        return observation
+
+    async def _create_analysed(
+        self,
+        payload: ObservationCreate,
+        owner_id: str,
+        video_result=None,
+    ) -> Observation | None:
         if not ObjectId.is_valid(payload.pet_id):
             return None
         pet_document = await self.database.pets.find_one(
@@ -61,6 +122,7 @@ class ObservationService:
                 "analysis": AnalysisBundle(
                     text=text_result,
                     context=context_result,
+                    video=video_result or AnalysisBundle().video,
                     fusion=fusion_result,
                 )
             }
@@ -100,7 +162,12 @@ class ObservationService:
         )
 
     async def delete(self, observation_id: str, owner_id: str) -> bool:
-        return await self.repository.delete(observation_id, {"owner_id": owner_id})
+        deleted = await self.repository.delete(observation_id, {"owner_id": owner_id})
+        if deleted and hasattr(self.database, "media"):
+            from app.services.media import MediaService
+
+            await MediaService(self.database).delete_for_observation(observation_id, owner_id)
+        return deleted
 
     @staticmethod
     def _utc_iso(value: datetime) -> str:

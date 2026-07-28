@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { api } from "../api";
 import { ConfirmDialog } from "../components/ConfirmDialog";
 import { InterpretationResult } from "../components/InterpretationResult";
+import { VideoEvidence } from "../components/VideoEvidence";
 import type { Observation, Pet } from "../types";
 
 export function ObservationDetailPage() {
@@ -45,6 +46,7 @@ export function ObservationDetailPage() {
     {error && <p className="error">{error}</p>}
     <article className="card original-observation"><h2>What was observed</h2><p>{observation.text_description}</p>{contextItems.length > 0 && <><h3>Context</h3><ul>{contextItems.map((item) => <li key={item}>{item}</li>)}</ul></>}</article>
     <InterpretationResult result={observation.analysis.fusion} />
+    <VideoEvidence observation={observation} />
     {confirmDelete && <ConfirmDialog title="Delete this observation?" confirmLabel="Delete observation" busy={busy} onCancel={() => setConfirmDelete(false)} onConfirm={() => void remove()}><p>This permanently removes the journal entry and its saved interpretation. It cannot be undone.</p></ConfirmDialog>}
   </section>;
 }

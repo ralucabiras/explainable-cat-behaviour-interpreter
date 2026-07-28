@@ -52,11 +52,22 @@ export interface Observation {
   created_at: string;
   updated_at: string;
   analysis: AnalysisBundle;
+  video?: MediaReference | null;
 }
 
 export type BehaviourState = "relaxed" | "playful" | "alert_or_curious" | "attention_seeking" | "fearful" | "stressed_or_frustrated" | "defensive_or_aggressive" | "potentially_unwell" | "uncertain";
 
-export interface EvidenceItem { key: string; observation: string; source: "text" | "context"; }
+export interface EvidenceItem { key: string; observation: string; source: "text" | "context" | "video"; }
+
+export interface MediaReference {
+  media_id?: string;
+  filename: string;
+  content_type: string;
+  size_bytes?: number;
+  duration_seconds?: number;
+  width?: number;
+  height?: number;
+}
 
 export interface ModalityResult {
   status: "pending" | "completed" | "failed";
@@ -70,6 +81,9 @@ export interface ModalityResult {
   recommendations: string[];
   safety_escalation: boolean;
   safety_message?: string;
+  quality_warnings?: string[];
+  representative_frames?: number[];
+  feature_values?: Record<string, number>;
 }
 
 export interface AnalysisBundle {

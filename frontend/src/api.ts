@@ -18,7 +18,7 @@ async function request<T>(path: string, options?: RequestInit): Promise<T> {
   const response = await fetch(`${API_URL}${path}`, {
     ...options,
     headers: {
-      "Content-Type": "application/json",
+      ...(!(options?.body instanceof FormData) ? { "Content-Type": "application/json" } : {}),
       ...(token ? { Authorization: `Bearer ${token}` } : {}),
       ...options?.headers,
     },
@@ -109,4 +109,55 @@ export const api = {
     text_description: string;
     context: ObservationContext;
   }) => request<Observation>("/observations", { method: "POST", body: JSON.stringify(payload) }),
+  createObservationWithVideo: (
+    payload: { pet_id: string; text_description: string; context: ObservationContext },
+    video: File,
+    consent: boolean,
+    onProgress: (progress: number) => void,
+  ) => uploadObservation(payload, video, consent, onProgress),
+  getMediaBlob: (path: string) => requestBlob(path),
 };
+
+function uploadObservation(
+  payload: { pet_id: string; text_description: string; context: ObservationContext },
+  video: File,
+  consent: boolean,
+  onProgress: (progress: number) => void,
+): Promise<Observation> {
+  return new Promise((resolve, reject) => {
+    const token = localStorage.getItem("whiskerwise_token");
+    const body = new FormData();
+    body.set("payload", JSON.stringify(payload));
+    body.set("video", video);
+    body.set("media_consent_confirmed", String(consent));
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", `${API_URL}/observations/with-video`);
+    if (token) xhr.setRequestHeader("Authorization", `Bearer ${token}`);
+    xhr.upload.onprogress = (event) => {
+      if (event.lengthComputable) onProgress(Math.round((event.loaded / event.total) * 100));
+    };
+    xhr.onload = () => {
+      if (xhr.status === 401 && token) {
+        localStorage.removeItem("whiskerwise_token");
+        window.location.replace("/");
+        reject(new Error("Your session expired. Please log in again."));
+      } else if (xhr.status < 200 || xhr.status >= 300) {
+        try { reject(new Error(JSON.parse(xhr.responseText).detail)); }
+        catch { reject(new Error("The video observation could not be saved.")); }
+      } else {
+        resolve(JSON.parse(xhr.responseText) as Observation);
+      }
+    };
+    xhr.onerror = () => reject(new Error("The video upload failed."));
+    xhr.send(body);
+  });
+}
+
+async function requestBlob(path: string): Promise<Blob> {
+  const token = localStorage.getItem("whiskerwise_token");
+  const response = await fetch(`${API_URL}${path}`, {
+    headers: token ? { Authorization: `Bearer ${token}` } : {},
+  });
+  if (!response.ok) throw new Error("Private media could not be loaded.");
+  return response.blob();
+}

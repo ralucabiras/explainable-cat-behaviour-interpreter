@@ -24,10 +24,12 @@ services:
       EMAIL_DELIVERY_MODE: ${EMAIL_DELIVERY_MODE:-console}
       GMAIL_ADDRESS: ${GMAIL_ADDRESS:-}
       GMAIL_APP_PASSWORD: ${GMAIL_APP_PASSWORD:-}
+      MEDIA_ROOT: /private-media
     ports:
       - "8000:8000"
     volumes:
       - ./backend:/app
+      - private_media:/private-media
     depends_on:
       mongo:
         condition: service_healthy
@@ -48,3 +50,4 @@ services:
 volumes:
   mongo_data:
   frontend_node_modules:
+  private_media:

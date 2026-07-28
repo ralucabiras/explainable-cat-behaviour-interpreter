@@ -58,10 +58,34 @@ class PetService:
         pet = await self.get(pet_id, owner_id)
         if pet is None:
             return None
+        media_documents: list[dict] = []
+        if hasattr(self.database, "media"):
+            observation_ids = [
+                str(document["_id"])
+                async for document in self.database.observations.find(
+                    {"pet_id": pet_id, "owner_id": owner_id},
+                    {"_id": 1},
+                )
+            ]
+            media_documents = [
+                document
+                async for document in self.database.media.find(
+                    {"owner_id": owner_id, "observation_id": {"$in": observation_ids}}
+                )
+            ]
         try:
             deleted_count = await self._delete_in_transaction(pet_id, owner_id)
         except (AttributeError, NotImplementedError, OperationFailure):
             deleted_count = await self._delete_ordered(pet_id, owner_id)
+        if media_documents:
+            from app.services.media import MediaService
+
+            media = MediaService(self.database)
+            for document in media_documents:
+                await media.delete_paths([document["path"], *document.get("frame_paths", [])])
+            await self.database.media.delete_many(
+                {"_id": {"$in": [document["_id"] for document in media_documents]}}
+            )
         return PetDeleteResponse(
             message="Cat profile and its observations were deleted",
             deleted_observations=deleted_count,
