@@ -131,6 +131,37 @@ npm run lint
 npm run build
 ```
 
+## Reproducible baseline evaluation
+
+The versioned evaluation dataset contains synthetic, brief-derived scenarios rather than
+user journal data. It measures deterministic software behaviour and does not establish
+clinical or veterinary validity.
+
+Run the text-only, context-only, and fused evaluation from the backend directory:
+
+```bash
+python -m app.evaluation.cli \
+  --dataset evaluation/datasets/v1.json \
+  --output evaluation/results/current
+```
+
+The output includes a compact JSON summary, full JSON report, prediction CSV, and one
+confusion-matrix CSV per configuration. Metrics include accuracy, per-state
+precision/recall/F1, macro and weighted F1, uncertain coverage, safety precision/recall,
+and fixed-bin calibration.
+Confidence in these reports is rule-evidence strength, not a validated probability.
+
+To detect prediction changes against a prior report, add:
+
+```bash
+--compare evaluation/baseline/report.json
+```
+
+The command exits with status `1` when a scenario's predicted state or safety escalation
+changes, and status `2` for invalid input or file errors. Add scenarios by following the
+existing JSON schema: every case needs a unique stable ID, cat profile, observation,
+expected state, and expected safety flag.
+
 ## Current analysis scope
 
 The English-language baseline covers nine broad cat behaviour states, context-aware weighted evidence, simple negation, uncertainty, alternatives, and urgent safety escalation. Its confidence value is evidence strength from deterministic rules, not a medically validated probability.

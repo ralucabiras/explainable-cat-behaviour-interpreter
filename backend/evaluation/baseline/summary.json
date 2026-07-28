@@ -1,0 +1,53 @@
+{
+  "configurations": {
+    "context_only": {
+      "accuracy": 0.5652,
+      "correct": 13,
+      "macro_f1": 0.2993,
+      "safety": {
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "true_positive": 8
+      },
+      "total": 23,
+      "uncertain_coverage": 0.5217,
+      "weighted_f1": 0.5555
+    },
+    "fused": {
+      "accuracy": 1.0,
+      "correct": 23,
+      "macro_f1": 1.0,
+      "safety": {
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "true_positive": 8
+      },
+      "total": 23,
+      "uncertain_coverage": 0.087,
+      "weighted_f1": 1.0
+    },
+    "text_only": {
+      "accuracy": 0.8696,
+      "correct": 20,
+      "macro_f1": 0.8598,
+      "safety": {
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "true_positive": 8
+      },
+      "total": 23,
+      "uncertain_coverage": 0.2174,
+      "weighted_f1": 0.8685
+    }
+  },
+  "dataset_version": "1.0.0",
+  "evaluator_version": "1.0.0",
+  "synthetic_data_notice": "These scenarios test software behaviour and are not expert-labelled clinical evidence or proof of veterinary validity.",
+  "taxonomy_version": "1.0.0"
+}

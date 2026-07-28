@@ -1,0 +1,173 @@
+{
+  "dataset_version": "1.0.0",
+  "description": "Synthetic, English-language scenarios for the deterministic cat behaviour baseline.",
+  "synthetic_data_notice": "These scenarios test software behaviour and are not expert-labelled clinical evidence or proof of veterinary validity.",
+  "scenarios": [
+    {
+      "id": "relaxed_resting",
+      "pet": {"name": "Evaluation Cat"},
+      "observation": {"text_description": "She is resting with a loose body and slow blinking."},
+      "expected_state": "relaxed",
+      "notes": "Multiple relaxed text clues."
+    },
+    {
+      "id": "playful_pouncing",
+      "pet": {"name": "Evaluation Cat"},
+      "observation": {"text_description": "He is playing, pouncing and chasing a toy."},
+      "expected_state": "playful"
+    },
+    {
+      "id": "alert_exploring",
+      "pet": {"name": "Evaluation Cat"},
+      "observation": {"text_description": "She is exploring and sniffing around the new shelf."},
+      "expected_state": "alert_or_curious"
+    },
+    {
+      "id": "attention_following",
+      "pet": {"name": "Evaluation Cat"},
+      "observation": {"text_description": "He keeps following me and pawing at me."},
+      "expected_state": "attention_seeking"
+    },
+    {
+      "id": "fearful_hiding",
+      "pet": {"name": "Evaluation Cat"},
+      "observation": {"text_description": "She is hiding under the bed with flattened ears."},
+      "expected_state": "fearful"
+    },
+    {
+      "id": "stressed_pacing",
+      "pet": {"name": "Evaluation Cat"},
+      "observation": {"text_description": "He is pacing, walking back and forth and cannot settle."},
+      "expected_state": "stressed_or_frustrated"
+    },
+    {
+      "id": "defensive_hissing",
+      "pet": {"name": "Evaluation Cat"},
+      "observation": {"text_description": "She is hissing, growling and swatting when approached."},
+      "expected_state": "defensive_or_aggressive"
+    },
+    {
+      "id": "unwell_appetite",
+      "pet": {"name": "Evaluation Cat"},
+      "observation": {"text_description": "He has stopped eating and is much less active."},
+      "expected_state": "potentially_unwell"
+    },
+    {
+      "id": "uncertain_sparse",
+      "pet": {"name": "Evaluation Cat"},
+      "observation": {"text_description": "She sat beside the window for a while."},
+      "expected_state": "uncertain",
+      "notes": "No supported observable clue."
+    },
+    {
+      "id": "context_only_play",
+      "pet": {"name": "Evaluation Cat"},
+      "observation": {
+        "text_description": "His behaviour seemed different.",
+        "context": {"recent_play": true}
+      },
+      "expected_state": "playful"
+    },
+    {
+      "id": "context_only_fear",
+      "pet": {
+        "name": "Evaluation Cat",
+        "sociability_with_people": "shy"
+      },
+      "observation": {
+        "text_description": "She stayed in the room.",
+        "context": {"unfamiliar_people_present": true}
+      },
+      "expected_state": "fearful"
+    },
+    {
+      "id": "conflicting_play_and_fear",
+      "pet": {"name": "Evaluation Cat"},
+      "observation": {"text_description": "He was playing but then started hiding under the bed."},
+      "expected_state": "uncertain",
+      "notes": "Competing clues should keep confidence conservative."
+    },
+    {
+      "id": "negated_hiding",
+      "pet": {"name": "Evaluation Cat"},
+      "observation": {"text_description": "She is not hiding; she is resting with a loose body."},
+      "expected_state": "relaxed",
+      "notes": "Negated fearful clue must not count."
+    },
+    {
+      "id": "sparse_alert_clue",
+      "pet": {"name": "Evaluation Cat"},
+      "observation": {"text_description": "He is watching closely."},
+      "expected_state": "alert_or_curious"
+    },
+    {
+      "id": "profile_trigger_context",
+      "pet": {
+        "name": "Evaluation Cat",
+        "known_triggers": ["vacuum cleaner"],
+        "routine_sensitivity": "high"
+      },
+      "observation": {
+        "text_description": "The vacuum cleaner was running and she seemed different.",
+        "context": {"known_triggers": ["vacuum cleaner"]}
+      },
+      "expected_state": "fearful"
+    },
+    {
+      "id": "urgent_breathing",
+      "pet": {"name": "Evaluation Cat"},
+      "observation": {"text_description": "He is struggling to breathe."},
+      "expected_state": "potentially_unwell",
+      "expected_safety_escalation": true
+    },
+    {
+      "id": "urgent_collapse",
+      "pet": {"name": "Evaluation Cat"},
+      "observation": {"text_description": "She suddenly collapsed."},
+      "expected_state": "potentially_unwell",
+      "expected_safety_escalation": true
+    },
+    {
+      "id": "urgent_urination",
+      "pet": {"name": "Evaluation Cat"},
+      "observation": {"text_description": "He cannot urinate."},
+      "expected_state": "potentially_unwell",
+      "expected_safety_escalation": true
+    },
+    {
+      "id": "urgent_vomiting",
+      "pet": {"name": "Evaluation Cat"},
+      "observation": {"text_description": "She keeps vomiting."},
+      "expected_state": "potentially_unwell",
+      "expected_safety_escalation": true
+    },
+    {
+      "id": "urgent_lethargy",
+      "pet": {"name": "Evaluation Cat"},
+      "observation": {"text_description": "He is barely responsive with severe lethargy."},
+      "expected_state": "potentially_unwell",
+      "expected_safety_escalation": true
+    },
+    {
+      "id": "urgent_seizure",
+      "pet": {"name": "Evaluation Cat"},
+      "observation": {"text_description": "She is having a seizure."},
+      "expected_state": "potentially_unwell",
+      "expected_safety_escalation": true
+    },
+    {
+      "id": "urgent_poisoning",
+      "pet": {"name": "Evaluation Cat"},
+      "observation": {"text_description": "He may have eaten poison."},
+      "expected_state": "potentially_unwell",
+      "expected_safety_escalation": true
+    },
+    {
+      "id": "urgent_injury",
+      "pet": {"name": "Evaluation Cat"},
+      "observation": {"text_description": "She has a deep wound and heavy bleeding."},
+      "expected_state": "potentially_unwell",
+      "expected_safety_escalation": true
+    }
+  ]
+}

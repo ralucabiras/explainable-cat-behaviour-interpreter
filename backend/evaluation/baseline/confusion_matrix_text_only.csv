@@ -1,0 +1,10 @@
+expected/predicted,relaxed,playful,alert_or_curious,attention_seeking,fearful,stressed_or_frustrated,defensive_or_aggressive,potentially_unwell,uncertain
+relaxed,2,0,0,0,0,0,0,0,0
+playful,0,1,0,0,0,0,0,0,1
+alert_or_curious,0,0,2,0,0,0,0,0,0
+attention_seeking,0,0,0,1,0,0,0,0,0
+fearful,0,0,0,0,1,0,0,0,2
+stressed_or_frustrated,0,0,0,0,0,1,0,0,0
+defensive_or_aggressive,0,0,0,0,0,0,1,0,0
+potentially_unwell,0,0,0,0,0,0,0,9,0
+uncertain,0,0,0,0,0,0,0,0,2

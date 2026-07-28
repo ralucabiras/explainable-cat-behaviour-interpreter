@@ -1,0 +1,1816 @@
+{
+  "dataset_version": "1.0.0",
+  "evaluator_version": "1.0.0",
+  "metrics": {
+    "context_only": {
+      "accuracy": 0.5652,
+      "calibration": {
+        "bins": [
+          {
+            "accuracy": 0.1667,
+            "count": 12,
+            "gap": 0.0167,
+            "lower": 0.0,
+            "mean_evidence_strength": 0.15,
+            "upper": 0.2
+          },
+          {
+            "accuracy": 0.0,
+            "count": 0,
+            "gap": 0.0,
+            "lower": 0.2,
+            "mean_evidence_strength": 0.0,
+            "upper": 0.4
+          },
+          {
+            "accuracy": 1.0,
+            "count": 3,
+            "gap": 0.4667,
+            "lower": 0.4,
+            "mean_evidence_strength": 0.5333,
+            "upper": 0.6
+          },
+          {
+            "accuracy": 0.0,
+            "count": 0,
+            "gap": 0.0,
+            "lower": 0.6,
+            "mean_evidence_strength": 0.0,
+            "upper": 0.8
+          },
+          {
+            "accuracy": 1.0,
+            "count": 8,
+            "gap": 0.05,
+            "lower": 0.8,
+            "mean_evidence_strength": 0.95,
+            "upper": 1.0
+          }
+        ],
+        "expected_calibration_error": 0.087,
+        "notice": "Confidence is deterministic rule-evidence strength, not a medically validated probability."
+      },
+      "confusion_matrix": {
+        "alert_or_curious": {
+          "alert_or_curious": 0,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 0,
+          "fearful": 0,
+          "playful": 0,
+          "potentially_unwell": 0,
+          "relaxed": 0,
+          "stressed_or_frustrated": 0,
+          "uncertain": 2
+        },
+        "attention_seeking": {
+          "alert_or_curious": 0,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 0,
+          "fearful": 0,
+          "playful": 0,
+          "potentially_unwell": 0,
+          "relaxed": 0,
+          "stressed_or_frustrated": 0,
+          "uncertain": 1
+        },
+        "defensive_or_aggressive": {
+          "alert_or_curious": 0,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 0,
+          "fearful": 0,
+          "playful": 0,
+          "potentially_unwell": 0,
+          "relaxed": 0,
+          "stressed_or_frustrated": 0,
+          "uncertain": 1
+        },
+        "fearful": {
+          "alert_or_curious": 0,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 0,
+          "fearful": 2,
+          "playful": 0,
+          "potentially_unwell": 0,
+          "relaxed": 0,
+          "stressed_or_frustrated": 0,
+          "uncertain": 1
+        },
+        "playful": {
+          "alert_or_curious": 0,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 0,
+          "fearful": 0,
+          "playful": 1,
+          "potentially_unwell": 0,
+          "relaxed": 0,
+          "stressed_or_frustrated": 0,
+          "uncertain": 1
+        },
+        "potentially_unwell": {
+          "alert_or_curious": 0,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 0,
+          "fearful": 0,
+          "playful": 0,
+          "potentially_unwell": 8,
+          "relaxed": 0,
+          "stressed_or_frustrated": 0,
+          "uncertain": 1
+        },
+        "relaxed": {
+          "alert_or_curious": 0,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 0,
+          "fearful": 0,
+          "playful": 0,
+          "potentially_unwell": 0,
+          "relaxed": 0,
+          "stressed_or_frustrated": 0,
+          "uncertain": 2
+        },
+        "stressed_or_frustrated": {
+          "alert_or_curious": 0,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 0,
+          "fearful": 0,
+          "playful": 0,
+          "potentially_unwell": 0,
+          "relaxed": 0,
+          "stressed_or_frustrated": 0,
+          "uncertain": 1
+        },
+        "uncertain": {
+          "alert_or_curious": 0,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 0,
+          "fearful": 0,
+          "playful": 0,
+          "potentially_unwell": 0,
+          "relaxed": 0,
+          "stressed_or_frustrated": 0,
+          "uncertain": 2
+        }
+      },
+      "correct": 13,
+      "macro_f1": 0.2993,
+      "per_state": {
+        "alert_or_curious": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 2
+        },
+        "attention_seeking": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 1
+        },
+        "defensive_or_aggressive": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 1
+        },
+        "fearful": {
+          "f1": 0.8,
+          "precision": 1.0,
+          "recall": 0.6667,
+          "support": 3
+        },
+        "playful": {
+          "f1": 0.6667,
+          "precision": 1.0,
+          "recall": 0.5,
+          "support": 2
+        },
+        "potentially_unwell": {
+          "f1": 0.9412,
+          "precision": 1.0,
+          "recall": 0.8889,
+          "support": 9
+        },
+        "relaxed": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 2
+        },
+        "stressed_or_frustrated": {
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 1
+        },
+        "uncertain": {
+          "f1": 0.2857,
+          "precision": 0.1667,
+          "recall": 1.0,
+          "support": 2
+        }
+      },
+      "safety": {
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "true_positive": 8
+      },
+      "total": 23,
+      "uncertain_coverage": 0.5217,
+      "weighted_f1": 0.5555
+    },
+    "fused": {
+      "accuracy": 1.0,
+      "calibration": {
+        "bins": [
+          {
+            "accuracy": 1.0,
+            "count": 1,
+            "gap": 0.85,
+            "lower": 0.0,
+            "mean_evidence_strength": 0.15,
+            "upper": 0.2
+          },
+          {
+            "accuracy": 1.0,
+            "count": 1,
+            "gap": 0.7,
+            "lower": 0.2,
+            "mean_evidence_strength": 0.3,
+            "upper": 0.4
+          },
+          {
+            "accuracy": 1.0,
+            "count": 12,
+            "gap": 0.4608,
+            "lower": 0.4,
+            "mean_evidence_strength": 0.5392,
+            "upper": 0.6
+          },
+          {
+            "accuracy": 1.0,
+            "count": 1,
+            "gap": 0.39,
+            "lower": 0.6,
+            "mean_evidence_strength": 0.61,
+            "upper": 0.8
+          },
+          {
+            "accuracy": 1.0,
+            "count": 8,
+            "gap": 0.05,
+            "lower": 0.8,
+            "mean_evidence_strength": 0.95,
+            "upper": 1.0
+          }
+        ],
+        "expected_calibration_error": 0.3422,
+        "notice": "Confidence is deterministic rule-evidence strength, not a medically validated probability."
+      },
+      "confusion_matrix": {
+        "alert_or_curious": {
+          "alert_or_curious": 2,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 0,
+          "fearful": 0,
+          "playful": 0,
+          "potentially_unwell": 0,
+          "relaxed": 0,
+          "stressed_or_frustrated": 0,
+          "uncertain": 0
+        },
+        "attention_seeking": {
+          "alert_or_curious": 0,
+          "attention_seeking": 1,
+          "defensive_or_aggressive": 0,
+          "fearful": 0,
+          "playful": 0,
+          "potentially_unwell": 0,
+          "relaxed": 0,
+          "stressed_or_frustrated": 0,
+          "uncertain": 0
+        },
+        "defensive_or_aggressive": {
+          "alert_or_curious": 0,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 1,
+          "fearful": 0,
+          "playful": 0,
+          "potentially_unwell": 0,
+          "relaxed": 0,
+          "stressed_or_frustrated": 0,
+          "uncertain": 0
+        },
+        "fearful": {
+          "alert_or_curious": 0,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 0,
+          "fearful": 3,
+          "playful": 0,
+          "potentially_unwell": 0,
+          "relaxed": 0,
+          "stressed_or_frustrated": 0,
+          "uncertain": 0
+        },
+        "playful": {
+          "alert_or_curious": 0,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 0,
+          "fearful": 0,
+          "playful": 2,
+          "potentially_unwell": 0,
+          "relaxed": 0,
+          "stressed_or_frustrated": 0,
+          "uncertain": 0
+        },
+        "potentially_unwell": {
+          "alert_or_curious": 0,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 0,
+          "fearful": 0,
+          "playful": 0,
+          "potentially_unwell": 9,
+          "relaxed": 0,
+          "stressed_or_frustrated": 0,
+          "uncertain": 0
+        },
+        "relaxed": {
+          "alert_or_curious": 0,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 0,
+          "fearful": 0,
+          "playful": 0,
+          "potentially_unwell": 0,
+          "relaxed": 2,
+          "stressed_or_frustrated": 0,
+          "uncertain": 0
+        },
+        "stressed_or_frustrated": {
+          "alert_or_curious": 0,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 0,
+          "fearful": 0,
+          "playful": 0,
+          "potentially_unwell": 0,
+          "relaxed": 0,
+          "stressed_or_frustrated": 1,
+          "uncertain": 0
+        },
+        "uncertain": {
+          "alert_or_curious": 0,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 0,
+          "fearful": 0,
+          "playful": 0,
+          "potentially_unwell": 0,
+          "relaxed": 0,
+          "stressed_or_frustrated": 0,
+          "uncertain": 2
+        }
+      },
+      "correct": 23,
+      "macro_f1": 1.0,
+      "per_state": {
+        "alert_or_curious": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 2
+        },
+        "attention_seeking": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 1
+        },
+        "defensive_or_aggressive": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 1
+        },
+        "fearful": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 3
+        },
+        "playful": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 2
+        },
+        "potentially_unwell": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 9
+        },
+        "relaxed": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 2
+        },
+        "stressed_or_frustrated": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 1
+        },
+        "uncertain": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 2
+        }
+      },
+      "safety": {
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "true_positive": 8
+      },
+      "total": 23,
+      "uncertain_coverage": 0.087,
+      "weighted_f1": 1.0
+    },
+    "text_only": {
+      "accuracy": 0.8696,
+      "calibration": {
+        "bins": [
+          {
+            "accuracy": 0.25,
+            "count": 4,
+            "gap": 0.1,
+            "lower": 0.0,
+            "mean_evidence_strength": 0.15,
+            "upper": 0.2
+          },
+          {
+            "accuracy": 1.0,
+            "count": 1,
+            "gap": 0.7,
+            "lower": 0.2,
+            "mean_evidence_strength": 0.3,
+            "upper": 0.4
+          },
+          {
+            "accuracy": 1.0,
+            "count": 9,
+            "gap": 0.4589,
+            "lower": 0.4,
+            "mean_evidence_strength": 0.5411,
+            "upper": 0.6
+          },
+          {
+            "accuracy": 1.0,
+            "count": 1,
+            "gap": 0.39,
+            "lower": 0.6,
+            "mean_evidence_strength": 0.61,
+            "upper": 0.8
+          },
+          {
+            "accuracy": 1.0,
+            "count": 8,
+            "gap": 0.05,
+            "lower": 0.8,
+            "mean_evidence_strength": 0.95,
+            "upper": 1.0
+          }
+        ],
+        "expected_calibration_error": 0.2617,
+        "notice": "Confidence is deterministic rule-evidence strength, not a medically validated probability."
+      },
+      "confusion_matrix": {
+        "alert_or_curious": {
+          "alert_or_curious": 2,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 0,
+          "fearful": 0,
+          "playful": 0,
+          "potentially_unwell": 0,
+          "relaxed": 0,
+          "stressed_or_frustrated": 0,
+          "uncertain": 0
+        },
+        "attention_seeking": {
+          "alert_or_curious": 0,
+          "attention_seeking": 1,
+          "defensive_or_aggressive": 0,
+          "fearful": 0,
+          "playful": 0,
+          "potentially_unwell": 0,
+          "relaxed": 0,
+          "stressed_or_frustrated": 0,
+          "uncertain": 0
+        },
+        "defensive_or_aggressive": {
+          "alert_or_curious": 0,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 1,
+          "fearful": 0,
+          "playful": 0,
+          "potentially_unwell": 0,
+          "relaxed": 0,
+          "stressed_or_frustrated": 0,
+          "uncertain": 0
+        },
+        "fearful": {
+          "alert_or_curious": 0,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 0,
+          "fearful": 1,
+          "playful": 0,
+          "potentially_unwell": 0,
+          "relaxed": 0,
+          "stressed_or_frustrated": 0,
+          "uncertain": 2
+        },
+        "playful": {
+          "alert_or_curious": 0,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 0,
+          "fearful": 0,
+          "playful": 1,
+          "potentially_unwell": 0,
+          "relaxed": 0,
+          "stressed_or_frustrated": 0,
+          "uncertain": 1
+        },
+        "potentially_unwell": {
+          "alert_or_curious": 0,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 0,
+          "fearful": 0,
+          "playful": 0,
+          "potentially_unwell": 9,
+          "relaxed": 0,
+          "stressed_or_frustrated": 0,
+          "uncertain": 0
+        },
+        "relaxed": {
+          "alert_or_curious": 0,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 0,
+          "fearful": 0,
+          "playful": 0,
+          "potentially_unwell": 0,
+          "relaxed": 2,
+          "stressed_or_frustrated": 0,
+          "uncertain": 0
+        },
+        "stressed_or_frustrated": {
+          "alert_or_curious": 0,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 0,
+          "fearful": 0,
+          "playful": 0,
+          "potentially_unwell": 0,
+          "relaxed": 0,
+          "stressed_or_frustrated": 1,
+          "uncertain": 0
+        },
+        "uncertain": {
+          "alert_or_curious": 0,
+          "attention_seeking": 0,
+          "defensive_or_aggressive": 0,
+          "fearful": 0,
+          "playful": 0,
+          "potentially_unwell": 0,
+          "relaxed": 0,
+          "stressed_or_frustrated": 0,
+          "uncertain": 2
+        }
+      },
+      "correct": 20,
+      "macro_f1": 0.8598,
+      "per_state": {
+        "alert_or_curious": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 2
+        },
+        "attention_seeking": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 1
+        },
+        "defensive_or_aggressive": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 1
+        },
+        "fearful": {
+          "f1": 0.5,
+          "precision": 1.0,
+          "recall": 0.3333,
+          "support": 3
+        },
+        "playful": {
+          "f1": 0.6667,
+          "precision": 1.0,
+          "recall": 0.5,
+          "support": 2
+        },
+        "potentially_unwell": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 9
+        },
+        "relaxed": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 2
+        },
+        "stressed_or_frustrated": {
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 1
+        },
+        "uncertain": {
+          "f1": 0.5714,
+          "precision": 0.4,
+          "recall": 1.0,
+          "support": 2
+        }
+      },
+      "safety": {
+        "false_negative": 0,
+        "false_positive": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "true_positive": 8
+      },
+      "total": 23,
+      "uncertain_coverage": 0.2174,
+      "weighted_f1": 0.8685
+    }
+  },
+  "predictions": [
+    {
+      "alternatives": [],
+      "confidence": 0.55,
+      "configuration": "text_only",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "exploration",
+          "observation": "active exploration",
+          "source": "text"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "alert_or_curious",
+      "predicted_safety_escalation": false,
+      "predicted_state": "alert_or_curious",
+      "scenario_id": "alert_exploring"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.15,
+      "configuration": "context_only",
+      "correct": false,
+      "evidence": [],
+      "expected_safety_escalation": false,
+      "expected_state": "alert_or_curious",
+      "predicted_safety_escalation": false,
+      "predicted_state": "uncertain",
+      "scenario_id": "alert_exploring"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.55,
+      "configuration": "fused",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "exploration",
+          "observation": "active exploration",
+          "source": "text"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "alert_or_curious",
+      "predicted_safety_escalation": false,
+      "predicted_state": "alert_or_curious",
+      "scenario_id": "alert_exploring"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.55,
+      "configuration": "text_only",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "attention",
+          "observation": "repeated bids for attention",
+          "source": "text"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "attention_seeking",
+      "predicted_safety_escalation": false,
+      "predicted_state": "attention_seeking",
+      "scenario_id": "attention_following"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.15,
+      "configuration": "context_only",
+      "correct": false,
+      "evidence": [],
+      "expected_safety_escalation": false,
+      "expected_state": "attention_seeking",
+      "predicted_safety_escalation": false,
+      "predicted_state": "uncertain",
+      "scenario_id": "attention_following"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.55,
+      "configuration": "fused",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "attention",
+          "observation": "repeated bids for attention",
+          "source": "text"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "attention_seeking",
+      "predicted_safety_escalation": false,
+      "predicted_state": "attention_seeking",
+      "scenario_id": "attention_following"
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.42,
+          "state": "playful"
+        },
+        {
+          "confidence": 0.38,
+          "state": "fearful"
+        }
+      ],
+      "confidence": 0.3,
+      "configuration": "text_only",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "play",
+          "observation": "active play behaviour",
+          "source": "text"
+        },
+        {
+          "key": "hiding",
+          "observation": "hiding or withdrawal",
+          "source": "text"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "uncertain",
+      "predicted_safety_escalation": false,
+      "predicted_state": "uncertain",
+      "scenario_id": "conflicting_play_and_fear"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.15,
+      "configuration": "context_only",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": false,
+      "expected_state": "uncertain",
+      "predicted_safety_escalation": false,
+      "predicted_state": "uncertain",
+      "scenario_id": "conflicting_play_and_fear"
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.42,
+          "state": "playful"
+        },
+        {
+          "confidence": 0.38,
+          "state": "fearful"
+        }
+      ],
+      "confidence": 0.3,
+      "configuration": "fused",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "play",
+          "observation": "active play behaviour",
+          "source": "text"
+        },
+        {
+          "key": "hiding",
+          "observation": "hiding or withdrawal",
+          "source": "text"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "uncertain",
+      "predicted_safety_escalation": false,
+      "predicted_state": "uncertain",
+      "scenario_id": "conflicting_play_and_fear"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.15,
+      "configuration": "text_only",
+      "correct": false,
+      "evidence": [],
+      "expected_safety_escalation": false,
+      "expected_state": "fearful",
+      "predicted_safety_escalation": false,
+      "predicted_state": "uncertain",
+      "scenario_id": "context_only_fear"
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.22,
+          "state": "alert_or_curious"
+        }
+      ],
+      "confidence": 0.58,
+      "configuration": "context_only",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "unfamiliar_people",
+          "observation": "unfamiliar people were present",
+          "source": "context"
+        },
+        {
+          "key": "profile_people_sociability",
+          "observation": "a profile history of shyness around people",
+          "source": "context"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "fearful",
+      "predicted_safety_escalation": false,
+      "predicted_state": "fearful",
+      "scenario_id": "context_only_fear"
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.22,
+          "state": "alert_or_curious"
+        }
+      ],
+      "confidence": 0.58,
+      "configuration": "fused",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "unfamiliar_people",
+          "observation": "unfamiliar people were present",
+          "source": "context"
+        },
+        {
+          "key": "profile_people_sociability",
+          "observation": "a profile history of shyness around people",
+          "source": "context"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "fearful",
+      "predicted_safety_escalation": false,
+      "predicted_state": "fearful",
+      "scenario_id": "context_only_fear"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.15,
+      "configuration": "text_only",
+      "correct": false,
+      "evidence": [],
+      "expected_safety_escalation": false,
+      "expected_state": "playful",
+      "predicted_safety_escalation": false,
+      "predicted_state": "uncertain",
+      "scenario_id": "context_only_play"
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.25,
+          "state": "relaxed"
+        }
+      ],
+      "confidence": 0.49,
+      "configuration": "context_only",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "recent_play",
+          "observation": "recent interactive play",
+          "source": "context"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "playful",
+      "predicted_safety_escalation": false,
+      "predicted_state": "playful",
+      "scenario_id": "context_only_play"
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.25,
+          "state": "relaxed"
+        }
+      ],
+      "confidence": 0.49,
+      "configuration": "fused",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "recent_play",
+          "observation": "recent interactive play",
+          "source": "context"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "playful",
+      "predicted_safety_escalation": false,
+      "predicted_state": "playful",
+      "scenario_id": "context_only_play"
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.2,
+          "state": "fearful"
+        }
+      ],
+      "confidence": 0.51,
+      "configuration": "text_only",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "defensive",
+          "observation": "defensive signals",
+          "source": "text"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "defensive_or_aggressive",
+      "predicted_safety_escalation": false,
+      "predicted_state": "defensive_or_aggressive",
+      "scenario_id": "defensive_hissing"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.15,
+      "configuration": "context_only",
+      "correct": false,
+      "evidence": [],
+      "expected_safety_escalation": false,
+      "expected_state": "defensive_or_aggressive",
+      "predicted_safety_escalation": false,
+      "predicted_state": "uncertain",
+      "scenario_id": "defensive_hissing"
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.2,
+          "state": "fearful"
+        }
+      ],
+      "confidence": 0.51,
+      "configuration": "fused",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "defensive",
+          "observation": "defensive signals",
+          "source": "text"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "defensive_or_aggressive",
+      "predicted_safety_escalation": false,
+      "predicted_state": "defensive_or_aggressive",
+      "scenario_id": "defensive_hissing"
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.13,
+          "state": "stressed_or_frustrated"
+        },
+        {
+          "confidence": 0.09,
+          "state": "defensive_or_aggressive"
+        }
+      ],
+      "confidence": 0.58,
+      "configuration": "text_only",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "hiding",
+          "observation": "hiding or withdrawal",
+          "source": "text"
+        },
+        {
+          "key": "fear_posture",
+          "observation": "a fearful body posture",
+          "source": "text"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "fearful",
+      "predicted_safety_escalation": false,
+      "predicted_state": "fearful",
+      "scenario_id": "fearful_hiding"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.15,
+      "configuration": "context_only",
+      "correct": false,
+      "evidence": [],
+      "expected_safety_escalation": false,
+      "expected_state": "fearful",
+      "predicted_safety_escalation": false,
+      "predicted_state": "uncertain",
+      "scenario_id": "fearful_hiding"
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.13,
+          "state": "stressed_or_frustrated"
+        },
+        {
+          "confidence": 0.09,
+          "state": "defensive_or_aggressive"
+        }
+      ],
+      "confidence": 0.58,
+      "configuration": "fused",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "hiding",
+          "observation": "hiding or withdrawal",
+          "source": "text"
+        },
+        {
+          "key": "fear_posture",
+          "observation": "a fearful body posture",
+          "source": "text"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "fearful",
+      "predicted_safety_escalation": false,
+      "predicted_state": "fearful",
+      "scenario_id": "fearful_hiding"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.55,
+      "configuration": "text_only",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "resting",
+          "observation": "resting with a loose body",
+          "source": "text"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "relaxed",
+      "predicted_safety_escalation": false,
+      "predicted_state": "relaxed",
+      "scenario_id": "negated_hiding"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.15,
+      "configuration": "context_only",
+      "correct": false,
+      "evidence": [],
+      "expected_safety_escalation": false,
+      "expected_state": "relaxed",
+      "predicted_safety_escalation": false,
+      "predicted_state": "uncertain",
+      "scenario_id": "negated_hiding"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.55,
+      "configuration": "fused",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "resting",
+          "observation": "resting with a loose body",
+          "source": "text"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "relaxed",
+      "predicted_safety_escalation": false,
+      "predicted_state": "relaxed",
+      "scenario_id": "negated_hiding"
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.17,
+          "state": "alert_or_curious"
+        }
+      ],
+      "confidence": 0.51,
+      "configuration": "text_only",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "play",
+          "observation": "active play behaviour",
+          "source": "text"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "playful",
+      "predicted_safety_escalation": false,
+      "predicted_state": "playful",
+      "scenario_id": "playful_pouncing"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.15,
+      "configuration": "context_only",
+      "correct": false,
+      "evidence": [],
+      "expected_safety_escalation": false,
+      "expected_state": "playful",
+      "predicted_safety_escalation": false,
+      "predicted_state": "uncertain",
+      "scenario_id": "playful_pouncing"
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.17,
+          "state": "alert_or_curious"
+        }
+      ],
+      "confidence": 0.51,
+      "configuration": "fused",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "play",
+          "observation": "active play behaviour",
+          "source": "text"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "playful",
+      "predicted_safety_escalation": false,
+      "predicted_state": "playful",
+      "scenario_id": "playful_pouncing"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.15,
+      "configuration": "text_only",
+      "correct": false,
+      "evidence": [],
+      "expected_safety_escalation": false,
+      "expected_state": "fearful",
+      "predicted_safety_escalation": false,
+      "predicted_state": "uncertain",
+      "scenario_id": "profile_trigger_context"
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.44,
+          "state": "stressed_or_frustrated"
+        }
+      ],
+      "confidence": 0.53,
+      "configuration": "context_only",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "known_trigger",
+          "observation": "one or more known triggers were present",
+          "source": "context"
+        },
+        {
+          "key": "profile_known_trigger",
+          "observation": "a known profile trigger was mentioned (vacuum cleaner)",
+          "source": "context"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "fearful",
+      "predicted_safety_escalation": false,
+      "predicted_state": "fearful",
+      "scenario_id": "profile_trigger_context"
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.44,
+          "state": "stressed_or_frustrated"
+        }
+      ],
+      "confidence": 0.53,
+      "configuration": "fused",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "known_trigger",
+          "observation": "one or more known triggers were present",
+          "source": "context"
+        },
+        {
+          "key": "profile_known_trigger",
+          "observation": "a known profile trigger was mentioned (vacuum cleaner)",
+          "source": "context"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "fearful",
+      "predicted_safety_escalation": false,
+      "predicted_state": "fearful",
+      "scenario_id": "profile_trigger_context"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.55,
+      "configuration": "text_only",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "resting",
+          "observation": "resting with a loose body",
+          "source": "text"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "relaxed",
+      "predicted_safety_escalation": false,
+      "predicted_state": "relaxed",
+      "scenario_id": "relaxed_resting"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.15,
+      "configuration": "context_only",
+      "correct": false,
+      "evidence": [],
+      "expected_safety_escalation": false,
+      "expected_state": "relaxed",
+      "predicted_safety_escalation": false,
+      "predicted_state": "uncertain",
+      "scenario_id": "relaxed_resting"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.55,
+      "configuration": "fused",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "resting",
+          "observation": "resting with a loose body",
+          "source": "text"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "relaxed",
+      "predicted_safety_escalation": false,
+      "predicted_state": "relaxed",
+      "scenario_id": "relaxed_resting"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.55,
+      "configuration": "text_only",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "exploration",
+          "observation": "active exploration",
+          "source": "text"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "alert_or_curious",
+      "predicted_safety_escalation": false,
+      "predicted_state": "alert_or_curious",
+      "scenario_id": "sparse_alert_clue"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.15,
+      "configuration": "context_only",
+      "correct": false,
+      "evidence": [],
+      "expected_safety_escalation": false,
+      "expected_state": "alert_or_curious",
+      "predicted_safety_escalation": false,
+      "predicted_state": "uncertain",
+      "scenario_id": "sparse_alert_clue"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.55,
+      "configuration": "fused",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "exploration",
+          "observation": "active exploration",
+          "source": "text"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "alert_or_curious",
+      "predicted_safety_escalation": false,
+      "predicted_state": "alert_or_curious",
+      "scenario_id": "sparse_alert_clue"
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.14,
+          "state": "alert_or_curious"
+        }
+      ],
+      "confidence": 0.52,
+      "configuration": "text_only",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "pacing",
+          "observation": "repetitive pacing",
+          "source": "text"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "stressed_or_frustrated",
+      "predicted_safety_escalation": false,
+      "predicted_state": "stressed_or_frustrated",
+      "scenario_id": "stressed_pacing"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.15,
+      "configuration": "context_only",
+      "correct": false,
+      "evidence": [],
+      "expected_safety_escalation": false,
+      "expected_state": "stressed_or_frustrated",
+      "predicted_safety_escalation": false,
+      "predicted_state": "uncertain",
+      "scenario_id": "stressed_pacing"
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.14,
+          "state": "alert_or_curious"
+        }
+      ],
+      "confidence": 0.52,
+      "configuration": "fused",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "pacing",
+          "observation": "repetitive pacing",
+          "source": "text"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "stressed_or_frustrated",
+      "predicted_safety_escalation": false,
+      "predicted_state": "stressed_or_frustrated",
+      "scenario_id": "stressed_pacing"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.15,
+      "configuration": "text_only",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": false,
+      "expected_state": "uncertain",
+      "predicted_safety_escalation": false,
+      "predicted_state": "uncertain",
+      "scenario_id": "uncertain_sparse"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.15,
+      "configuration": "context_only",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": false,
+      "expected_state": "uncertain",
+      "predicted_safety_escalation": false,
+      "predicted_state": "uncertain",
+      "scenario_id": "uncertain_sparse"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.15,
+      "configuration": "fused",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": false,
+      "expected_state": "uncertain",
+      "predicted_safety_escalation": false,
+      "predicted_state": "uncertain",
+      "scenario_id": "uncertain_sparse"
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.1,
+          "state": "stressed_or_frustrated"
+        }
+      ],
+      "confidence": 0.61,
+      "configuration": "text_only",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "low_activity",
+          "observation": "an unusual reduction in activity",
+          "source": "text"
+        },
+        {
+          "key": "appetite_change",
+          "observation": "a change in eating",
+          "source": "text"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": false,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "unwell_appetite"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.15,
+      "configuration": "context_only",
+      "correct": false,
+      "evidence": [],
+      "expected_safety_escalation": false,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": false,
+      "predicted_state": "uncertain",
+      "scenario_id": "unwell_appetite"
+    },
+    {
+      "alternatives": [
+        {
+          "confidence": 0.1,
+          "state": "stressed_or_frustrated"
+        }
+      ],
+      "confidence": 0.61,
+      "configuration": "fused",
+      "correct": true,
+      "evidence": [
+        {
+          "key": "low_activity",
+          "observation": "an unusual reduction in activity",
+          "source": "text"
+        },
+        {
+          "key": "appetite_change",
+          "observation": "a change in eating",
+          "source": "text"
+        }
+      ],
+      "expected_safety_escalation": false,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": false,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "unwell_appetite"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.95,
+      "configuration": "text_only",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": true,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": true,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "urgent_breathing"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.95,
+      "configuration": "context_only",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": true,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": true,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "urgent_breathing"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.95,
+      "configuration": "fused",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": true,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": true,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "urgent_breathing"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.95,
+      "configuration": "text_only",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": true,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": true,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "urgent_collapse"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.95,
+      "configuration": "context_only",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": true,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": true,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "urgent_collapse"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.95,
+      "configuration": "fused",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": true,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": true,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "urgent_collapse"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.95,
+      "configuration": "text_only",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": true,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": true,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "urgent_injury"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.95,
+      "configuration": "context_only",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": true,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": true,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "urgent_injury"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.95,
+      "configuration": "fused",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": true,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": true,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "urgent_injury"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.95,
+      "configuration": "text_only",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": true,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": true,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "urgent_lethargy"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.95,
+      "configuration": "context_only",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": true,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": true,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "urgent_lethargy"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.95,
+      "configuration": "fused",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": true,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": true,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "urgent_lethargy"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.95,
+      "configuration": "text_only",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": true,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": true,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "urgent_poisoning"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.95,
+      "configuration": "context_only",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": true,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": true,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "urgent_poisoning"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.95,
+      "configuration": "fused",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": true,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": true,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "urgent_poisoning"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.95,
+      "configuration": "text_only",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": true,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": true,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "urgent_seizure"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.95,
+      "configuration": "context_only",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": true,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": true,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "urgent_seizure"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.95,
+      "configuration": "fused",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": true,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": true,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "urgent_seizure"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.95,
+      "configuration": "text_only",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": true,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": true,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "urgent_urination"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.95,
+      "configuration": "context_only",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": true,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": true,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "urgent_urination"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.95,
+      "configuration": "fused",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": true,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": true,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "urgent_urination"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.95,
+      "configuration": "text_only",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": true,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": true,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "urgent_vomiting"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.95,
+      "configuration": "context_only",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": true,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": true,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "urgent_vomiting"
+    },
+    {
+      "alternatives": [],
+      "confidence": 0.95,
+      "configuration": "fused",
+      "correct": true,
+      "evidence": [],
+      "expected_safety_escalation": true,
+      "expected_state": "potentially_unwell",
+      "predicted_safety_escalation": true,
+      "predicted_state": "potentially_unwell",
+      "scenario_id": "urgent_vomiting"
+    }
+  ],
+  "synthetic_data_notice": "These scenarios test software behaviour and are not expert-labelled clinical evidence or proof of veterinary validity.",
+  "taxonomy_version": "1.0.0"
+}

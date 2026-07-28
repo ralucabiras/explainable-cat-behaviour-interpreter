@@ -10,5 +10,6 @@ dist/
 *.tsbuildinfo
 vite.config.js
 coverage/
+backend/evaluation/results/
 *.log
 .DS_Store
