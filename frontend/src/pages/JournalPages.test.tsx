@@ -146,6 +146,26 @@ describe("journal pages", () => {
     await waitFor(() => expect(refresh).toHaveBeenCalled());
     expect(screen.queryByText(/Cannot read properties/)).not.toBeInTheDocument();
   });
+
+  it("submits a selected breed, multiple standard triggers, and a custom trigger", async () => {
+    render(<MemoryRouter><PetsPage pets={[]} refresh={vi.fn().mockResolvedValue(undefined)} /></MemoryRouter>);
+    fireEvent.change(screen.getByLabelText("Name"), { target: { value: "Nova" } });
+    fireEvent.change(screen.getByLabelText("Breed"), { target: { value: "Bengal" } });
+    fireEvent.click(screen.getByText("Personality and known triggers"));
+    fireEvent.click(screen.getByLabelText("Vacuum cleaner"));
+    fireEvent.click(screen.getByLabelText("Fireworks"));
+    fireEvent.click(screen.getByRole("button", { name: "+ Other trigger" }));
+    fireEvent.change(screen.getByLabelText("Other trigger"), { target: { value: "Robot toy" } });
+    fireEvent.click(screen.getByRole("button", { name: "Add trigger" }));
+    fireEvent.click(screen.getByRole("button", { name: "Save profile" }));
+
+    await waitFor(() => expect(api.createPet).toHaveBeenCalledWith(
+      expect.objectContaining({
+        breed: "Bengal",
+        known_triggers: ["Vacuum cleaner", "Fireworks", "Robot toy"],
+      }),
+    ));
+  });
 });
 
 function renderPetPage(onPetsChanged = vi.fn().mockResolvedValue(undefined)) {

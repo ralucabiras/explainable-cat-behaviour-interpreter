@@ -40,7 +40,7 @@ export function PetsPage({ pets, refresh }: { pets: Pet[]; refresh: () => Promis
         sociability_with_people: String(form.get("sociability_with_people")) as Sociability,
         sociability_with_animals: String(form.get("sociability_with_animals")) as Sociability,
         routine_sensitivity: String(form.get("routine_sensitivity")) as RoutineSensitivity,
-        known_triggers: String(form.get("known_triggers")).split(",").map((item) => item.trim()).filter(Boolean),
+        known_triggers: form.getAll("known_triggers").map(String),
         personality_notes: String(form.get("personality_notes")) || undefined,
       });
       formElement.reset();
