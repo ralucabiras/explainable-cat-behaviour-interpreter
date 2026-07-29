@@ -167,6 +167,23 @@ changes, and status `2` for invalid input or file errors. Add scenarios by follo
 existing JSON schema: every case needs a unique stable ID, cat profile, observation,
 expected state, and expected safety flag.
 
+## Video dataset preparation
+
+The observable-action dataset workflow is provenance-first and does not bundle third-party
+videos. Its initial inventory and annotation guide live under `backend/video_dataset`.
+
+```bash
+cd backend
+python -m app.video_dataset.cli validate --manifest video_dataset/manifests/v1.inventory.json
+python -m app.video_dataset.cli inspect --manifest manifest.json --media-root video_dataset/media --output inspected.json
+python -m app.video_dataset.cli split --manifest inspected.json --output split.json
+python -m app.video_dataset.cli report --manifest split.json --output video_dataset/reports/feasibility.json
+```
+
+The tooling validates licenses and provenance, decodes files, records checksums and media
+metadata, detects exact and possible visual duplicates, preserves source groups across
+splits, and applies the documented training-feasibility thresholds.
+
 ## Current analysis scope
 
 The English-language baseline covers nine broad cat behaviour states, context-aware weighted evidence, simple negation, uncertainty, alternatives, and urgent safety escalation. Its confidence value is evidence strength from deterministic rules, not a medically validated probability.

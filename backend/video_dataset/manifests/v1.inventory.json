@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_version": "1.0.0-inventory",
+  "description": "Provenance-first inventory for observable domestic-cat video actions. No footage is bundled.",
+  "sources": [
+    {
+      "id": "animal_kingdom",
+      "name": "Animal Kingdom",
+      "homepage": "https://sutdcv.github.io/Animal-Kingdom/",
+      "status": "needs_review",
+      "notes": "Audit the domestic-cat subset, exact action labels, download terms, and redistribution rules before adding clips."
+    },
+    {
+      "id": "wikimedia_commons",
+      "name": "Wikimedia Commons",
+      "homepage": "https://commons.wikimedia.org/",
+      "status": "available",
+      "notes": "Licensing is per file. Record the exact license, attribution, and original file page for every clip."
+    },
+    {
+      "id": "cat_royale",
+      "name": "Cat Royale Comprehensive Dataset",
+      "homepage": "https://zenodo.org/records/19498944",
+      "status": "unavailable",
+      "notes": "Metadata exists, but files are restricted and there is no confirmed usable release. Do not make it a project dependency."
+    },
+    {
+      "id": "research_supplement",
+      "name": "Research supplementary videos",
+      "homepage": "https://figshare.com/",
+      "status": "needs_review",
+      "notes": "Only use individual supplements with an explicit reusable license and compatible consent."
+    }
+  ],
+  "clips": []
+}

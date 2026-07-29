@@ -12,5 +12,7 @@ vite.config.js
 coverage/
 backend/evaluation/results/
 backend/data/media/
+backend/video_dataset/media/
+backend/video_dataset/reports/
 *.log
 .DS_Store
