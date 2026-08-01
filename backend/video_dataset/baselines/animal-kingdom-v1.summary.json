@@ -1,0 +1,32 @@
+{
+  "candidate_action_records": 23087,
+  "cloud_bytes": 74230818217,
+  "cloud_objects": 8,
+  "dataset_version": "animal-kingdom-v1",
+  "downloaded_large_media": false,
+  "mapped_video_counts": {
+    "drinking": 1008,
+    "eating": 3955,
+    "exploring": 475,
+    "grooming": 392,
+    "hissing": 96,
+    "keeping_still": 7979,
+    "licking": 37,
+    "locomotion": 3007,
+    "lying_down": 1,
+    "playing": 55,
+    "resting": 24,
+    "running": 924,
+    "sitting": 154,
+    "sleeping": 18,
+    "walking": 4962
+  },
+  "media_archive_members_verified": false,
+  "source_split_counts": {
+    "test": 6096,
+    "train": 24004
+  },
+  "species_metadata_available": false,
+  "target_source_videos": 18021,
+  "total_source_videos": 30100
+}

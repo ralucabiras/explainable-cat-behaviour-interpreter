@@ -14,5 +14,7 @@ backend/evaluation/results/
 backend/data/media/
 backend/video_dataset/media/
 backend/video_dataset/reports/
+backend/video_dataset/animal_kingdom/
+backend/video_dataset/archive.zip
 *.log
 .DS_Store

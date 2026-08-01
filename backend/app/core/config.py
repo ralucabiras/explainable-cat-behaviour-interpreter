@@ -23,6 +23,8 @@ class Settings(BaseSettings):
     media_root: str = "data/media"
     max_video_bytes: int = 50 * 1024 * 1024
     max_video_seconds: int = 30
+    gcs_dataset_bucket: str | None = None
+    gcs_dataset_prefix: str = "raw/animal-kingdom"
 
     model_config = SettingsConfigDict(
         env_file=(ROOT_ENV_FILE, ".env"),

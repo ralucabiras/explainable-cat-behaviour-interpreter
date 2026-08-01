@@ -8,9 +8,19 @@ from app.models.common import APIModel
 class ObservableAction(StrEnum):
     RESTING = "resting"
     LOCOMOTION = "locomotion"
+    WALKING = "walking"
+    RUNNING = "running"
     PLAYING = "playing"
     GROOMING = "grooming"
     EATING = "eating"
+    DRINKING = "drinking"
+    LICKING = "licking"
+    SLEEPING = "sleeping"
+    SITTING = "sitting"
+    LYING_DOWN = "lying_down"
+    KEEPING_STILL = "keeping_still"
+    EXPLORING = "exploring"
+    HISSING = "hissing"
     UNCERTAIN = "uncertain"
 
 
