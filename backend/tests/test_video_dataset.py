@@ -12,6 +12,12 @@ from pydantic import ValidationError
 from app.video_dataset.animal_kingdom import audit_action_archive, iter_annotation_rows
 from app.video_dataset.cloud import GCloudStorage
 from app.video_dataset.models import VideoDatasetManifest
+from app.video_dataset.review import (
+    ReviewPlan,
+    ReviewSubmission,
+    build_review_plan,
+    validate_review_submission,
+)
 from app.video_dataset.service import (
     assign_grouped_splits,
     build_report,
@@ -128,6 +134,56 @@ def test_cloud_inventory_is_sorted_and_totals_bytes() -> None:
     inventory = FakeStorage().inventory("bucket", "raw")
     assert inventory.total_bytes == 30
     assert [item.name for item in inventory.objects] == ["raw/a.zip", "raw/z.zip"]
+
+
+def test_review_sample_is_deterministic_balanced_and_group_unique() -> None:
+    clips = []
+    for index in range(8):
+        clips.append(
+            {
+                **_clip(f"rest-{index}", f"group-{index}"),
+                "source_clip_id": f"SOURCE{index}",
+                "source_url": f"video/SOURCE{index}.mp4",
+                "action": "resting",
+            }
+        )
+        if index < 4:
+            clips.append(
+                {
+                    **_clip(f"play-{index}", f"group-{index}"),
+                    "source_clip_id": f"SOURCE{index}",
+                    "source_url": f"video/SOURCE{index}.mp4",
+                    "action": "playing",
+                }
+            )
+    manifest = _manifest(clips)
+    first = build_review_plan(manifest, "gs://bucket/video.tar.gz", per_action=3)
+    second = build_review_plan(manifest, "gs://bucket/video.tar.gz", per_action=3)
+
+    assert first == second
+    assert first.coverage_by_action["resting"] >= 3
+    assert first.coverage_by_action["playing"] == 3
+    assert len({item.group_id for item in first.items}) == len(first.items)
+    assert ReviewPlan.model_validate_json(first.model_dump_json()) == first
+
+    submission = ReviewSubmission.model_validate(
+        {
+            "plan_version": first.plan_version,
+            "labels": [
+                {
+                    "item_id": first.items[0].id,
+                    "species": "domestic_cat",
+                    "suitability": "suitable",
+                    "visible_actions": ["playing"],
+                }
+            ],
+        }
+    )
+    result = validate_review_submission(first, submission)
+    assert result["submitted_items"] == 1
+    assert result["complete"] is False
+    with pytest.raises(ValueError, match="Review is incomplete"):
+        validate_review_submission(first, submission, require_complete=True)
 
 
 def _manifest(clips: list[dict]) -> VideoDatasetManifest:

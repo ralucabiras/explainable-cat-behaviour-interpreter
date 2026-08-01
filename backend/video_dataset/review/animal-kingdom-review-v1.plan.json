@@ -1,0 +1,2595 @@
+{
+  "coverage_by_action": {
+    "drinking": 20,
+    "eating": 20,
+    "exploring": 20,
+    "grooming": 20,
+    "hissing": 20,
+    "keeping_still": 46,
+    "licking": 20,
+    "locomotion": 20,
+    "lying_down": 1,
+    "playing": 21,
+    "resting": 20,
+    "running": 20,
+    "sitting": 20,
+    "sleeping": 18,
+    "walking": 49
+  },
+  "dataset_version": "animal-kingdom-v1",
+  "items": [
+    {
+      "actions": [
+        "eating",
+        "exploring",
+        "keeping_still"
+      ],
+      "archive_member": "video/AMEXOBQT.mp4",
+      "group_id": "ak-amexobqt",
+      "id": "review-amexobqt",
+      "selected_for": [
+        "exploring"
+      ],
+      "source_clip_id": "AMEXOBQT"
+    },
+    {
+      "actions": [
+        "running"
+      ],
+      "archive_member": "video/AOZWOKEW.mp4",
+      "group_id": "ak-aozwokew",
+      "id": "review-aozwokew",
+      "selected_for": [
+        "running"
+      ],
+      "source_clip_id": "AOZWOKEW"
+    },
+    {
+      "actions": [
+        "exploring"
+      ],
+      "archive_member": "video/APVDFYUQ.mp4",
+      "group_id": "ak-apvdfyuq",
+      "id": "review-apvdfyuq",
+      "selected_for": [
+        "exploring"
+      ],
+      "source_clip_id": "APVDFYUQ"
+    },
+    {
+      "actions": [
+        "licking"
+      ],
+      "archive_member": "video/AQEOBXPO.mp4",
+      "group_id": "ak-aqeobxpo",
+      "id": "review-aqeobxpo",
+      "selected_for": [
+        "licking"
+      ],
+      "source_clip_id": "AQEOBXPO"
+    },
+    {
+      "actions": [
+        "eating",
+        "resting"
+      ],
+      "archive_member": "video/ASCJGAMC.mp4",
+      "group_id": "ak-ascjgamc",
+      "id": "review-ascjgamc",
+      "selected_for": [
+        "resting"
+      ],
+      "source_clip_id": "ASCJGAMC"
+    },
+    {
+      "actions": [
+        "exploring"
+      ],
+      "archive_member": "video/ASGWDEOD.mp4",
+      "group_id": "ak-asgwdeod",
+      "id": "review-asgwdeod",
+      "selected_for": [
+        "exploring"
+      ],
+      "source_clip_id": "ASGWDEOD"
+    },
+    {
+      "actions": [
+        "eating"
+      ],
+      "archive_member": "video/AVYOHHGW.mp4",
+      "group_id": "ak-avyohhgw",
+      "id": "review-avyohhgw",
+      "selected_for": [
+        "eating"
+      ],
+      "source_clip_id": "AVYOHHGW"
+    },
+    {
+      "actions": [
+        "exploring"
+      ],
+      "archive_member": "video/AWSISZYO.mp4",
+      "group_id": "ak-awsiszyo",
+      "id": "review-awsiszyo",
+      "selected_for": [
+        "exploring"
+      ],
+      "source_clip_id": "AWSISZYO"
+    },
+    {
+      "actions": [
+        "locomotion"
+      ],
+      "archive_member": "video/AZEAVOOZ.mp4",
+      "group_id": "ak-azeavooz",
+      "id": "review-azeavooz",
+      "selected_for": [
+        "locomotion"
+      ],
+      "source_clip_id": "AZEAVOOZ"
+    },
+    {
+      "actions": [
+        "running",
+        "walking"
+      ],
+      "archive_member": "video/AZLUOAMC.mp4",
+      "group_id": "ak-azluoamc",
+      "id": "review-azluoamc",
+      "selected_for": [
+        "running"
+      ],
+      "source_clip_id": "AZLUOAMC"
+    },
+    {
+      "actions": [
+        "resting",
+        "sitting"
+      ],
+      "archive_member": "video/AZNITHAQ.mp4",
+      "group_id": "ak-aznithaq",
+      "id": "review-aznithaq",
+      "selected_for": [
+        "resting"
+      ],
+      "source_clip_id": "AZNITHAQ"
+    },
+    {
+      "actions": [
+        "playing",
+        "walking"
+      ],
+      "archive_member": "video/BCJZGAMC.mp4",
+      "group_id": "ak-bcjzgamc",
+      "id": "review-bcjzgamc",
+      "selected_for": [
+        "playing"
+      ],
+      "source_clip_id": "BCJZGAMC"
+    },
+    {
+      "actions": [
+        "resting",
+        "sitting"
+      ],
+      "archive_member": "video/BCKMIHAQ.mp4",
+      "group_id": "ak-bckmihaq",
+      "id": "review-bckmihaq",
+      "selected_for": [
+        "resting"
+      ],
+      "source_clip_id": "BCKMIHAQ"
+    },
+    {
+      "actions": [
+        "grooming",
+        "playing"
+      ],
+      "archive_member": "video/BFDSJAMC.mp4",
+      "group_id": "ak-bfdsjamc",
+      "id": "review-bfdsjamc",
+      "selected_for": [
+        "playing"
+      ],
+      "source_clip_id": "BFDSJAMC"
+    },
+    {
+      "actions": [
+        "licking"
+      ],
+      "archive_member": "video/BFHTBGEG.mp4",
+      "group_id": "ak-bfhtbgeg",
+      "id": "review-bfhtbgeg",
+      "selected_for": [
+        "licking"
+      ],
+      "source_clip_id": "BFHTBGEG"
+    },
+    {
+      "actions": [
+        "sleeping"
+      ],
+      "archive_member": "video/BHGGYPIF.mp4",
+      "group_id": "ak-bhggypif",
+      "id": "review-bhggypif",
+      "selected_for": [
+        "sleeping"
+      ],
+      "source_clip_id": "BHGGYPIF"
+    },
+    {
+      "actions": [
+        "licking"
+      ],
+      "archive_member": "video/CBRFRBQT.mp4",
+      "group_id": "ak-cbrfrbqt",
+      "id": "review-cbrfrbqt",
+      "selected_for": [
+        "licking"
+      ],
+      "source_clip_id": "CBRFRBQT"
+    },
+    {
+      "actions": [
+        "grooming",
+        "keeping_still",
+        "locomotion"
+      ],
+      "archive_member": "video/CFGQHMVW.mp4",
+      "group_id": "ak-cfgqhmvw",
+      "id": "review-cfgqhmvw",
+      "selected_for": [
+        "grooming"
+      ],
+      "source_clip_id": "CFGQHMVW"
+    },
+    {
+      "actions": [
+        "exploring",
+        "sitting",
+        "walking"
+      ],
+      "archive_member": "video/CIMMKZTV.mp4",
+      "group_id": "ak-cimmkztv",
+      "id": "review-cimmkztv",
+      "selected_for": [
+        "sitting"
+      ],
+      "source_clip_id": "CIMMKZTV"
+    },
+    {
+      "actions": [
+        "keeping_still",
+        "licking"
+      ],
+      "archive_member": "video/CJIQBBQT.mp4",
+      "group_id": "ak-cjiqbbqt",
+      "id": "review-cjiqbbqt",
+      "selected_for": [
+        "licking"
+      ],
+      "source_clip_id": "CJIQBBQT"
+    },
+    {
+      "actions": [
+        "keeping_still",
+        "sitting",
+        "walking"
+      ],
+      "archive_member": "video/CPVKAGCS.mp4",
+      "group_id": "ak-cpvkagcs",
+      "id": "review-cpvkagcs",
+      "selected_for": [
+        "sitting"
+      ],
+      "source_clip_id": "CPVKAGCS"
+    },
+    {
+      "actions": [
+        "keeping_still",
+        "licking"
+      ],
+      "archive_member": "video/CPZETBQT.mp4",
+      "group_id": "ak-cpzetbqt",
+      "id": "review-cpzetbqt",
+      "selected_for": [
+        "licking"
+      ],
+      "source_clip_id": "CPZETBQT"
+    },
+    {
+      "actions": [
+        "grooming",
+        "locomotion"
+      ],
+      "archive_member": "video/CQKZBFAU.mp4",
+      "group_id": "ak-cqkzbfau",
+      "id": "review-cqkzbfau",
+      "selected_for": [
+        "grooming"
+      ],
+      "source_clip_id": "CQKZBFAU"
+    },
+    {
+      "actions": [
+        "running"
+      ],
+      "archive_member": "video/CRZOFLKY.mp4",
+      "group_id": "ak-crzoflky",
+      "id": "review-crzoflky",
+      "selected_for": [
+        "running"
+      ],
+      "source_clip_id": "CRZOFLKY"
+    },
+    {
+      "actions": [
+        "eating"
+      ],
+      "archive_member": "video/CUSMQOXJ.mp4",
+      "group_id": "ak-cusmqoxj",
+      "id": "review-cusmqoxj",
+      "selected_for": [
+        "eating"
+      ],
+      "source_clip_id": "CUSMQOXJ"
+    },
+    {
+      "actions": [
+        "licking"
+      ],
+      "archive_member": "video/CVYMYGEG.mp4",
+      "group_id": "ak-cvymygeg",
+      "id": "review-cvymygeg",
+      "selected_for": [
+        "licking"
+      ],
+      "source_clip_id": "CVYMYGEG"
+    },
+    {
+      "actions": [
+        "running",
+        "walking"
+      ],
+      "archive_member": "video/CWJXUVKA.mp4",
+      "group_id": "ak-cwjxuvka",
+      "id": "review-cwjxuvka",
+      "selected_for": [
+        "running"
+      ],
+      "source_clip_id": "CWJXUVKA"
+    },
+    {
+      "actions": [
+        "drinking",
+        "walking"
+      ],
+      "archive_member": "video/DHCUOTFT.mp4",
+      "group_id": "ak-dhcuotft",
+      "id": "review-dhcuotft",
+      "selected_for": [
+        "drinking"
+      ],
+      "source_clip_id": "DHCUOTFT"
+    },
+    {
+      "actions": [
+        "drinking"
+      ],
+      "archive_member": "video/DKQMETFT.mp4",
+      "group_id": "ak-dkqmetft",
+      "id": "review-dkqmetft",
+      "selected_for": [
+        "drinking"
+      ],
+      "source_clip_id": "DKQMETFT"
+    },
+    {
+      "actions": [
+        "playing",
+        "walking"
+      ],
+      "archive_member": "video/DURLJAMC.mp4",
+      "group_id": "ak-durljamc",
+      "id": "review-durljamc",
+      "selected_for": [
+        "playing"
+      ],
+      "source_clip_id": "DURLJAMC"
+    },
+    {
+      "actions": [
+        "sitting"
+      ],
+      "archive_member": "video/DXCSPGCS.mp4",
+      "group_id": "ak-dxcspgcs",
+      "id": "review-dxcspgcs",
+      "selected_for": [
+        "sitting"
+      ],
+      "source_clip_id": "DXCSPGCS"
+    },
+    {
+      "actions": [
+        "keeping_still",
+        "licking"
+      ],
+      "archive_member": "video/DYKTSGEG.mp4",
+      "group_id": "ak-dyktsgeg",
+      "id": "review-dyktsgeg",
+      "selected_for": [
+        "licking"
+      ],
+      "source_clip_id": "DYKTSGEG"
+    },
+    {
+      "actions": [
+        "keeping_still",
+        "licking"
+      ],
+      "archive_member": "video/DYOGIGEG.mp4",
+      "group_id": "ak-dyogigeg",
+      "id": "review-dyogigeg",
+      "selected_for": [
+        "licking"
+      ],
+      "source_clip_id": "DYOGIGEG"
+    },
+    {
+      "actions": [
+        "licking"
+      ],
+      "archive_member": "video/EAWZLBQT.mp4",
+      "group_id": "ak-eawzlbqt",
+      "id": "review-eawzlbqt",
+      "selected_for": [
+        "licking"
+      ],
+      "source_clip_id": "EAWZLBQT"
+    },
+    {
+      "actions": [
+        "drinking",
+        "keeping_still",
+        "walking"
+      ],
+      "archive_member": "video/EBIXVPKK.mp4",
+      "group_id": "ak-ebixvpkk",
+      "id": "review-ebixvpkk",
+      "selected_for": [
+        "drinking"
+      ],
+      "source_clip_id": "EBIXVPKK"
+    },
+    {
+      "actions": [
+        "running"
+      ],
+      "archive_member": "video/EERMFRAC.mp4",
+      "group_id": "ak-eermfrac",
+      "id": "review-eermfrac",
+      "selected_for": [
+        "running"
+      ],
+      "source_clip_id": "EERMFRAC"
+    },
+    {
+      "actions": [
+        "keeping_still",
+        "licking"
+      ],
+      "archive_member": "video/EFUPBBQT.mp4",
+      "group_id": "ak-efupbbqt",
+      "id": "review-efupbbqt",
+      "selected_for": [
+        "licking"
+      ],
+      "source_clip_id": "EFUPBBQT"
+    },
+    {
+      "actions": [
+        "playing"
+      ],
+      "archive_member": "video/EIDCMHGW.mp4",
+      "group_id": "ak-eidcmhgw",
+      "id": "review-eidcmhgw",
+      "selected_for": [
+        "playing"
+      ],
+      "source_clip_id": "EIDCMHGW"
+    },
+    {
+      "actions": [
+        "keeping_still",
+        "sleeping"
+      ],
+      "archive_member": "video/EJQITVYU.mp4",
+      "group_id": "ak-ejqitvyu",
+      "id": "review-ejqitvyu",
+      "selected_for": [
+        "sleeping"
+      ],
+      "source_clip_id": "EJQITVYU"
+    },
+    {
+      "actions": [
+        "exploring"
+      ],
+      "archive_member": "video/EKSKXWPM.mp4",
+      "group_id": "ak-ekskxwpm",
+      "id": "review-ekskxwpm",
+      "selected_for": [
+        "exploring"
+      ],
+      "source_clip_id": "EKSKXWPM"
+    },
+    {
+      "actions": [
+        "resting"
+      ],
+      "archive_member": "video/ELGJYWUH.mp4",
+      "group_id": "ak-elgjywuh",
+      "id": "review-elgjywuh",
+      "selected_for": [
+        "resting"
+      ],
+      "source_clip_id": "ELGJYWUH"
+    },
+    {
+      "actions": [
+        "licking"
+      ],
+      "archive_member": "video/EQNHAGEG.mp4",
+      "group_id": "ak-eqnhageg",
+      "id": "review-eqnhageg",
+      "selected_for": [
+        "licking"
+      ],
+      "source_clip_id": "EQNHAGEG"
+    },
+    {
+      "actions": [
+        "resting",
+        "walking"
+      ],
+      "archive_member": "video/EVOVAXDO.mp4",
+      "group_id": "ak-evovaxdo",
+      "id": "review-evovaxdo",
+      "selected_for": [
+        "resting"
+      ],
+      "source_clip_id": "EVOVAXDO"
+    },
+    {
+      "actions": [
+        "grooming",
+        "keeping_still",
+        "playing",
+        "walking"
+      ],
+      "archive_member": "video/EZCZNAMC.mp4",
+      "group_id": "ak-ezcznamc",
+      "id": "review-ezcznamc",
+      "selected_for": [
+        "playing"
+      ],
+      "source_clip_id": "EZCZNAMC"
+    },
+    {
+      "actions": [
+        "hissing",
+        "walking"
+      ],
+      "archive_member": "video/FBDNTIQR.mp4",
+      "group_id": "ak-fbdntiqr",
+      "id": "review-fbdntiqr",
+      "selected_for": [
+        "hissing"
+      ],
+      "source_clip_id": "FBDNTIQR"
+    },
+    {
+      "actions": [
+        "sleeping",
+        "walking"
+      ],
+      "archive_member": "video/FCQYFNXN.mp4",
+      "group_id": "ak-fcqyfnxn",
+      "id": "review-fcqyfnxn",
+      "selected_for": [
+        "sleeping"
+      ],
+      "source_clip_id": "FCQYFNXN"
+    },
+    {
+      "actions": [
+        "exploring",
+        "keeping_still"
+      ],
+      "archive_member": "video/FDAETBQT.mp4",
+      "group_id": "ak-fdaetbqt",
+      "id": "review-fdaetbqt",
+      "selected_for": [
+        "exploring"
+      ],
+      "source_clip_id": "FDAETBQT"
+    },
+    {
+      "actions": [
+        "hissing"
+      ],
+      "archive_member": "video/FDPCJUXS.mp4",
+      "group_id": "ak-fdpcjuxs",
+      "id": "review-fdpcjuxs",
+      "selected_for": [
+        "hissing"
+      ],
+      "source_clip_id": "FDPCJUXS"
+    },
+    {
+      "actions": [
+        "exploring"
+      ],
+      "archive_member": "video/FFGJOLOI.mp4",
+      "group_id": "ak-ffgjoloi",
+      "id": "review-ffgjoloi",
+      "selected_for": [
+        "exploring"
+      ],
+      "source_clip_id": "FFGJOLOI"
+    },
+    {
+      "actions": [
+        "playing",
+        "walking"
+      ],
+      "archive_member": "video/FFGYWAMC.mp4",
+      "group_id": "ak-ffgywamc",
+      "id": "review-ffgywamc",
+      "selected_for": [
+        "playing"
+      ],
+      "source_clip_id": "FFGYWAMC"
+    },
+    {
+      "actions": [
+        "resting"
+      ],
+      "archive_member": "video/FHIQKBQT.mp4",
+      "group_id": "ak-fhiqkbqt",
+      "id": "review-fhiqkbqt",
+      "selected_for": [
+        "resting"
+      ],
+      "source_clip_id": "FHIQKBQT"
+    },
+    {
+      "actions": [
+        "playing"
+      ],
+      "archive_member": "video/FJCHTKRF.mp4",
+      "group_id": "ak-fjchtkrf",
+      "id": "review-fjchtkrf",
+      "selected_for": [
+        "playing"
+      ],
+      "source_clip_id": "FJCHTKRF"
+    },
+    {
+      "actions": [
+        "sleeping"
+      ],
+      "archive_member": "video/FPLXRZQJ.mp4",
+      "group_id": "ak-fplxrzqj",
+      "id": "review-fplxrzqj",
+      "selected_for": [
+        "sleeping"
+      ],
+      "source_clip_id": "FPLXRZQJ"
+    },
+    {
+      "actions": [
+        "grooming"
+      ],
+      "archive_member": "video/FQCRCUXR.mp4",
+      "group_id": "ak-fqcrcuxr",
+      "id": "review-fqcrcuxr",
+      "selected_for": [
+        "grooming"
+      ],
+      "source_clip_id": "FQCRCUXR"
+    },
+    {
+      "actions": [
+        "hissing"
+      ],
+      "archive_member": "video/FSNAJEUL.mp4",
+      "group_id": "ak-fsnajeul",
+      "id": "review-fsnajeul",
+      "selected_for": [
+        "hissing"
+      ],
+      "source_clip_id": "FSNAJEUL"
+    },
+    {
+      "actions": [
+        "resting"
+      ],
+      "archive_member": "video/FTPSZZTV.mp4",
+      "group_id": "ak-ftpszztv",
+      "id": "review-ftpszztv",
+      "selected_for": [
+        "resting"
+      ],
+      "source_clip_id": "FTPSZZTV"
+    },
+    {
+      "actions": [
+        "drinking"
+      ],
+      "archive_member": "video/FWLVBTFT.mp4",
+      "group_id": "ak-fwlvbtft",
+      "id": "review-fwlvbtft",
+      "selected_for": [
+        "drinking"
+      ],
+      "source_clip_id": "FWLVBTFT"
+    },
+    {
+      "actions": [
+        "locomotion"
+      ],
+      "archive_member": "video/GAKPHDFS.mp4",
+      "group_id": "ak-gakphdfs",
+      "id": "review-gakphdfs",
+      "selected_for": [
+        "locomotion"
+      ],
+      "source_clip_id": "GAKPHDFS"
+    },
+    {
+      "actions": [
+        "running"
+      ],
+      "archive_member": "video/GBGTENSU.mp4",
+      "group_id": "ak-gbgtensu",
+      "id": "review-gbgtensu",
+      "selected_for": [
+        "running"
+      ],
+      "source_clip_id": "GBGTENSU"
+    },
+    {
+      "actions": [
+        "drinking"
+      ],
+      "archive_member": "video/GDVTQVYU.mp4",
+      "group_id": "ak-gdvtqvyu",
+      "id": "review-gdvtqvyu",
+      "selected_for": [
+        "drinking"
+      ],
+      "source_clip_id": "GDVTQVYU"
+    },
+    {
+      "actions": [
+        "playing"
+      ],
+      "archive_member": "video/GIFVCAMC.mp4",
+      "group_id": "ak-gifvcamc",
+      "id": "review-gifvcamc",
+      "selected_for": [
+        "playing"
+      ],
+      "source_clip_id": "GIFVCAMC"
+    },
+    {
+      "actions": [
+        "hissing",
+        "locomotion"
+      ],
+      "archive_member": "video/GJNJCEUL.mp4",
+      "group_id": "ak-gjnjceul",
+      "id": "review-gjnjceul",
+      "selected_for": [
+        "hissing"
+      ],
+      "source_clip_id": "GJNJCEUL"
+    },
+    {
+      "actions": [
+        "locomotion",
+        "sleeping"
+      ],
+      "archive_member": "video/GNVRMNXN.mp4",
+      "group_id": "ak-gnvrmnxn",
+      "id": "review-gnvrmnxn",
+      "selected_for": [
+        "sleeping"
+      ],
+      "source_clip_id": "GNVRMNXN"
+    },
+    {
+      "actions": [
+        "grooming",
+        "playing",
+        "walking"
+      ],
+      "archive_member": "video/GTHORAMC.mp4",
+      "group_id": "ak-gthoramc",
+      "id": "review-gthoramc",
+      "selected_for": [
+        "playing"
+      ],
+      "source_clip_id": "GTHORAMC"
+    },
+    {
+      "actions": [
+        "sleeping"
+      ],
+      "archive_member": "video/HXYRJBQT.mp4",
+      "group_id": "ak-hxyrjbqt",
+      "id": "review-hxyrjbqt",
+      "selected_for": [
+        "sleeping"
+      ],
+      "source_clip_id": "HXYRJBQT"
+    },
+    {
+      "actions": [
+        "drinking",
+        "walking"
+      ],
+      "archive_member": "video/IHVJQTFT.mp4",
+      "group_id": "ak-ihvjqtft",
+      "id": "review-ihvjqtft",
+      "selected_for": [
+        "drinking"
+      ],
+      "source_clip_id": "IHVJQTFT"
+    },
+    {
+      "actions": [
+        "drinking",
+        "walking"
+      ],
+      "archive_member": "video/INQJDTFT.mp4",
+      "group_id": "ak-inqjdtft",
+      "id": "review-inqjdtft",
+      "selected_for": [
+        "drinking"
+      ],
+      "source_clip_id": "INQJDTFT"
+    },
+    {
+      "actions": [
+        "licking"
+      ],
+      "archive_member": "video/IOACKBQT.mp4",
+      "group_id": "ak-ioackbqt",
+      "id": "review-ioackbqt",
+      "selected_for": [
+        "licking"
+      ],
+      "source_clip_id": "IOACKBQT"
+    },
+    {
+      "actions": [
+        "grooming",
+        "keeping_still",
+        "locomotion"
+      ],
+      "archive_member": "video/IOWJKMVW.mp4",
+      "group_id": "ak-iowjkmvw",
+      "id": "review-iowjkmvw",
+      "selected_for": [
+        "grooming"
+      ],
+      "source_clip_id": "IOWJKMVW"
+    },
+    {
+      "actions": [
+        "drinking"
+      ],
+      "archive_member": "video/ITBIHTFT.mp4",
+      "group_id": "ak-itbihtft",
+      "id": "review-itbihtft",
+      "selected_for": [
+        "drinking"
+      ],
+      "source_clip_id": "ITBIHTFT"
+    },
+    {
+      "actions": [
+        "grooming",
+        "locomotion"
+      ],
+      "archive_member": "video/IVPQZMVW.mp4",
+      "group_id": "ak-ivpqzmvw",
+      "id": "review-ivpqzmvw",
+      "selected_for": [
+        "grooming"
+      ],
+      "source_clip_id": "IVPQZMVW"
+    },
+    {
+      "actions": [
+        "sitting"
+      ],
+      "archive_member": "video/IWZGKBQT.mp4",
+      "group_id": "ak-iwzgkbqt",
+      "id": "review-iwzgkbqt",
+      "selected_for": [
+        "sitting"
+      ],
+      "source_clip_id": "IWZGKBQT"
+    },
+    {
+      "actions": [
+        "grooming",
+        "sitting"
+      ],
+      "archive_member": "video/IYVZNNBD.mp4",
+      "group_id": "ak-iyvznnbd",
+      "id": "review-iyvznnbd",
+      "selected_for": [
+        "sitting"
+      ],
+      "source_clip_id": "IYVZNNBD"
+    },
+    {
+      "actions": [
+        "resting",
+        "sitting"
+      ],
+      "archive_member": "video/IZVCZHAQ.mp4",
+      "group_id": "ak-izvczhaq",
+      "id": "review-izvczhaq",
+      "selected_for": [
+        "resting"
+      ],
+      "source_clip_id": "IZVCZHAQ"
+    },
+    {
+      "actions": [
+        "sitting",
+        "walking"
+      ],
+      "archive_member": "video/JESMEAMC.mp4",
+      "group_id": "ak-jesmeamc",
+      "id": "review-jesmeamc",
+      "selected_for": [
+        "sitting"
+      ],
+      "source_clip_id": "JESMEAMC"
+    },
+    {
+      "actions": [
+        "grooming",
+        "keeping_still",
+        "locomotion"
+      ],
+      "archive_member": "video/JNAQYMVW.mp4",
+      "group_id": "ak-jnaqymvw",
+      "id": "review-jnaqymvw",
+      "selected_for": [
+        "grooming"
+      ],
+      "source_clip_id": "JNAQYMVW"
+    },
+    {
+      "actions": [
+        "running"
+      ],
+      "archive_member": "video/JOLSRBQT.mp4",
+      "group_id": "ak-jolsrbqt",
+      "id": "review-jolsrbqt",
+      "selected_for": [
+        "running"
+      ],
+      "source_clip_id": "JOLSRBQT"
+    },
+    {
+      "actions": [
+        "drinking",
+        "keeping_still",
+        "walking"
+      ],
+      "archive_member": "video/JUYUYPKK.mp4",
+      "group_id": "ak-juyuypkk",
+      "id": "review-juyuypkk",
+      "selected_for": [
+        "drinking"
+      ],
+      "source_clip_id": "JUYUYPKK"
+    },
+    {
+      "actions": [
+        "keeping_still",
+        "playing",
+        "walking"
+      ],
+      "archive_member": "video/JWKWZAMC.mp4",
+      "group_id": "ak-jwkwzamc",
+      "id": "review-jwkwzamc",
+      "selected_for": [
+        "playing"
+      ],
+      "source_clip_id": "JWKWZAMC"
+    },
+    {
+      "actions": [
+        "grooming"
+      ],
+      "archive_member": "video/JXLJKLHH.mp4",
+      "group_id": "ak-jxljklhh",
+      "id": "review-jxljklhh",
+      "selected_for": [
+        "grooming"
+      ],
+      "source_clip_id": "JXLJKLHH"
+    },
+    {
+      "actions": [
+        "keeping_still",
+        "sleeping",
+        "walking"
+      ],
+      "archive_member": "video/KCGSJVYU.mp4",
+      "group_id": "ak-kcgsjvyu",
+      "id": "review-kcgsjvyu",
+      "selected_for": [
+        "sleeping"
+      ],
+      "source_clip_id": "KCGSJVYU"
+    },
+    {
+      "actions": [
+        "keeping_still",
+        "sitting",
+        "walking"
+      ],
+      "archive_member": "video/KHGINPKK.mp4",
+      "group_id": "ak-khginpkk",
+      "id": "review-khginpkk",
+      "selected_for": [
+        "sitting"
+      ],
+      "source_clip_id": "KHGINPKK"
+    },
+    {
+      "actions": [
+        "keeping_still",
+        "sitting",
+        "walking"
+      ],
+      "archive_member": "video/KSQKYGCS.mp4",
+      "group_id": "ak-ksqkygcs",
+      "id": "review-ksqkygcs",
+      "selected_for": [
+        "sitting"
+      ],
+      "source_clip_id": "KSQKYGCS"
+    },
+    {
+      "actions": [
+        "resting",
+        "sleeping"
+      ],
+      "archive_member": "video/KVRSBPIF.mp4",
+      "group_id": "ak-kvrsbpif",
+      "id": "review-kvrsbpif",
+      "selected_for": [
+        "sleeping"
+      ],
+      "source_clip_id": "KVRSBPIF"
+    },
+    {
+      "actions": [
+        "sitting",
+        "walking"
+      ],
+      "archive_member": "video/LCNFOAMC.mp4",
+      "group_id": "ak-lcnfoamc",
+      "id": "review-lcnfoamc",
+      "selected_for": [
+        "sitting"
+      ],
+      "source_clip_id": "LCNFOAMC"
+    },
+    {
+      "actions": [
+        "exploring"
+      ],
+      "archive_member": "video/LFDJTXGD.mp4",
+      "group_id": "ak-lfdjtxgd",
+      "id": "review-lfdjtxgd",
+      "selected_for": [
+        "exploring"
+      ],
+      "source_clip_id": "LFDJTXGD"
+    },
+    {
+      "actions": [
+        "hissing"
+      ],
+      "archive_member": "video/LJKSMUXS.mp4",
+      "group_id": "ak-ljksmuxs",
+      "id": "review-ljksmuxs",
+      "selected_for": [
+        "hissing"
+      ],
+      "source_clip_id": "LJKSMUXS"
+    },
+    {
+      "actions": [
+        "hissing",
+        "locomotion"
+      ],
+      "archive_member": "video/LKSSIEUL.mp4",
+      "group_id": "ak-lkssieul",
+      "id": "review-lkssieul",
+      "selected_for": [
+        "hissing"
+      ],
+      "source_clip_id": "LKSSIEUL"
+    },
+    {
+      "actions": [
+        "hissing",
+        "keeping_still"
+      ],
+      "archive_member": "video/LLMPZFUP.mp4",
+      "group_id": "ak-llmpzfup",
+      "id": "review-llmpzfup",
+      "selected_for": [
+        "hissing"
+      ],
+      "source_clip_id": "LLMPZFUP"
+    },
+    {
+      "actions": [
+        "exploring",
+        "walking"
+      ],
+      "archive_member": "video/LOQEVXGD.mp4",
+      "group_id": "ak-loqevxgd",
+      "id": "review-loqevxgd",
+      "selected_for": [
+        "exploring"
+      ],
+      "source_clip_id": "LOQEVXGD"
+    },
+    {
+      "actions": [
+        "licking"
+      ],
+      "archive_member": "video/LPPDMBQT.mp4",
+      "group_id": "ak-lppdmbqt",
+      "id": "review-lppdmbqt",
+      "selected_for": [
+        "licking"
+      ],
+      "source_clip_id": "LPPDMBQT"
+    },
+    {
+      "actions": [
+        "hissing"
+      ],
+      "archive_member": "video/LTOKIIQR.mp4",
+      "group_id": "ak-ltokiiqr",
+      "id": "review-ltokiiqr",
+      "selected_for": [
+        "hissing"
+      ],
+      "source_clip_id": "LTOKIIQR"
+    },
+    {
+      "actions": [
+        "grooming",
+        "keeping_still"
+      ],
+      "archive_member": "video/LWDIAJKU.mp4",
+      "group_id": "ak-lwdiajku",
+      "id": "review-lwdiajku",
+      "selected_for": [
+        "grooming"
+      ],
+      "source_clip_id": "LWDIAJKU"
+    },
+    {
+      "actions": [
+        "grooming",
+        "keeping_still",
+        "playing",
+        "walking"
+      ],
+      "archive_member": "video/LZMNQAMC.mp4",
+      "group_id": "ak-lzmnqamc",
+      "id": "review-lzmnqamc",
+      "selected_for": [
+        "playing"
+      ],
+      "source_clip_id": "LZMNQAMC"
+    },
+    {
+      "actions": [
+        "keeping_still",
+        "sitting",
+        "walking"
+      ],
+      "archive_member": "video/MDLBKGCS.mp4",
+      "group_id": "ak-mdlbkgcs",
+      "id": "review-mdlbkgcs",
+      "selected_for": [
+        "sitting"
+      ],
+      "source_clip_id": "MDLBKGCS"
+    },
+    {
+      "actions": [
+        "grooming",
+        "locomotion"
+      ],
+      "archive_member": "video/MJFBRSVW.mp4",
+      "group_id": "ak-mjfbrsvw",
+      "id": "review-mjfbrsvw",
+      "selected_for": [
+        "grooming"
+      ],
+      "source_clip_id": "MJFBRSVW"
+    },
+    {
+      "actions": [
+        "sitting",
+        "walking"
+      ],
+      "archive_member": "video/MJSCSAMC.mp4",
+      "group_id": "ak-mjscsamc",
+      "id": "review-mjscsamc",
+      "selected_for": [
+        "sitting"
+      ],
+      "source_clip_id": "MJSCSAMC"
+    },
+    {
+      "actions": [
+        "drinking",
+        "keeping_still",
+        "walking"
+      ],
+      "archive_member": "video/MNBQLPKK.mp4",
+      "group_id": "ak-mnbqlpkk",
+      "id": "review-mnbqlpkk",
+      "selected_for": [
+        "drinking"
+      ],
+      "source_clip_id": "MNBQLPKK"
+    },
+    {
+      "actions": [
+        "running"
+      ],
+      "archive_member": "video/MNKNGFGA.mp4",
+      "group_id": "ak-mnkngfga",
+      "id": "review-mnkngfga",
+      "selected_for": [
+        "running"
+      ],
+      "source_clip_id": "MNKNGFGA"
+    },
+    {
+      "actions": [
+        "hissing"
+      ],
+      "archive_member": "video/MPFOSUXS.mp4",
+      "group_id": "ak-mpfosuxs",
+      "id": "review-mpfosuxs",
+      "selected_for": [
+        "hissing"
+      ],
+      "source_clip_id": "MPFOSUXS"
+    },
+    {
+      "actions": [
+        "grooming"
+      ],
+      "archive_member": "video/MSAAGBRS.mp4",
+      "group_id": "ak-msaagbrs",
+      "id": "review-msaagbrs",
+      "selected_for": [
+        "grooming"
+      ],
+      "source_clip_id": "MSAAGBRS"
+    },
+    {
+      "actions": [
+        "running"
+      ],
+      "archive_member": "video/MSBNPXGD.mp4",
+      "group_id": "ak-msbnpxgd",
+      "id": "review-msbnpxgd",
+      "selected_for": [
+        "running"
+      ],
+      "source_clip_id": "MSBNPXGD"
+    },
+    {
+      "actions": [
+        "licking"
+      ],
+      "archive_member": "video/MUEJQDSN.mp4",
+      "group_id": "ak-muejqdsn",
+      "id": "review-muejqdsn",
+      "selected_for": [
+        "licking"
+      ],
+      "source_clip_id": "MUEJQDSN"
+    },
+    {
+      "actions": [
+        "drinking"
+      ],
+      "archive_member": "video/MUPXMWZS.mp4",
+      "group_id": "ak-mupxmwzs",
+      "id": "review-mupxmwzs",
+      "selected_for": [
+        "drinking"
+      ],
+      "source_clip_id": "MUPXMWZS"
+    },
+    {
+      "actions": [
+        "eating",
+        "running"
+      ],
+      "archive_member": "video/MVIALVEI.mp4",
+      "group_id": "ak-mvialvei",
+      "id": "review-mvialvei",
+      "selected_for": [
+        "running"
+      ],
+      "source_clip_id": "MVIALVEI"
+    },
+    {
+      "actions": [
+        "eating"
+      ],
+      "archive_member": "video/NITBYZIE.mp4",
+      "group_id": "ak-nitbyzie",
+      "id": "review-nitbyzie",
+      "selected_for": [
+        "eating"
+      ],
+      "source_clip_id": "NITBYZIE"
+    },
+    {
+      "actions": [
+        "resting",
+        "walking"
+      ],
+      "archive_member": "video/NKUIPWUH.mp4",
+      "group_id": "ak-nkuipwuh",
+      "id": "review-nkuipwuh",
+      "selected_for": [
+        "resting"
+      ],
+      "source_clip_id": "NKUIPWUH"
+    },
+    {
+      "actions": [
+        "running"
+      ],
+      "archive_member": "video/NRQXYXGD.mp4",
+      "group_id": "ak-nrqxyxgd",
+      "id": "review-nrqxyxgd",
+      "selected_for": [
+        "running"
+      ],
+      "source_clip_id": "NRQXYXGD"
+    },
+    {
+      "actions": [
+        "exploring",
+        "locomotion"
+      ],
+      "archive_member": "video/NYZJTBRS.mp4",
+      "group_id": "ak-nyzjtbrs",
+      "id": "review-nyzjtbrs",
+      "selected_for": [
+        "exploring"
+      ],
+      "source_clip_id": "NYZJTBRS"
+    },
+    {
+      "actions": [
+        "grooming",
+        "keeping_still",
+        "locomotion"
+      ],
+      "archive_member": "video/NZFRFPAB.mp4",
+      "group_id": "ak-nzfrfpab",
+      "id": "review-nzfrfpab",
+      "selected_for": [
+        "grooming"
+      ],
+      "source_clip_id": "NZFRFPAB"
+    },
+    {
+      "actions": [
+        "running"
+      ],
+      "archive_member": "video/OBOMFKBS.mp4",
+      "group_id": "ak-obomfkbs",
+      "id": "review-obomfkbs",
+      "selected_for": [
+        "running"
+      ],
+      "source_clip_id": "OBOMFKBS"
+    },
+    {
+      "actions": [
+        "exploring",
+        "playing"
+      ],
+      "archive_member": "video/OCCPKFFP.mp4",
+      "group_id": "ak-occpkffp",
+      "id": "review-occpkffp",
+      "selected_for": [
+        "exploring"
+      ],
+      "source_clip_id": "OCCPKFFP"
+    },
+    {
+      "actions": [
+        "resting",
+        "walking"
+      ],
+      "archive_member": "video/OFKTTUDX.mp4",
+      "group_id": "ak-ofkttudx",
+      "id": "review-ofkttudx",
+      "selected_for": [
+        "resting"
+      ],
+      "source_clip_id": "OFKTTUDX"
+    },
+    {
+      "actions": [
+        "drinking"
+      ],
+      "archive_member": "video/OGBCAPKK.mp4",
+      "group_id": "ak-ogbcapkk",
+      "id": "review-ogbcapkk",
+      "selected_for": [
+        "drinking"
+      ],
+      "source_clip_id": "OGBCAPKK"
+    },
+    {
+      "actions": [
+        "playing"
+      ],
+      "archive_member": "video/OGVXAAMC.mp4",
+      "group_id": "ak-ogvxaamc",
+      "id": "review-ogvxaamc",
+      "selected_for": [
+        "playing"
+      ],
+      "source_clip_id": "OGVXAAMC"
+    },
+    {
+      "actions": [
+        "resting"
+      ],
+      "archive_member": "video/OIDEMXDO.mp4",
+      "group_id": "ak-oidemxdo",
+      "id": "review-oidemxdo",
+      "selected_for": [
+        "resting"
+      ],
+      "source_clip_id": "OIDEMXDO"
+    },
+    {
+      "actions": [
+        "resting",
+        "walking"
+      ],
+      "archive_member": "video/OSOXLUDX.mp4",
+      "group_id": "ak-osoxludx",
+      "id": "review-osoxludx",
+      "selected_for": [
+        "resting"
+      ],
+      "source_clip_id": "OSOXLUDX"
+    },
+    {
+      "actions": [
+        "hissing",
+        "keeping_still"
+      ],
+      "archive_member": "video/OUAGGMYV.mp4",
+      "group_id": "ak-ouaggmyv",
+      "id": "review-ouaggmyv",
+      "selected_for": [
+        "hissing"
+      ],
+      "source_clip_id": "OUAGGMYV"
+    },
+    {
+      "actions": [
+        "sleeping"
+      ],
+      "archive_member": "video/OUMKQTEK.mp4",
+      "group_id": "ak-oumkqtek",
+      "id": "review-oumkqtek",
+      "selected_for": [
+        "sleeping"
+      ],
+      "source_clip_id": "OUMKQTEK"
+    },
+    {
+      "actions": [
+        "sleeping"
+      ],
+      "archive_member": "video/OUSQBFFP.mp4",
+      "group_id": "ak-ousqbffp",
+      "id": "review-ousqbffp",
+      "selected_for": [
+        "sleeping"
+      ],
+      "source_clip_id": "OUSQBFFP"
+    },
+    {
+      "actions": [
+        "sleeping"
+      ],
+      "archive_member": "video/OZIMMBQT.mp4",
+      "group_id": "ak-ozimmbqt",
+      "id": "review-ozimmbqt",
+      "selected_for": [
+        "sleeping"
+      ],
+      "source_clip_id": "OZIMMBQT"
+    },
+    {
+      "actions": [
+        "playing"
+      ],
+      "archive_member": "video/PDIXOFFP.mp4",
+      "group_id": "ak-pdixoffp",
+      "id": "review-pdixoffp",
+      "selected_for": [
+        "playing"
+      ],
+      "source_clip_id": "PDIXOFFP"
+    },
+    {
+      "actions": [
+        "keeping_still",
+        "licking"
+      ],
+      "archive_member": "video/PDTABBQT.mp4",
+      "group_id": "ak-pdtabbqt",
+      "id": "review-pdtabbqt",
+      "selected_for": [
+        "licking"
+      ],
+      "source_clip_id": "PDTABBQT"
+    },
+    {
+      "actions": [
+        "drinking"
+      ],
+      "archive_member": "video/PFABFSEK.mp4",
+      "group_id": "ak-pfabfsek",
+      "id": "review-pfabfsek",
+      "selected_for": [
+        "drinking"
+      ],
+      "source_clip_id": "PFABFSEK"
+    },
+    {
+      "actions": [
+        "resting",
+        "sitting"
+      ],
+      "archive_member": "video/PGQFTHAQ.mp4",
+      "group_id": "ak-pgqfthaq",
+      "id": "review-pgqfthaq",
+      "selected_for": [
+        "resting"
+      ],
+      "source_clip_id": "PGQFTHAQ"
+    },
+    {
+      "actions": [
+        "playing"
+      ],
+      "archive_member": "video/PGXQHDPR.mp4",
+      "group_id": "ak-pgxqhdpr",
+      "id": "review-pgxqhdpr",
+      "selected_for": [
+        "playing"
+      ],
+      "source_clip_id": "PGXQHDPR"
+    },
+    {
+      "actions": [
+        "running"
+      ],
+      "archive_member": "video/PHIFDXGD.mp4",
+      "group_id": "ak-phifdxgd",
+      "id": "review-phifdxgd",
+      "selected_for": [
+        "running"
+      ],
+      "source_clip_id": "PHIFDXGD"
+    },
+    {
+      "actions": [
+        "drinking"
+      ],
+      "archive_member": "video/PLNTKTFT.mp4",
+      "group_id": "ak-plntktft",
+      "id": "review-plntktft",
+      "selected_for": [
+        "drinking"
+      ],
+      "source_clip_id": "PLNTKTFT"
+    },
+    {
+      "actions": [
+        "resting"
+      ],
+      "archive_member": "video/PZUAZIVA.mp4",
+      "group_id": "ak-pzuaziva",
+      "id": "review-pzuaziva",
+      "selected_for": [
+        "resting"
+      ],
+      "source_clip_id": "PZUAZIVA"
+    },
+    {
+      "actions": [
+        "running"
+      ],
+      "archive_member": "video/QAQUUXGD.mp4",
+      "group_id": "ak-qaquuxgd",
+      "id": "review-qaquuxgd",
+      "selected_for": [
+        "running"
+      ],
+      "source_clip_id": "QAQUUXGD"
+    },
+    {
+      "actions": [
+        "sleeping"
+      ],
+      "archive_member": "video/QINTGVYU.mp4",
+      "group_id": "ak-qintgvyu",
+      "id": "review-qintgvyu",
+      "selected_for": [
+        "sleeping"
+      ],
+      "source_clip_id": "QINTGVYU"
+    },
+    {
+      "actions": [
+        "drinking"
+      ],
+      "archive_member": "video/QKMDFRDX.mp4",
+      "group_id": "ak-qkmdfrdx",
+      "id": "review-qkmdfrdx",
+      "selected_for": [
+        "drinking"
+      ],
+      "source_clip_id": "QKMDFRDX"
+    },
+    {
+      "actions": [
+        "locomotion"
+      ],
+      "archive_member": "video/QUKFTNJC.mp4",
+      "group_id": "ak-qukftnjc",
+      "id": "review-qukftnjc",
+      "selected_for": [
+        "locomotion"
+      ],
+      "source_clip_id": "QUKFTNJC"
+    },
+    {
+      "actions": [
+        "eating"
+      ],
+      "archive_member": "video/QWZCGUOY.mp4",
+      "group_id": "ak-qwzcguoy",
+      "id": "review-qwzcguoy",
+      "selected_for": [
+        "eating"
+      ],
+      "source_clip_id": "QWZCGUOY"
+    },
+    {
+      "actions": [
+        "keeping_still",
+        "sleeping",
+        "walking"
+      ],
+      "archive_member": "video/QZVIDVYU.mp4",
+      "group_id": "ak-qzvidvyu",
+      "id": "review-qzvidvyu",
+      "selected_for": [
+        "sleeping"
+      ],
+      "source_clip_id": "QZVIDVYU"
+    },
+    {
+      "actions": [
+        "eating"
+      ],
+      "archive_member": "video/RENFHVEI.mp4",
+      "group_id": "ak-renfhvei",
+      "id": "review-renfhvei",
+      "selected_for": [
+        "eating"
+      ],
+      "source_clip_id": "RENFHVEI"
+    },
+    {
+      "actions": [
+        "resting"
+      ],
+      "archive_member": "video/RQHBYHAQ.mp4",
+      "group_id": "ak-rqhbyhaq",
+      "id": "review-rqhbyhaq",
+      "selected_for": [
+        "resting"
+      ],
+      "source_clip_id": "RQHBYHAQ"
+    },
+    {
+      "actions": [
+        "resting",
+        "walking"
+      ],
+      "archive_member": "video/RRYEMXDO.mp4",
+      "group_id": "ak-rryemxdo",
+      "id": "review-rryemxdo",
+      "selected_for": [
+        "resting"
+      ],
+      "source_clip_id": "RRYEMXDO"
+    },
+    {
+      "actions": [
+        "keeping_still",
+        "running"
+      ],
+      "archive_member": "video/RSLJTXDO.mp4",
+      "group_id": "ak-rsljtxdo",
+      "id": "review-rsljtxdo",
+      "selected_for": [
+        "running"
+      ],
+      "source_clip_id": "RSLJTXDO"
+    },
+    {
+      "actions": [
+        "eating"
+      ],
+      "archive_member": "video/RTMPHVTT.mp4",
+      "group_id": "ak-rtmphvtt",
+      "id": "review-rtmphvtt",
+      "selected_for": [
+        "eating"
+      ],
+      "source_clip_id": "RTMPHVTT"
+    },
+    {
+      "actions": [
+        "exploring",
+        "keeping_still",
+        "playing"
+      ],
+      "archive_member": "video/RUUKSHGA.mp4",
+      "group_id": "ak-ruukshga",
+      "id": "review-ruukshga",
+      "selected_for": [
+        "playing"
+      ],
+      "source_clip_id": "RUUKSHGA"
+    },
+    {
+      "actions": [
+        "hissing",
+        "walking"
+      ],
+      "archive_member": "video/SBNOGIQR.mp4",
+      "group_id": "ak-sbnogiqr",
+      "id": "review-sbnogiqr",
+      "selected_for": [
+        "hissing"
+      ],
+      "source_clip_id": "SBNOGIQR"
+    },
+    {
+      "actions": [
+        "sitting",
+        "walking"
+      ],
+      "archive_member": "video/SHKRDGCS.mp4",
+      "group_id": "ak-shkrdgcs",
+      "id": "review-shkrdgcs",
+      "selected_for": [
+        "sitting"
+      ],
+      "source_clip_id": "SHKRDGCS"
+    },
+    {
+      "actions": [
+        "hissing"
+      ],
+      "archive_member": "video/SHPGHPAB.mp4",
+      "group_id": "ak-shpghpab",
+      "id": "review-shpghpab",
+      "selected_for": [
+        "hissing"
+      ],
+      "source_clip_id": "SHPGHPAB"
+    },
+    {
+      "actions": [
+        "resting"
+      ],
+      "archive_member": "video/SKCGPBQT.mp4",
+      "group_id": "ak-skcgpbqt",
+      "id": "review-skcgpbqt",
+      "selected_for": [
+        "resting"
+      ],
+      "source_clip_id": "SKCGPBQT"
+    },
+    {
+      "actions": [
+        "eating"
+      ],
+      "archive_member": "video/SVBZULSQ.mp4",
+      "group_id": "ak-svbzulsq",
+      "id": "review-svbzulsq",
+      "selected_for": [
+        "eating"
+      ],
+      "source_clip_id": "SVBZULSQ"
+    },
+    {
+      "actions": [
+        "lying_down"
+      ],
+      "archive_member": "video/SVRZZXYT.mp4",
+      "group_id": "ak-svrzzxyt",
+      "id": "review-svrzzxyt",
+      "selected_for": [
+        "lying_down"
+      ],
+      "source_clip_id": "SVRZZXYT"
+    },
+    {
+      "actions": [
+        "exploring",
+        "locomotion"
+      ],
+      "archive_member": "video/SXHPWEUL.mp4",
+      "group_id": "ak-sxhpweul",
+      "id": "review-sxhpweul",
+      "selected_for": [
+        "exploring"
+      ],
+      "source_clip_id": "SXHPWEUL"
+    },
+    {
+      "actions": [
+        "grooming"
+      ],
+      "archive_member": "video/TBICFEQQ.mp4",
+      "group_id": "ak-tbicfeqq",
+      "id": "review-tbicfeqq",
+      "selected_for": [
+        "grooming"
+      ],
+      "source_clip_id": "TBICFEQQ"
+    },
+    {
+      "actions": [
+        "eating"
+      ],
+      "archive_member": "video/TBRPAVKA.mp4",
+      "group_id": "ak-tbrpavka",
+      "id": "review-tbrpavka",
+      "selected_for": [
+        "eating"
+      ],
+      "source_clip_id": "TBRPAVKA"
+    },
+    {
+      "actions": [
+        "locomotion"
+      ],
+      "archive_member": "video/TCNNIVRM.mp4",
+      "group_id": "ak-tcnnivrm",
+      "id": "review-tcnnivrm",
+      "selected_for": [
+        "locomotion"
+      ],
+      "source_clip_id": "TCNNIVRM"
+    },
+    {
+      "actions": [
+        "licking"
+      ],
+      "archive_member": "video/TECVDKWA.mp4",
+      "group_id": "ak-tecvdkwa",
+      "id": "review-tecvdkwa",
+      "selected_for": [
+        "licking"
+      ],
+      "source_clip_id": "TECVDKWA"
+    },
+    {
+      "actions": [
+        "playing",
+        "walking"
+      ],
+      "archive_member": "video/TGMNPAMC.mp4",
+      "group_id": "ak-tgmnpamc",
+      "id": "review-tgmnpamc",
+      "selected_for": [
+        "playing"
+      ],
+      "source_clip_id": "TGMNPAMC"
+    },
+    {
+      "actions": [
+        "hissing"
+      ],
+      "archive_member": "video/TJDVGIQR.mp4",
+      "group_id": "ak-tjdvgiqr",
+      "id": "review-tjdvgiqr",
+      "selected_for": [
+        "hissing"
+      ],
+      "source_clip_id": "TJDVGIQR"
+    },
+    {
+      "actions": [
+        "drinking",
+        "keeping_still",
+        "walking"
+      ],
+      "archive_member": "video/TJGIMPKK.mp4",
+      "group_id": "ak-tjgimpkk",
+      "id": "review-tjgimpkk",
+      "selected_for": [
+        "drinking"
+      ],
+      "source_clip_id": "TJGIMPKK"
+    },
+    {
+      "actions": [
+        "grooming",
+        "keeping_still",
+        "locomotion"
+      ],
+      "archive_member": "video/TLCTMMVW.mp4",
+      "group_id": "ak-tlctmmvw",
+      "id": "review-tlctmmvw",
+      "selected_for": [
+        "grooming"
+      ],
+      "source_clip_id": "TLCTMMVW"
+    },
+    {
+      "actions": [
+        "keeping_still",
+        "locomotion",
+        "walking"
+      ],
+      "archive_member": "video/TNFJCHGA.mp4",
+      "group_id": "ak-tnfjchga",
+      "id": "review-tnfjchga",
+      "selected_for": [
+        "locomotion"
+      ],
+      "source_clip_id": "TNFJCHGA"
+    },
+    {
+      "actions": [
+        "running"
+      ],
+      "archive_member": "video/TQDCMUDX.mp4",
+      "group_id": "ak-tqdcmudx",
+      "id": "review-tqdcmudx",
+      "selected_for": [
+        "running"
+      ],
+      "source_clip_id": "TQDCMUDX"
+    },
+    {
+      "actions": [
+        "eating",
+        "exploring"
+      ],
+      "archive_member": "video/TUXZWCIN.mp4",
+      "group_id": "ak-tuxzwcin",
+      "id": "review-tuxzwcin",
+      "selected_for": [
+        "exploring"
+      ],
+      "source_clip_id": "TUXZWCIN"
+    },
+    {
+      "actions": [
+        "keeping_still",
+        "sitting",
+        "walking"
+      ],
+      "archive_member": "video/TYMQJGCS.mp4",
+      "group_id": "ak-tymqjgcs",
+      "id": "review-tymqjgcs",
+      "selected_for": [
+        "sitting"
+      ],
+      "source_clip_id": "TYMQJGCS"
+    },
+    {
+      "actions": [
+        "eating",
+        "keeping_still",
+        "walking"
+      ],
+      "archive_member": "video/UAYLOPLS.mp4",
+      "group_id": "ak-uaylopls",
+      "id": "review-uaylopls",
+      "selected_for": [
+        "eating"
+      ],
+      "source_clip_id": "UAYLOPLS"
+    },
+    {
+      "actions": [
+        "locomotion"
+      ],
+      "archive_member": "video/UKMCUKWA.mp4",
+      "group_id": "ak-ukmcukwa",
+      "id": "review-ukmcukwa",
+      "selected_for": [
+        "locomotion"
+      ],
+      "source_clip_id": "UKMCUKWA"
+    },
+    {
+      "actions": [
+        "playing",
+        "walking"
+      ],
+      "archive_member": "video/ULRCBAMC.mp4",
+      "group_id": "ak-ulrcbamc",
+      "id": "review-ulrcbamc",
+      "selected_for": [
+        "playing"
+      ],
+      "source_clip_id": "ULRCBAMC"
+    },
+    {
+      "actions": [
+        "resting"
+      ],
+      "archive_member": "video/UMMJFZTV.mp4",
+      "group_id": "ak-ummjfztv",
+      "id": "review-ummjfztv",
+      "selected_for": [
+        "resting"
+      ],
+      "source_clip_id": "UMMJFZTV"
+    },
+    {
+      "actions": [
+        "licking"
+      ],
+      "archive_member": "video/UQCJJNPL.mp4",
+      "group_id": "ak-uqcjjnpl",
+      "id": "review-uqcjjnpl",
+      "selected_for": [
+        "licking"
+      ],
+      "source_clip_id": "UQCJJNPL"
+    },
+    {
+      "actions": [
+        "keeping_still",
+        "licking"
+      ],
+      "archive_member": "video/UVBWKBQT.mp4",
+      "group_id": "ak-uvbwkbqt",
+      "id": "review-uvbwkbqt",
+      "selected_for": [
+        "licking"
+      ],
+      "source_clip_id": "UVBWKBQT"
+    },
+    {
+      "actions": [
+        "exploring",
+        "playing"
+      ],
+      "archive_member": "video/UWPSAHGA.mp4",
+      "group_id": "ak-uwpsahga",
+      "id": "review-uwpsahga",
+      "selected_for": [
+        "playing"
+      ],
+      "source_clip_id": "UWPSAHGA"
+    },
+    {
+      "actions": [
+        "sitting",
+        "walking"
+      ],
+      "archive_member": "video/UYEQZNPO.mp4",
+      "group_id": "ak-uyeqznpo",
+      "id": "review-uyeqznpo",
+      "selected_for": [
+        "sitting"
+      ],
+      "source_clip_id": "UYEQZNPO"
+    },
+    {
+      "actions": [
+        "eating",
+        "keeping_still",
+        "walking"
+      ],
+      "archive_member": "video/VAIUBPLS.mp4",
+      "group_id": "ak-vaiubpls",
+      "id": "review-vaiubpls",
+      "selected_for": [
+        "eating"
+      ],
+      "source_clip_id": "VAIUBPLS"
+    },
+    {
+      "actions": [
+        "running"
+      ],
+      "archive_member": "video/VDKCNMRN.mp4",
+      "group_id": "ak-vdkcnmrn",
+      "id": "review-vdkcnmrn",
+      "selected_for": [
+        "running"
+      ],
+      "source_clip_id": "VDKCNMRN"
+    },
+    {
+      "actions": [
+        "eating",
+        "exploring",
+        "walking"
+      ],
+      "archive_member": "video/VGTJRMCW.mp4",
+      "group_id": "ak-vgtjrmcw",
+      "id": "review-vgtjrmcw",
+      "selected_for": [
+        "exploring"
+      ],
+      "source_clip_id": "VGTJRMCW"
+    },
+    {
+      "actions": [
+        "hissing",
+        "keeping_still"
+      ],
+      "archive_member": "video/VKJRCMHZ.mp4",
+      "group_id": "ak-vkjrcmhz",
+      "id": "review-vkjrcmhz",
+      "selected_for": [
+        "hissing"
+      ],
+      "source_clip_id": "VKJRCMHZ"
+    },
+    {
+      "actions": [
+        "eating"
+      ],
+      "archive_member": "video/VLTVDTKX.mp4",
+      "group_id": "ak-vltvdtkx",
+      "id": "review-vltvdtkx",
+      "selected_for": [
+        "eating"
+      ],
+      "source_clip_id": "VLTVDTKX"
+    },
+    {
+      "actions": [
+        "eating",
+        "keeping_still",
+        "running"
+      ],
+      "archive_member": "video/VRDQQSBA.mp4",
+      "group_id": "ak-vrdqqsba",
+      "id": "review-vrdqqsba",
+      "selected_for": [
+        "running"
+      ],
+      "source_clip_id": "VRDQQSBA"
+    },
+    {
+      "actions": [
+        "playing",
+        "walking"
+      ],
+      "archive_member": "video/VXMGLAMC.mp4",
+      "group_id": "ak-vxmglamc",
+      "id": "review-vxmglamc",
+      "selected_for": [
+        "playing"
+      ],
+      "source_clip_id": "VXMGLAMC"
+    },
+    {
+      "actions": [
+        "hissing",
+        "keeping_still"
+      ],
+      "archive_member": "video/VYVJZMYV.mp4",
+      "group_id": "ak-vyvjzmyv",
+      "id": "review-vyvjzmyv",
+      "selected_for": [
+        "hissing"
+      ],
+      "source_clip_id": "VYVJZMYV"
+    },
+    {
+      "actions": [
+        "sitting"
+      ],
+      "archive_member": "video/WEAMBXGD.mp4",
+      "group_id": "ak-weambxgd",
+      "id": "review-weambxgd",
+      "selected_for": [
+        "sitting"
+      ],
+      "source_clip_id": "WEAMBXGD"
+    },
+    {
+      "actions": [
+        "hissing"
+      ],
+      "archive_member": "video/WGBAHUXS.mp4",
+      "group_id": "ak-wgbahuxs",
+      "id": "review-wgbahuxs",
+      "selected_for": [
+        "hissing"
+      ],
+      "source_clip_id": "WGBAHUXS"
+    },
+    {
+      "actions": [
+        "resting",
+        "sitting"
+      ],
+      "archive_member": "video/WHLWIHAQ.mp4",
+      "group_id": "ak-whlwihaq",
+      "id": "review-whlwihaq",
+      "selected_for": [
+        "resting"
+      ],
+      "source_clip_id": "WHLWIHAQ"
+    },
+    {
+      "actions": [
+        "drinking",
+        "keeping_still",
+        "walking"
+      ],
+      "archive_member": "video/WPQWAPKK.mp4",
+      "group_id": "ak-wpqwapkk",
+      "id": "review-wpqwapkk",
+      "selected_for": [
+        "drinking"
+      ],
+      "source_clip_id": "WPQWAPKK"
+    },
+    {
+      "actions": [
+        "grooming",
+        "playing"
+      ],
+      "archive_member": "video/WWKCBAMC.mp4",
+      "group_id": "ak-wwkcbamc",
+      "id": "review-wwkcbamc",
+      "selected_for": [
+        "playing"
+      ],
+      "source_clip_id": "WWKCBAMC"
+    },
+    {
+      "actions": [
+        "keeping_still",
+        "licking"
+      ],
+      "archive_member": "video/XDZAMBQT.mp4",
+      "group_id": "ak-xdzambqt",
+      "id": "review-xdzambqt",
+      "selected_for": [
+        "licking"
+      ],
+      "source_clip_id": "XDZAMBQT"
+    },
+    {
+      "actions": [
+        "locomotion",
+        "sleeping"
+      ],
+      "archive_member": "video/XJNOINXN.mp4",
+      "group_id": "ak-xjnoinxn",
+      "id": "review-xjnoinxn",
+      "selected_for": [
+        "sleeping"
+      ],
+      "source_clip_id": "XJNOINXN"
+    },
+    {
+      "actions": [
+        "exploring"
+      ],
+      "archive_member": "video/XVKTPCNX.mp4",
+      "group_id": "ak-xvktpcnx",
+      "id": "review-xvktpcnx",
+      "selected_for": [
+        "exploring"
+      ],
+      "source_clip_id": "XVKTPCNX"
+    },
+    {
+      "actions": [
+        "running"
+      ],
+      "archive_member": "video/XWBFDXGD.mp4",
+      "group_id": "ak-xwbfdxgd",
+      "id": "review-xwbfdxgd",
+      "selected_for": [
+        "running"
+      ],
+      "source_clip_id": "XWBFDXGD"
+    },
+    {
+      "actions": [
+        "hissing"
+      ],
+      "archive_member": "video/XWVZNIQR.mp4",
+      "group_id": "ak-xwvzniqr",
+      "id": "review-xwvzniqr",
+      "selected_for": [
+        "hissing"
+      ],
+      "source_clip_id": "XWVZNIQR"
+    },
+    {
+      "actions": [
+        "eating"
+      ],
+      "archive_member": "video/XXWCHXSF.mp4",
+      "group_id": "ak-xxwchxsf",
+      "id": "review-xxwchxsf",
+      "selected_for": [
+        "eating"
+      ],
+      "source_clip_id": "XXWCHXSF"
+    },
+    {
+      "actions": [
+        "exploring",
+        "keeping_still"
+      ],
+      "archive_member": "video/YMAEFZYO.mp4",
+      "group_id": "ak-ymaefzyo",
+      "id": "review-ymaefzyo",
+      "selected_for": [
+        "exploring"
+      ],
+      "source_clip_id": "YMAEFZYO"
+    },
+    {
+      "actions": [
+        "hissing"
+      ],
+      "archive_member": "video/YOLXKIQR.mp4",
+      "group_id": "ak-yolxkiqr",
+      "id": "review-yolxkiqr",
+      "selected_for": [
+        "hissing"
+      ],
+      "source_clip_id": "YOLXKIQR"
+    },
+    {
+      "actions": [
+        "sleeping"
+      ],
+      "archive_member": "video/YRDLXCPZ.mp4",
+      "group_id": "ak-yrdlxcpz",
+      "id": "review-yrdlxcpz",
+      "selected_for": [
+        "sleeping"
+      ],
+      "source_clip_id": "YRDLXCPZ"
+    },
+    {
+      "actions": [
+        "drinking"
+      ],
+      "archive_member": "video/YRTCGSEK.mp4",
+      "group_id": "ak-yrtcgsek",
+      "id": "review-yrtcgsek",
+      "selected_for": [
+        "drinking"
+      ],
+      "source_clip_id": "YRTCGSEK"
+    },
+    {
+      "actions": [
+        "eating",
+        "walking"
+      ],
+      "archive_member": "video/YRTITVEI.mp4",
+      "group_id": "ak-yrtitvei",
+      "id": "review-yrtitvei",
+      "selected_for": [
+        "eating"
+      ],
+      "source_clip_id": "YRTITVEI"
+    },
+    {
+      "actions": [
+        "eating"
+      ],
+      "archive_member": "video/YRUIEJVY.mp4",
+      "group_id": "ak-yruiejvy",
+      "id": "review-yruiejvy",
+      "selected_for": [
+        "eating"
+      ],
+      "source_clip_id": "YRUIEJVY"
+    },
+    {
+      "actions": [
+        "sleeping",
+        "walking"
+      ],
+      "archive_member": "video/YZVYQDSN.mp4",
+      "group_id": "ak-yzvyqdsn",
+      "id": "review-yzvyqdsn",
+      "selected_for": [
+        "sleeping"
+      ],
+      "source_clip_id": "YZVYQDSN"
+    },
+    {
+      "actions": [
+        "running"
+      ],
+      "archive_member": "video/ZBPGEIQR.mp4",
+      "group_id": "ak-zbpgeiqr",
+      "id": "review-zbpgeiqr",
+      "selected_for": [
+        "running"
+      ],
+      "source_clip_id": "ZBPGEIQR"
+    },
+    {
+      "actions": [
+        "hissing"
+      ],
+      "archive_member": "video/ZHVVQUXS.mp4",
+      "group_id": "ak-zhvvquxs",
+      "id": "review-zhvvquxs",
+      "selected_for": [
+        "hissing"
+      ],
+      "source_clip_id": "ZHVVQUXS"
+    },
+    {
+      "actions": [
+        "drinking",
+        "exploring"
+      ],
+      "archive_member": "video/ZNTSNFUP.mp4",
+      "group_id": "ak-zntsnfup",
+      "id": "review-zntsnfup",
+      "selected_for": [
+        "exploring"
+      ],
+      "source_clip_id": "ZNTSNFUP"
+    },
+    {
+      "actions": [
+        "grooming"
+      ],
+      "archive_member": "video/ZOXVNBQT.mp4",
+      "group_id": "ak-zoxvnbqt",
+      "id": "review-zoxvnbqt",
+      "selected_for": [
+        "grooming"
+      ],
+      "source_clip_id": "ZOXVNBQT"
+    },
+    {
+      "actions": [
+        "keeping_still",
+        "sleeping"
+      ],
+      "archive_member": "video/ZVPFDNXN.mp4",
+      "group_id": "ak-zvpfdnxn",
+      "id": "review-zvpfdnxn",
+      "selected_for": [
+        "sleeping"
+      ],
+      "source_clip_id": "ZVPFDNXN"
+    },
+    {
+      "actions": [
+        "sleeping"
+      ],
+      "archive_member": "video/ZWFAAAMC.mp4",
+      "group_id": "ak-zwfaaamc",
+      "id": "review-zwfaaamc",
+      "selected_for": [
+        "sleeping"
+      ],
+      "source_clip_id": "ZWFAAAMC"
+    },
+    {
+      "actions": [
+        "keeping_still",
+        "licking"
+      ],
+      "archive_member": "video/ZWQVNBQT.mp4",
+      "group_id": "ak-zwqvnbqt",
+      "id": "review-zwqvnbqt",
+      "selected_for": [
+        "licking"
+      ],
+      "source_clip_id": "ZWQVNBQT"
+    },
+    {
+      "actions": [
+        "hissing"
+      ],
+      "archive_member": "video/ZXQXMMYV.mp4",
+      "group_id": "ak-zxqxmmyv",
+      "id": "review-zxqxmmyv",
+      "selected_for": [
+        "hissing"
+      ],
+      "source_clip_id": "ZXQXMMYV"
+    },
+    {
+      "actions": [
+        "drinking",
+        "keeping_still",
+        "walking"
+      ],
+      "archive_member": "video/ZZVMNPKK.mp4",
+      "group_id": "ak-zzvmnpkk",
+      "id": "review-zzvmnpkk",
+      "selected_for": [
+        "drinking"
+      ],
+      "source_clip_id": "ZZVMNPKK"
+    }
+  ],
+  "plan_version": "animal-kingdom-review-v1",
+  "requested_per_action": 20,
+  "schema_version": "1.0.0",
+  "seed": 2026,
+  "source_archive_uri": "gs://cat-behaviour-research-raluca-2026/raw/animal-kingdom/video-002.tar.gz"
+}

@@ -79,3 +79,38 @@ selected archive members, create small review previews, and write them under a v
 `curated/review-v1/` prefix. A human then labels species suitability before any model is
 trained. Grouping and final train/validation/test splits must use the original source-video
 ID so a video never crosses splits.
+
+## Colab species review
+
+The deterministic plan is tracked at
+`video_dataset/review/animal-kingdom-review-v1.plan.json`. It requests 20 examples per
+mapped action where available and contains 203 unique source videos. `lying_down` has only
+one source video and `sleeping` only 18, so those classes cannot reach 20.
+
+After these repository changes are committed and pushed, open:
+
+<https://colab.research.google.com/github/ralucabiras/explainable-cat-behaviour-interpreter/blob/main/backend/video_dataset/notebooks/animal_kingdom_review.ipynb>
+
+Use a CPU runtime. The notebook will:
+
+1. authenticate your Google account;
+2. clone this repository to obtain the frozen review plan;
+3. stream the 15.6 GB compressed action archive once;
+4. extract only the 203 selected videos to temporary Colab storage;
+5. present each video with species, suitability, visible-action, and notes controls;
+6. checkpoint labels privately to
+   `gs://cat-behaviour-research-raluca-2026/curated/review-v1/review-labels.json`.
+
+Use `unclear` instead of guessing. A clip is `suitable` only when the animal and mapped
+action are visible enough to support an observable-action model. Wild felines and other
+animals should still receive their correct species category; suitability is a separate
+decision.
+
+After downloading the completed labels locally, validate them with:
+
+```powershell
+python -m app.video_dataset.cli review-validate `
+  --plan video_dataset/review/animal-kingdom-review-v1.plan.json `
+  --labels review-labels.json `
+  --require-complete
+```

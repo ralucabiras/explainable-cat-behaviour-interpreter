@@ -13,6 +13,13 @@ from app.video_dataset.animal_kingdom import (
     save_json,
 )
 from app.video_dataset.cloud import GCloudStorage
+from app.video_dataset.review import (
+    ReviewPlan,
+    ReviewSubmission,
+    build_review_plan,
+    save_review_plan,
+    validate_review_submission,
+)
 from app.video_dataset.service import (
     assign_grouped_splits,
     build_report,
@@ -56,6 +63,22 @@ def parser() -> argparse.ArgumentParser:
     _add_cloud_arguments(cloud_audit)
     cloud_audit.add_argument("--output-dir", type=Path, required=True)
     cloud_audit.add_argument("--work-dir", type=Path)
+    review_sample = subcommands.add_parser(
+        "review-sample",
+        description="Create a deterministic species-review plan from action candidates.",
+    )
+    review_sample.add_argument("--manifest", type=Path, required=True)
+    review_sample.add_argument("--output", type=Path, required=True)
+    review_sample.add_argument("--source-archive-uri", required=True)
+    review_sample.add_argument("--per-action", type=int, default=20)
+    review_sample.add_argument("--seed", type=int, default=2026)
+    review_sample.add_argument("--plan-version", default="review-v1")
+    review_validate = subcommands.add_parser(
+        "review-validate", description="Validate species-review labels against their plan."
+    )
+    review_validate.add_argument("--plan", type=Path, required=True)
+    review_validate.add_argument("--labels", type=Path, required=True)
+    review_validate.add_argument("--require-complete", action="store_true")
     return command
 
 
@@ -73,6 +96,26 @@ def main(argv: list[str] | None = None) -> int:
             return 0
         if args.command == "animal-kingdom-cloud-audit":
             _run_cloud_audit(args)
+            return 0
+        if args.command == "review-sample":
+            manifest = load_manifest(args.manifest)
+            plan = build_review_plan(
+                manifest,
+                source_archive_uri=args.source_archive_uri,
+                per_action=args.per_action,
+                seed=args.seed,
+                plan_version=args.plan_version,
+            )
+            save_review_plan(plan, args.output)
+            print(f"Selected {len(plan.items)} unique source videos; wrote {args.output}")
+            return 0
+        if args.command == "review-validate":
+            plan = ReviewPlan.model_validate_json(args.plan.read_text(encoding="utf-8"))
+            submission = ReviewSubmission.model_validate_json(
+                args.labels.read_text(encoding="utf-8")
+            )
+            result = validate_review_submission(plan, submission, args.require_complete)
+            print(json.dumps(result, indent=2, sort_keys=True))
             return 0
 
         manifest = load_manifest(args.manifest)
